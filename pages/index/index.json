@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#858C96",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "色卡",
+    "backgroundColor": "#858C96",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "dialog": "/components/dialog/dialog"
+    }
+}
