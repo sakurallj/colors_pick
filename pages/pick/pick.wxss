@@ -4,6 +4,7 @@
     background: linear-gradient(#858c96, #414854);
     min-height: 100vh;
     box-sizing: border-box;
+    padding-bottom: 150rpx;
 }
 
 .color_item {
