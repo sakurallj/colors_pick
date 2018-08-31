@@ -54,5 +54,13 @@
     bottom: 20rpx;
     left: 20rpx;
     font-weight: bolder;
-    opacity: 0.5
+    opacity: 0.5;
+}
+
+.color_item_img_smile {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
 }

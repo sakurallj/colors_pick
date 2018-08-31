@@ -6,14 +6,24 @@ Page({
     },
     onLoad: function() {
         that = this;
+    },
+    initColors() {
+        let colors = wx.getStorageSync("colors");
+        if (!colors) {
+            colors = default_colors.colors;
+        }
         this.setData({
-            colors: default_colors.colors,
-            dialogData: default_colors.colors.builtInArrs[0]
+            colors: colors
         });
+        wx.setStorageSync("colors", colors);
     },
     onShow() {
+        that.initColors();
         that.dialog = that.selectComponent("#dialog");
-        that.showDialog("color_comment")
+        // this.setData({
+        //     dialogData: default_colors.colors.builtInArrs[0]
+        // });
+        // that.showDialog("color_detail")
     },
     showDialog(dialog_type) {
         this.setData({
@@ -25,12 +35,14 @@ Page({
         this.dialog.hideDialog();
     },
     cancelEvent() {
+        that.initColors();
         this.hiddenDialog();
     },
     chooseItem(e) {
         console.log(e);
         let item = e.currentTarget.dataset.item;
         item.index = parseInt(item.index);
+        item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
         that.setData({
             dialogData: item
         });

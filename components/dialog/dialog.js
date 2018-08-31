@@ -81,13 +81,35 @@ Component({
         },
         _like() {
             let d_data = this.data.d_data;
-            d_data.is_like = !d_data.is_like;
+            d_data.is_like = d_data.is_like==1 ? 2 : 1; console.log(d_data);
             this.setData({
                 d_data: d_data
             });
+            api.saveOneBuiltColor(d_data.index, {
+                color3: d_data.color3,
+                color0: d_data.color0,
+                color1: d_data.color1,
+                color2: d_data.color2,
+                index: d_data.index,
+                name: d_data.name,
+                is_like: d_data.is_like
+            });
         },
         _edit() {
+            this.setData({
+                sub_type: "edit"
+            });
 
+        },
+        _cancelEventSub() {
+            this.setData({
+                sub_type: ""
+            });
+        },
+        _confirmEventSub() {
+            this.setData({
+                sub_type: ""
+            });
         }
     }
 });

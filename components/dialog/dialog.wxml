@@ -1,74 +1,78 @@
 <view class="wx_dialog_container" hidden="{{!isShow}}">
-    <view class="wx_mask" catchtap="_cancelEvent"></view>
+    <view class="wx_mask" catchtap="{{sub_type=='edit'?'':'_cancelEvent'}}" style="{{sub_type=='edit'?'z-index: 1000;':''}}"></view>
     <view class="wc_dialog_continer" wx:if="{{dialog_type=='color_detail'}}">
-        <view class="wx_dialog cd_dialog ">
-            <view class='color_item left' style='background:#{{d_data.color3}}'>
-                <view class='color_item_cell_2' style='background:#{{d_data.color1}}'></view>
-                <view class='color_item_cell_1' style='background:#{{d_data.color0}}'></view>
-                <view class='color_item_cell_3' style='background:#{{d_data.color2}}'></view>
-            </view>
-            <view class='color_list right'>
-                <view class='color_list_item' style='background:#{{d_data.color0}}' catchtap='_copyColor' data-value="#{{d_data.color0}}"></view>
-                <view class='color_list_item' style='background:#{{d_data.color1}}' catchtap='_copyColor' data-value="#{{d_data.color1}}"></view>
-                <view class='color_list_item' style='background:#{{d_data.color2}}' catchtap='_copyColor' data-value="#{{d_data.color2}}"></view>
-                <view class='color_list_item' style='background:#{{d_data.color3}}' catchtap='_copyColor' data-value="#{{d_data.color3}}"></view>
-            </view>
-            <view class='clear_both'></view>
-            <view class='color_hor'>
-                <view class='color_hor_item left' catchtap='_copyColor' data-value="#{{d_data.color0}}">
-                    <view class='color_hor_item_color left' style='background:#{{d_data.color0}}'></view>
-                    <view class='color_hor_item_text left'>#{{d_data.color0}}</view>
+        <view class='cd_dialog_out'>
+            <view class="wx_dialog cd_dialog ">
+                <view class='color_item left' style='background:#{{d_data.color3}}'>
+                    <view class='color_item_cell_2' style='background:#{{d_data.color1}}'></view>
+                    <view class='color_item_cell_1' style='background:#{{d_data.color0}}'></view>
+                    <view class='color_item_cell_3' style='background:#{{d_data.color2}}'></view>
+                    <view class='color_item_text'>{{d_data.index+1}}</view>
+                </view>
+                <view class='color_list right'>
+                    <view class='color_list_item' style='background:#{{d_data.color0}}' catchtap='_copyColor' data-value="#{{d_data.color0}}"></view>
+                    <view class='color_list_item' style='background:#{{d_data.color1}}' catchtap='_copyColor' data-value="#{{d_data.color1}}"></view>
+                    <view class='color_list_item' style='background:#{{d_data.color2}}' catchtap='_copyColor' data-value="#{{d_data.color2}}"></view>
+                    <view class='color_list_item' style='background:#{{d_data.color3}}' catchtap='_copyColor' data-value="#{{d_data.color3}}"></view>
+                </view>
+                <view class='clear_both'></view>
+                <view class='color_hor'>
+                    <view class='color_hor_item left' catchtap='_copyColor' data-value="#{{d_data.color0}}">
+                        <view class='color_hor_item_color left' style='background:#{{d_data.color0}}'></view>
+                        <view class='color_hor_item_text left'>#{{d_data.color0}}</view>
+                        <view class='clear_both'></view>
+                    </view>
+                    <view class='color_hor_item right' catchtap='_copyColor' data-value="#{{d_data.color1}}">
+                        <view class='color_hor_item_color right' style='background:#{{d_data.color1}}'></view>
+                        <view class='color_hor_item_text right'>#{{d_data.color1}}</view>
+                        <view class='clear_both'></view>
+                    </view>
                     <view class='clear_both'></view>
                 </view>
-                <view class='color_hor_item right' catchtap='_copyColor' data-value="#{{d_data.color1}}">
-                    <view class='color_hor_item_color right' style='background:#{{d_data.color1}}'></view>
-                    <view class='color_hor_item_text right'>#{{d_data.color1}}</view>
+                <view class='color_hor'>
+                    <view class='color_hor_item left' catchtap='_copyColor' data-value="#{{d_data.color2}}">
+                        <view class='color_hor_item_color left' style='background:#{{d_data.color2}}'></view>
+                        <view class='color_hor_item_text left'>#{{d_data.color2}}</view>
+                        <view class='clear_both'></view>
+                    </view>
+                    <view class='color_hor_item right' catchtap='_copyColor' data-value="#{{d_data.color3}}">
+                        <view class='color_hor_item_color right' style='background:#{{d_data.color3}}'></view>
+                        <view class='color_hor_item_text right'>#{{d_data.color3}}</view>
+                        <view class='clear_both'></view>
+                    </view>
                     <view class='clear_both'></view>
+                </view>
+            </view>
+            <view class='cd_title'>
+                <text class='cd_title_min'>色卡</text>
+                <text class='cd_title_max'>No.{{d_data.index+1}}</text>
+            </view>
+            <view class='cd_bottom'>
+                <button class='cd_bottom_item right' open-type='share'>
+                    <image class='cd_bottom_img' src="/images/share.png"></image>
+                </button>
+                <view class='cd_bottom_item right' catchtap='_copyColor' data-value='{{d_data.copyStr}}'>
+                    <image class='cd_bottom_img' src="/images/copy.png"></image>
+                </view>
+                <view class='cd_bottom_item right' catchtap='_edit'>
+                    <image class='cd_bottom_img' src="/images/edit.png"></image>
+                </view>
+                <view class='cd_bottom_item right' catchtap='_like'>
+                    <image class='cd_bottom_img' src="/images/smile_active.png" wx:if="{{d_data.is_like==1}}"></image>
+                    <image class='cd_bottom_img' src="/images/smile.png" wx:else></image>
                 </view>
                 <view class='clear_both'></view>
             </view>
-            <view class='color_hor'>
-                <view class='color_hor_item left' catchtap='_copyColor' data-value="#{{d_data.color2}}">
-                    <view class='color_hor_item_color left' style='background:#{{d_data.color2}}'></view>
-                    <view class='color_hor_item_text left'>#{{d_data.color2}}</view>
-                    <view class='clear_both'></view>
-                </view>
-                <view class='color_hor_item right' catchtap='_copyColor' data-value="#{{d_data.color3}}">
-                    <view class='color_hor_item_color right' style='background:#{{d_data.color3}}'></view>
-                    <view class='color_hor_item_text right'>#{{d_data.color3}}</view>
-                    <view class='clear_both'></view>
-                </view>
-                <view class='clear_both'></view>
-            </view>
-        </view>
-        <view class='cd_title'>
-            <text class='cd_title_min'>色卡</text>
-            <text class='cd_title_max'>No.{{d_data.index+1}}</text>
-        </view>
-        <view class='cd_bottom'>
-            <button class='cd_bottom_item right' open-type='share'>
-                <image class='cd_bottom_img' src="/images/share.png"></image>
-            </button>
-            <view class='cd_bottom_item right' catchtap='_copyColor' data-value='{{"#"+d_data.color0+" #"+d_data.color1+" #"+d_data.color2+" #"+d_data.color3}}'>
-                <image class='cd_bottom_img' src="/images/copy.png"></image>
-            </view>
-            <view class='cd_bottom_item right' catchtap='_edit'>
-                <image class='cd_bottom_img' src="/images/edit.png"></image>
-            </view>
-            <view class='cd_bottom_item right' catchtap='_like'>
-                <image class='cd_bottom_img' src="/images/smile_active.png" wx:if="{{d_data.is_like==1}}"></image>
-                <image class='cd_bottom_img' src="/images/smile.png" wx:else></image>
-            </view>
-            <view class='clear_both'></view>
         </view>
     </view>
-    <view class="wx_dialog cc_dialog " wx:if="{{dialog_type=='color_comment'}}">
+    <view class="wx_dialog cc_sub_dialog " wx:if="{{sub_type=='edit'}}">
         <view class='cc_title'>备注</view>
         <view class='cc_desc'>为该色卡添加备注</view>
         <input class='cc_input' bindinput="bindReplaceInput" placeholder="输入备注" value="{{d_data.text}}"></input>
         <view class='cc_bottom'>
-            <view class='cc_bottom_item'>取消</view>
-            <view class='cc_bottom_item'>确定</view>
+            <view class='cc_bottom_item' catchtap="_cancelEventSub">取消</view>
+            <view class='cc_bottom_item' catchtap='_confirmEventSub'>确定</view>
         </view>
     </view>
 </view>
+

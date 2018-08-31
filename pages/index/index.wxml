@@ -3,7 +3,8 @@
         <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
         <view class='color_item_cell_1' style='background:#{{item.color0}}'></view>
         <view class='color_item_cell_3' style='background:#{{item.color2}}'></view>
-        <view class='color_item_text' >{{index+1}}</view>
+        <view class='color_item_text'>{{index+1}}</view>
+        <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
     </view>
 </view>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
