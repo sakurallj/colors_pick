@@ -27,7 +27,14 @@
         </view>
     </view>
     <view class='clear_both'></view>
-    <view class='add_pic'>
-        <image class='add_pic_img' src="/images/add.png"></image>
+    <view class='add_pic_container'>
+        <view class='add_pic' bindtap='choosePic' wx:if="{{!src}}">
+            <image class='add_pic_img' src="/images/add.png"></image>
+        </view>
+        <view class='ch_pic' wx:else  bindtap='choosePic' >
+            <image class='ch_pic_img' src="{{src}}" mode='widthFix'></image>
+        </view>
+
     </view>
+
 </view>
