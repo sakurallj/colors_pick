@@ -1,66 +1,51 @@
-// pages/my/my.js
+let default_colors = require('../..//utils/default_colors.js');
+let that;
 Page({
+    data: {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    },
+    onLoad: function () {
+        that = this;
+    },
+    initColors() {
+        let colors = wx.getStorageSync("colors");
+        if (!colors) {
+            colors = default_colors.colors;
+        }
+        this.setData({
+            colors: colors
+        });
+        wx.setStorageSync("colors", colors);
+    },
+    onShow() {
+        that.initColors();
+        that.dialog = that.selectComponent("#dialog");
+        // this.setData({
+        //     dialogData: default_colors.colors.builtInArrs[0]
+        // });
+        // that.showDialog("color_detail")
+    },
+    showDialog(dialog_type) {
+        this.setData({
+            dialog_type: dialog_type
+        });
+        this.dialog.showDialog();
+    },
+    hiddenDialog: function () {
+        this.dialog.hideDialog();
+    },
+    cancelEvent() {
+        that.initColors();
+        this.hiddenDialog();
+    },
+    chooseItem(e) {
+        console.log(e);
+        let item = e.currentTarget.dataset.item;
+        item.index = parseInt(item.index);
+        item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
+        that.setData({
+            dialogData: item
+        });
+        that.showDialog("color_detail")
+    }
 })

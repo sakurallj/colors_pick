@@ -1,3 +1,10 @@
 page{
       background: linear-gradient( #858C96,#414854);
 }
+
+.cut {
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

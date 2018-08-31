@@ -1,1 +1,78 @@
-/* pages/my/my.wxss */
+.colors_container {
+    padding: 0 65rpx;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(#858c96, #414854);
+    padding-top: 30rpx;
+}
+
+.color_item {
+    width: 290rpx;
+    height: 395rpx;
+    background: #b1b5bb;
+    border-radius: 24rpx;
+    margin-right: 40rpx;
+    margin-bottom: 40rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.color_item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.color_item_cell_1 {
+    width: 290rpx;
+    height: 290rpx;
+    border-radius: 290rpx;
+    position: absolute;
+    right: -80rpx;
+    top: -100rpx;
+}
+
+.color_item_cell_2 {
+    width: 230rpx;
+    height: 230rpx;
+    position: absolute;
+    right: -70rpx;
+    border-radius: 230rpx;
+    top: 50rpx;
+}
+
+.color_item_cell_3 {
+    width: 290rpx;
+    height: 290rpx;
+    position: absolute;
+    left: -130rpx;
+    border-radius: 290rpx;
+    bottom: -100rpx;
+}
+
+.color_item_text {
+    color: #fff;
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    font-weight: bolder;
+    opacity: 0.5;
+}
+
+.color_item_img_smile {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
+}
+
+.color_item_title {
+    position: absolute;
+    z-index: 100;
+    width: 242rpx;
+    text-align: center;
+    top: 20rpx;
+    left: 24rpx;
+    color: #fff;
+    font-weight: bolder;
+    opacity: 0.8;
+}

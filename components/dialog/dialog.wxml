@@ -68,7 +68,7 @@
     <view class="wx_dialog cc_sub_dialog " wx:if="{{sub_type=='edit'}}">
         <view class='cc_title'>备注</view>
         <view class='cc_desc'>为该色卡添加备注</view>
-        <input class='cc_input' bindinput="bindReplaceInput" placeholder="输入备注" value="{{d_data.text}}"></input>
+        <input class='cc_input' bindinput="_input" placeholder="输入备注" value="{{d_data.text}}"></input>
         <view class='cc_bottom'>
             <view class='cc_bottom_item' catchtap="_cancelEventSub">取消</view>
             <view class='cc_bottom_item' catchtap='_confirmEventSub'>确定</view>

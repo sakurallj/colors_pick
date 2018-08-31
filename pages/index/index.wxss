@@ -64,3 +64,15 @@
     bottom: 20rpx;
     right: 20rpx;
 }
+
+.color_item_title {
+    position: absolute;
+    z-index: 100;
+    width: 242rpx;
+    text-align: center;
+    top: 20rpx;
+    left: 24rpx;
+    color: #fff;
+    font-weight: bolder;
+    opacity: 0.8;
+}
