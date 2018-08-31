@@ -55,7 +55,7 @@
     position: relative;
     margin: 0 auto;
     margin-top: 100rpx;
-    border-radius: 24rpx;
+    border-radius: 12rpx;
     background: #fff;
     box-sizing: border-box;
     padding: 24rpx;
@@ -89,7 +89,7 @@
     width: 100rpx;
     height: 400rpx;
     overflow: hidden;
-    border-radius: 24rpx;
+    border-radius: 12rpx;
     box-shadow: 0 0 22rpx rgba(0, 0, 0, 0.5);
 }
 
@@ -102,7 +102,7 @@
     width: 300rpx;
     height: 400rpx;
     background: #b1b5bb;
-    border-radius: 24rpx;
+    border-radius: 12rpx;
     margin-right: 40rpx;
     margin-bottom: 40rpx;
     position: relative;

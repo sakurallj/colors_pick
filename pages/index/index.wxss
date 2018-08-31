@@ -4,17 +4,19 @@
     flex-wrap: wrap;
     background: linear-gradient(#858c96, #414854);
     padding-top: 30rpx;
+    box-sizing: border-box;
 }
 
 .color_item {
     width: 290rpx;
     height: 395rpx;
     background: #b1b5bb;
-    border-radius: 24rpx;
+    border-radius: 12rpx;
     margin-right: 40rpx;
     margin-bottom: 40rpx;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 22rpx rgba(0, 0, 0, 0.5);
 }
 
 .color_item:nth-child(2n) {
@@ -71,7 +73,7 @@
     width: 242rpx;
     text-align: center;
     top: 20rpx;
-    left: 24rpx;
+    left: 12rpx;
     color: #fff;
     font-weight: bolder;
     opacity: 0.8;

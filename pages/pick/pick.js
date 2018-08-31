@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+      init_color: {
+          "color3": "177E89",
+          "color0": "FFC857",
+          "color1": "DB3A34",
+          "color2": "084C61" 
+      }
   },
 
   /**

@@ -1,2 +1,33 @@
-<!--pages/pick/pick.wxml-->
-<text>pages/pick/pick.wxml</text>
+<view class='colors_container'>
+    <view class='color_item left' style='background:#{{init_color.color3}}'>
+        <view class='color_item_cell_2' style='background:#{{init_color.color1}}'></view>
+        <view class='color_item_cell_1' style='background:#{{init_color.color0}}'></view>
+        <view class='color_item_cell_3' style='background:#{{init_color.color2}}'></view>
+    </view>
+    <view class='color_list left'>
+        <view class='color_list_item'>
+            <view class='color_list_item_color left' style='background:#{{init_color.color0}}'></view>
+            <view class="color_list_item_text left">#{{init_color.color0}}</view>
+            <view class='clear_both'></view>
+        </view>
+        <view class='color_list_item'>
+            <view class='color_list_item_color left' style='background:#{{init_color.color1}}'></view>
+            <view class="color_list_item_text left">#{{init_color.color1}}</view>
+            <view class='clear_both'></view>
+        </view>
+        <view class='color_list_item'>
+            <view class='color_list_item_color left' style='background:#{{init_color.color2}}'></view>
+            <view class="color_list_item_text left">#{{init_color.color2}}</view>
+            <view class='clear_both'></view>
+        </view>
+        <view class='color_list_item'>
+            <view class='color_list_item_color left' style='background:#{{init_color.color3}}'></view>
+            <view class="color_list_item_text left">#{{init_color.color3}}</view>
+            <view class='clear_both'></view>
+        </view>
+    </view>
+    <view class='clear_both'></view>
+    <view class='add_pic'>
+        <image class='add_pic_img' src="/images/add.png"></image>
+    </view>
+</view>

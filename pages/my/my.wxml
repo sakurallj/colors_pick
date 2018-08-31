@@ -1,4 +1,4 @@
-<view class='colors_container'>
+<view class='colors_container' wx:if="{{has_like}}">
     <view class='color_item' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}" wx:if="{{item.is_like==1}}">
         <view class='color_item_title cut'>{{item.name}}</view>
         <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>

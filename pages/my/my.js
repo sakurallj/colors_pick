@@ -4,7 +4,7 @@ Page({
     data: {
 
     },
-    onLoad: function () {
+    onLoad: function() {
         that = this;
     },
     initColors() {
@@ -12,7 +12,17 @@ Page({
         if (!colors) {
             colors = default_colors.colors;
         }
+        let i = 0,
+            len = colors.builtInArrs.length,
+            has_like = false;
+        for (; i < len; i++) { 
+            if (colors.builtInArrs[i].is_like == 1) {
+                has_like = true;
+                break;
+            }
+        }
         this.setData({
+            has_like: has_like,
             colors: colors
         });
         wx.setStorageSync("colors", colors);
@@ -31,7 +41,7 @@ Page({
         });
         this.dialog.showDialog();
     },
-    hiddenDialog: function () {
+    hiddenDialog: function() {
         this.dialog.hideDialog();
     },
     cancelEvent() {
