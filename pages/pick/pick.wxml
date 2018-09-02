@@ -32,9 +32,8 @@
             <image class='add_pic_img' src="/images/add.png"></image>
         </view>
         <view class='ch_pic' wx:else  bindtap='choosePic' >
-            <image class='ch_pic_img' src="{{src}}" mode='widthFix'></image>
+            <canvas style="width: 630rpx; height: 394rpx;" canvas-id="ch_pic_img_canvas"></canvas>
+            <!-- <image class='ch_pic_img' src="{{src}}" mode='widthFix'></image> -->
         </view>
-
     </view>
-
 </view>

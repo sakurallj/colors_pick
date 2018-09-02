@@ -11,14 +11,14 @@ Page({
             "color1": "DB3A34",
             "color2": "084C61"
         },
-        // src:"/images/test.jpg"
+        src: "/images/test.jpg"
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        that=this;
+        that = this;
     },
 
     /**
@@ -32,7 +32,15 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        wx.getImageInfo({
+            src: that.data.src,
+            success:function(res){
+                console.log(res);
+            }
+        });
+        let ctx = wx.createCanvasContext("ch_pic_img_canvas", this);
+        ctx.drawImage(that.data.src, 0, 0, 200, 200);
+        ctx.draw();
     },
 
     /**
@@ -71,11 +79,11 @@ Page({
     },
     choosePic() {
         wx.chooseImage({
-            count:1,
+            count: 1,
             sizeType: ['original', 'compressed'],
             sourceType: ['album', 'camera'],
-            success:function(res){
-                console.log("choosePic",res);
+            success: function(res) {
+                console.log("choosePic", res);
                 that.setData({
                     src: res.tempFilePaths[0]
                 });
