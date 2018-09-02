@@ -1,7 +1,7 @@
 .colors_container {
     padding: 0 65rpx;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     background: linear-gradient(#858c96, #414854);
     padding-top: 30rpx;
     min-height: 100vh;

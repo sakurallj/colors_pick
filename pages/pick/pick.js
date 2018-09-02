@@ -11,7 +11,7 @@ Page({
             "color1": "DB3A34",
             "color2": "084C61"
         },
-        src:"/images/test.jpg"
+        // src:"/images/test.jpg"
     },
 
     /**
