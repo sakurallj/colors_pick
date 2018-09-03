@@ -100,10 +100,32 @@
 .ch_pic {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 12rpx;
+    position: relative;
 }
 
-.ch_pic_img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12rpx;
+.movable_area {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.movable_view {
+}
+
+.movable_view_img {
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.movable_view_circle {
+    width: 60rpx;
+    height: 60rpx;
+    background: red;
+    border-radius: 75rpx;
+    margin-left: 16rpx;
 }

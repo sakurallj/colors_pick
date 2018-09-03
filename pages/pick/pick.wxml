@@ -31,9 +31,14 @@
         <view class='add_pic' bindtap='choosePic' wx:if="{{!src}}">
             <image class='add_pic_img' src="/images/add.png"></image>
         </view>
-        <view class='ch_pic' wx:else  bindtap='choosePic' >
-            <canvas style="width: 630rpx; height: 394rpx;" canvas-id="ch_pic_img_canvas"></canvas>
-            <!-- <image class='ch_pic_img' src="{{src}}" mode='widthFix'></image> -->
+        <view class='ch_pic' wx:else bindtap='choosePic'>
+            <canvas style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_img_canvas"></canvas>
+            <movable-area style="height:{{canvasInfo.height}}rpx; width:  {{canvasInfo.width}}rpx " class="movable_area">
+                <movable-view class="movable_view" x="{{item.x}}" y="{{item.y}}" direction="all" wx:for="{{movableViewInfo}}" damping="1000" bindchange="moveGps">
+                    <image class='movable_view_img' src="/images/gps.png"></image>
+                    <view class='movable_view_circle'></view>
+                </movable-view>
+            </movable-area>
         </view>
     </view>
 </view>
