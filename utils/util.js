@@ -1,25 +1,27 @@
 let utils = {}
-utils.getSystemWidth=function(){
+utils.getSystemWidth = function() {
     let info = wx.getStorageSync("system_info");
-    if (!info){
+    if (!info) {
         info = wx.getSystemInfoSync();
+        wx.setStorageSync("system_info", info);
     }
-    console.log(info)
     return info;
 }
-utils.rpxToPx  = function (rpx_num) {
+utils.rpxToPx = function(rpx_num) {
     if (!rpx_num) {
         return 0;
     }
-    let info = utils.getSystemWidth(), screenWidth = info.screenWidth;
+    let info = utils.getSystemWidth(),
+        screenWidth = info.screenWidth;
     return rpx_num / (750 / screenWidth);
 }
-utils.pxToRpx=function(px_num){
-    if (!px_num){
+utils.pxToRpx = function(px_num) {
+    if (!px_num) {
         return 0;
     }
-    let info = utils.getSystemWidth(), screenWidth = info.screenWidth;
-    return (750 / screenWidth) * px_num ;
+    let info = utils.getSystemWidth(),
+        screenWidth = info.screenWidth;
+    return (750 / screenWidth) * px_num;
 }
 module.exports = {
     utils: utils
