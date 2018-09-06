@@ -13,7 +13,7 @@ Page({
             "color1": "DB3A34",
             "color2": "084C61"
         },
-        src: "",
+        src: "http://img5.imgtn.bdimg.com/it/u=1177527485,4257251962&fm=26&gp=0.jpg",
         pickImgInfo: {
             src: "/images/gps.png",
             width: utils.rpxToPx(90),
@@ -44,54 +44,19 @@ Page({
     onLoad: function(options) {
         that = this;
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        that.drawCanvas();
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage: function() {
-
+        return {
+            title: "你要的颜色都在这里"
+        }
     },
     choosePic() {
         wx.chooseImage({
@@ -103,42 +68,46 @@ Page({
                 that.setData({
                     src: res.tempFilePaths[0]
                 });
-                let canvasInfo = that.data.canvasInfo,
-                    ctx = wx.createCanvasContext("ch_pic_canvas", this),
-                    movableViewInfo = that.data.movableViewInfo;
-                wx.getImageInfo({
-                    src: that.data.src,
-                    success: function(res) {
-                        console.log(res);
-                        let height = res.height,
-                            width = res.width,
-                            imgWidth = canvasInfo.width,
-                            imgHeight = imgWidth * height / width,
-                            y = utils.rpxToPx(imgHeight - 80 - 90);
-                        canvasInfo.height = imgHeight;
-                        movableViewInfo[2].y = y;
-                        movableViewInfo[3].y = y;
-                        ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(imgWidth), utils.rpxToPx(imgHeight));
-                        //绘制取色点
-                        for (let i = 0; i < movableViewInfo.length; i++) {
-                            ctx.drawImage(that.data.pickImgInfo.src, movableViewInfo[i].x, movableViewInfo[i].y, that.data.pickImgInfo.width, that.data.pickImgInfo.height);
-                        }
-                        ctx.draw();
-                        that.setData({
-                            movableViewInfo: movableViewInfo,
-                            canvasInfo: canvasInfo
-                        });
-
-                    }
-                });
+                that.drawCanvas();
             }
         })
     },
+    drawCanvas() {
+        let canvasInfo = that.data.canvasInfo,
+            movableViewInfo = that.data.movableViewInfo;
+        wx.getImageInfo({
+            src: that.data.src,
+            success: function(res) {
+                console.log(res);
+                let height = res.height,
+                    width = res.width,
+                    imgWidth = canvasInfo.width,
+                    imgHeight = imgWidth * height / width,
+                    y = utils.rpxToPx(imgHeight - 80 - 90);
+                canvasInfo.height = imgHeight;
+                movableViewInfo[2].y = y;
+                movableViewInfo[3].y = y;
+                that.setData({
+                    movableViewInfo: movableViewInfo,
+                    canvasInfo: canvasInfo
+                });
+                that.reDrawCanvas()
+
+            }
+        });
+    },
+    ctx: wx.createCanvasContext("ch_pic_canvas", this),
     reDrawCanvas() {
         let canvasInfo = that.data.canvasInfo,
-            ctx = wx.createCanvasContext("ch_pic_canvas", this),
+            ctx = that.ctx,
             movableViewInfo = that.data.movableViewInfo;
         ctx.clearRect(0, 0, canvasInfo.width, canvasInfo.height)
+        ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(canvasInfo.width), utils.rpxToPx(canvasInfo.height));
+        //绘制取色点
+        for (let i = 0; i < movableViewInfo.length; i++) {
+            ctx.drawImage(that.data.pickImgInfo.src, movableViewInfo[i].x, movableViewInfo[i].y, that.data.pickImgInfo.width, that.data.pickImgInfo.height);
+        }
+        ctx.draw();
     },
     moveGps: e => {
         console.log("moveGps", e);
@@ -156,5 +125,19 @@ Page({
                 console.log("canvasGetImageData fail", res);
             }
         }, that)
+    },
+    touchstart(e) {
+        console.log("touchstart", e);
+    },
+    touchmove(e) {
+        console.log("touchmove", e);
+        let movableViewInfo = that.data.movableViewInfo,
+            position = e.touches[0];
+        movableViewInfo[0].x = position.x;
+        movableViewInfo[0].y = position.y;
+        that.drawCanvas();
+    },
+    touchend(e) {
+        console.log("touchend", e);
     }
 })

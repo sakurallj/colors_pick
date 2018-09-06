@@ -32,7 +32,7 @@
             <image class='add_pic_img' src="/images/add.png"></image>
         </view>
         <view class='ch_pic' wx:else bindtap='choosePic'>
-            <canvas class='ch_pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas"></canvas>
+            <canvas class='ch_pic_canvas' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas"></canvas>
         </view>
     </view>
 </view>
