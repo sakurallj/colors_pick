@@ -47,5 +47,10 @@ Page({
             dialogData: item
         });
         that.showDialog("color_detail")
-    }
+    },
+    onShareAppMessage: function (event) {
+        return {
+            title:"你要的颜色都在这里"
+        }
+    },
 })

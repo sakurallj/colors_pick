@@ -15,7 +15,7 @@ Page({
         let i = 0,
             len = colors.builtInArrs.length,
             has_like = false;
-        for (; i < len; i++) { 
+        for (; i < len; i++) {
             if (colors.builtInArrs[i].is_like == 1) {
                 has_like = true;
                 break;
@@ -57,5 +57,10 @@ Page({
             dialogData: item
         });
         that.showDialog("color_detail")
-    }
+    },
+    onShareAppMessage: function(event) {
+        return {
+            title: "你要的颜色都在这里"
+        }
+    },
 })

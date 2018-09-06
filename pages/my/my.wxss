@@ -79,3 +79,9 @@
     font-weight: bolder;
     opacity: 0.8;
 }
+
+.colors_container_empty {
+    text-align: center;
+    margin-top: 300rpx;
+    color: #fff;
+}

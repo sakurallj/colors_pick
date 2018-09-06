@@ -4,7 +4,8 @@ let defaultColors = {
         "color0": "FFC857",
         "color1": "DB3A34",
         "color2": "084C61",
-        "index": "0"
+        "index": "0",
+        "is_like":1
     }, {
         "color3": "1F2B40",
         "color0": "2E7866",

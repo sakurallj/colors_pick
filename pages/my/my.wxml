@@ -8,4 +8,7 @@
         <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
     </view>
 </view>
+<view class='colors_container_empty' wx:else>
+    还没有自己喜欢的颜色，去收藏吧
+</view>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
