@@ -13,7 +13,7 @@ Page({
             "color1": "DB3A34",
             "color2": "084C61"
         },
-        src: "http://img5.imgtn.bdimg.com/it/u=1177527485,4257251962&fm=26&gp=0.jpg",
+        src: "/images/trst.jpg",
         pickImgInfo: {
             src: "/images/gps.png",
             width: utils.rpxToPx(90),
@@ -35,7 +35,9 @@ Page({
         }, {
             x: utils.rpxToPx(440),
             y: 0,
-        }]
+        }],
+        movableViewColorInfo: []
+
     },
 
     /**
@@ -72,6 +74,8 @@ Page({
             }
         })
     },
+    canvasId: "ch_pic_canvas",
+    ctx: wx.createCanvasContext("ch_pic_canvas", this),
     drawCanvas() {
         let canvasInfo = that.data.canvasInfo,
             movableViewInfo = that.data.movableViewInfo;
@@ -83,7 +87,8 @@ Page({
                     width = res.width,
                     imgWidth = canvasInfo.width,
                     imgHeight = imgWidth * height / width,
-                    y = utils.rpxToPx(imgHeight - 80 - 90);
+                    y = utils.rpxToPx(imgHeight - 80 - 90),
+                    ctx = that.ctx;
                 canvasInfo.height = imgHeight;
                 movableViewInfo[2].y = y;
                 movableViewInfo[3].y = y;
@@ -91,53 +96,52 @@ Page({
                     movableViewInfo: movableViewInfo,
                     canvasInfo: canvasInfo
                 });
-                that.reDrawCanvas()
-
+                ctx.clearRect(0, 0, canvasInfo.width, canvasInfo.height)
+                ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(canvasInfo.width), utils.rpxToPx(canvasInfo.height));
+                ctx.draw();
+                for (let i = 0; i < movableViewInfo.length; i++) {
+                    console.log(movableViewInfo[i]);
+                    wx.canvasGetImageData({
+                        canvasId: "ch_pic_canvas",
+                        x: movableViewInfo[i].x,
+                        y: movableViewInfo[i].y,
+                        width: 1,
+                        height: 1,
+                        success(res) {
+                            console.log("success>>>>", res.data)
+                        },
+                        fail: res => {
+                            console.log("fail>>>>", res)
+                        }
+                    })
+                }
             }
         });
     },
-    ctx: wx.createCanvasContext("ch_pic_canvas", this),
-    reDrawCanvas() {
-        let canvasInfo = that.data.canvasInfo,
-            ctx = that.ctx,
-            movableViewInfo = that.data.movableViewInfo;
-        ctx.clearRect(0, 0, canvasInfo.width, canvasInfo.height)
-        ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(canvasInfo.width), utils.rpxToPx(canvasInfo.height));
-        //绘制取色点
-        for (let i = 0; i < movableViewInfo.length; i++) {
-            ctx.drawImage(that.data.pickImgInfo.src, movableViewInfo[i].x, movableViewInfo[i].y, that.data.pickImgInfo.width, that.data.pickImgInfo.height);
-        }
-        ctx.draw();
-    },
     moveGps: e => {
         console.log("moveGps", e);
+        let index = e.currentTarget.dataset.index,
+            movableViewColorInfo = that.data.movableViewColorInfo,
+            detail = e.detail;
         wx.canvasGetImageData({
-            canvasId: 'ch_pic_canvas',
-            x: 0,
-            y: 0,
+            canvasId: that.canvasId,
+            x: detail.x,
+            y: detail.y,
             width: 1,
             height: 1,
             success(res) {
                 console.log("canvasGetImageData success", res);
                 console.log(res.data[0]);
+                movableViewColorInfo[index] = [
+                    res.data[0], res.data[1], res.data[2], res.data[3]
+                ];
+                that.setData({
+                    movableViewColorInfo: movableViewColorInfo
+                });
             },
             fail: res => {
                 console.log("canvasGetImageData fail", res);
             }
         }, that)
-    },
-    touchstart(e) {
-        console.log("touchstart", e);
-    },
-    touchmove(e) {
-        console.log("touchmove", e);
-        let movableViewInfo = that.data.movableViewInfo,
-            position = e.touches[0];
-        movableViewInfo[0].x = position.x;
-        movableViewInfo[0].y = position.y;
-        that.drawCanvas();
-    },
-    touchend(e) {
-        console.log("touchend", e);
     }
 })

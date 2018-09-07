@@ -130,3 +130,6 @@
     margin-left: 16rpx;
 }
 
+.pic_canvas{
+    margin-top: 2000rpx;
+}

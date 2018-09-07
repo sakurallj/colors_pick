@@ -32,7 +32,16 @@
             <image class='add_pic_img' src="/images/add.png"></image>
         </view>
         <view class='ch_pic' wx:else bindtap='choosePic'>
-            <canvas class='ch_pic_canvas' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas"></canvas>
+             <image style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;"  src="{{src}}" ></image>
+            <movable-area style="height:{{canvasInfo.height}}rpx; width:  {{canvasInfo.width}}rpx " class="movable_area">
+                <movable-view class="movable_view" x="{{item.x}}" y="{{item.y}}" data-index="{{index}}"  direction="all" wx:for="{{movableViewInfo}}" damping="1000" bindchange="moveGps">
+                    <image class='movable_view_img' src="/images/gps.png"></image>
+                    <view class='movable_view_circle' style="background: rgb({{movableViewColorInfo[index][0]}}, {{movableViewColorInfo[index][1]}}, {{movableViewColorInfo[index][2]}})"></view>
+                </movable-view>
+            </movable-area>
         </view>
     </view>
+
+    <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas">
+    </canvas>
 </view>
