@@ -4,6 +4,7 @@
         "pages/my/my",
         "pages/pick/pick" 
     ],
+    "cloud": true,
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
