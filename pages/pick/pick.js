@@ -14,9 +14,9 @@ Page({
             "color2": "084C61",
             "index": -1
         },
-        // src: "/images/trst.jpg",
+        src: "/images/trst.jpg",
         pickImgInfo: {
-            // src: "/images/gps.png",
+            src: "/images/gps.png",
             width: utils.rpxToPx(90),
             height: utils.rpxToPx(90),
         },
@@ -189,4 +189,7 @@ Page({
         });
         that.showDialog("color_detail")
     },
+    addCard(){
+        
+    }
 })

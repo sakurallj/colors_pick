@@ -132,9 +132,25 @@
     border-radius: 75rpx;
     margin-left: 16rpx;
 }
-.hiden_text{
+
+.hiden_text {
     margin-top: 1000rpx;
 }
+
 .pic_canvas {
-    margin-top: 1000rpx;
+    /* margin-top: 1000rpx; */
+    opacity: 0;
+}
+
+.color_list_item_add_btn {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 28rpx;
+    line-height: 60rpx;
+    /* margin-left: 20rpx; */
+    opacity: 0.8;
+    width: 160rpx;
+    border: 1px solid #fff;
+    text-align: center;
+    border-radius: 6rpx ;
 }

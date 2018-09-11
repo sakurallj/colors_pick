@@ -25,6 +25,9 @@
             <view class="color_list_item_text left">#{{init_color.color3}}</view>
             <view class='clear_both'></view>
         </view>
+        <!-- <view class='color_list_item' wx:if="{{src}}">
+            <view class='color_list_item_add_btn' bindtap='addCard'> 添加色卡</view>
+        </view> -->
     </view>
     <view class='clear_both'></view>
     <view class='add_pic_container'>
@@ -41,7 +44,7 @@
             </movable-area>
         </view>
     </view>
-    <view class='hiden_text'>以下内容本该隐藏的，但是因微信的限制，我们无法隐藏，很抱歉，没能带来尽美的产品</view>
+    <!-- <view class='hiden_text'>以下内容本该隐藏的，但是因微信的限制，我们无法隐藏，很抱歉，没能带来尽美的产品</view> -->
     <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas">
     </canvas>
 </view>
