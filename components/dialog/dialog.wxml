@@ -7,7 +7,7 @@
                     <view class='color_item_cell_2' style='background:#{{d_data.color1}}'></view>
                     <view class='color_item_cell_1' style='background:#{{d_data.color0}}'></view>
                     <view class='color_item_cell_3' style='background:#{{d_data.color2}}'></view>
-                    <view class='color_item_text'>{{d_data.index+1}}</view>
+                    <view class='color_item_text' wx:if="{{d_data.index>=0}}">{{d_data.index+1}}</view>
                 </view>
                 <view class='color_list right'>
                     <view class='color_list_item' style='background:#{{d_data.color0}}' catchtap='_copyColor' data-value="#{{d_data.color0}}"></view>
@@ -57,7 +57,7 @@
                 <view class='cd_bottom_item right' catchtap='_edit'>
                     <image class='cd_bottom_img' src="/images/edit.png"></image>
                 </view>
-                <view class='cd_bottom_item right' catchtap='_like'>
+                <view class='cd_bottom_item right' catchtap='_like'  wx:if="{{d_data.index>=0}}">
                     <image class='cd_bottom_img' src="/images/smile_active.png" wx:if="{{d_data.is_like==1}}"></image>
                     <image class='cd_bottom_img' src="/images/smile.png" wx:else></image>
                 </view>

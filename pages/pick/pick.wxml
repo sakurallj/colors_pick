@@ -1,5 +1,5 @@
 <view class='colors_container'>
-    <view class='color_item left' style='background:#{{init_color.color3}}'>
+    <view class='color_item left' style='background:#{{init_color.color3}}' bindtap='chooseItem' data-item="{{init_color}}">
         <view class='color_item_cell_2' style='background:#{{init_color.color1}}'></view>
         <view class='color_item_cell_1' style='background:#{{init_color.color0}}'></view>
         <view class='color_item_cell_3' style='background:#{{init_color.color2}}'></view>
@@ -32,16 +32,17 @@
             <image class='add_pic_img' src="/images/add.png"></image>
         </view>
         <view class='ch_pic' wx:else bindtap='choosePic'>
-             <image style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;"  src="{{src}}" ></image>
+            <image style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" src="{{src}}"></image>
             <movable-area style="height:{{canvasInfo.height}}rpx; width:  {{canvasInfo.width}}rpx " class="movable_area">
-                <movable-view class="movable_view" x="{{item.x}}" y="{{item.y}}" data-index="{{index}}"  direction="all" wx:for="{{movableViewInfo}}" damping="1000" bindchange="moveGps">
+                <movable-view class="movable_view" x="{{item.x}}" y="{{item.y}}" data-index="{{index}}" direction="all" wx:for="{{movableViewInfo}}" damping="1000" bindchange="moveGps">
                     <image class='movable_view_img' src="/images/gps.png"></image>
                     <view class='movable_view_circle' style="background: rgb({{movableViewColorInfo[index][0]}}, {{movableViewColorInfo[index][1]}}, {{movableViewColorInfo[index][2]}})"></view>
                 </movable-view>
             </movable-area>
         </view>
     </view>
-
+    <view class='hiden_text'>以下内容本该隐藏的，但是因微信的限制，我们无法隐藏，很抱歉，没能带来尽美的产品</view>
     <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas">
     </canvas>
 </view>
+<dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>

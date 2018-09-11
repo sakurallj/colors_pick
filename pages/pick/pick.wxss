@@ -112,6 +112,9 @@
 }
 
 .movable_view {
+    /* border: 1px black solid; */
+    width: 90rpx;
+    height: 90rpx;
 }
 
 .movable_view_img {
@@ -125,11 +128,13 @@
 .movable_view_circle {
     width: 60rpx;
     height: 60rpx;
-    background: red;
+    background: none;
     border-radius: 75rpx;
     margin-left: 16rpx;
 }
-
-.pic_canvas{
-    margin-top: 2000rpx;
+.hiden_text{
+    margin-top: 1000rpx;
+}
+.pic_canvas {
+    margin-top: 1000rpx;
 }

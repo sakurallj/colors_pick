@@ -11,11 +11,12 @@ Page({
             "color3": "177E89",
             "color0": "FFC857",
             "color1": "DB3A34",
-            "color2": "084C61"
+            "color2": "084C61",
+            "index": -1
         },
-        src: "/images/trst.jpg",
+        // src: "/images/trst.jpg",
         pickImgInfo: {
-            src: "/images/gps.png",
+            // src: "/images/gps.png",
             width: utils.rpxToPx(90),
             height: utils.rpxToPx(90),
         },
@@ -51,6 +52,7 @@ Page({
      */
     onShow: function() {
         that.drawCanvas();
+        that.dialog = that.selectComponent("#dialog");
     },
     /**
      * 用户点击右上角分享
@@ -99,49 +101,92 @@ Page({
                 ctx.clearRect(0, 0, canvasInfo.width, canvasInfo.height)
                 ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(canvasInfo.width), utils.rpxToPx(canvasInfo.height));
                 ctx.draw();
-                for (let i = 0; i < movableViewInfo.length; i++) {
-                    console.log(movableViewInfo[i]);
-                    wx.canvasGetImageData({
-                        canvasId: "ch_pic_canvas",
-                        x: movableViewInfo[i].x,
-                        y: movableViewInfo[i].y,
-                        width: 1,
-                        height: 1,
-                        success(res) {
-                            console.log("success>>>>", res.data)
-                        },
-                        fail: res => {
-                            console.log("fail>>>>", res)
-                        }
-                    })
-                }
+                setTimeout(function() {
+                    that.initPointImageColor(0);
+                }, 500);
             }
         });
     },
-    moveGps: e => {
-        console.log("moveGps", e);
-        let index = e.currentTarget.dataset.index,
-            movableViewColorInfo = that.data.movableViewColorInfo,
-            detail = e.detail;
+    initPointImageColor(index) {
+        let movableViewInfo = that.data.movableViewInfo,
+            len = movableViewInfo.length,
+            movableViewColorInfo = that.data.movableViewColorInfo;
+        if (index > len) {
+            console.log("big");
+            return false;
+        }
+        console.log(movableViewInfo[index].x - utils.rpxToPx(90 / 2), movableViewInfo[index].y - utils.rpxToPx(90));
         wx.canvasGetImageData({
-            canvasId: that.canvasId,
-            x: detail.x,
-            y: detail.y,
+            canvasId: "ch_pic_canvas",
+            x: movableViewInfo[index].x + utils.rpxToPx(90 / 2),
+            y: movableViewInfo[index].y + utils.rpxToPx(90),
             width: 1,
             height: 1,
             success(res) {
-                console.log("canvasGetImageData success", res);
-                console.log(res.data[0]);
-                movableViewColorInfo[index] = [
-                    res.data[0], res.data[1], res.data[2], res.data[3]
-                ];
-                that.setData({
-                    movableViewColorInfo: movableViewColorInfo
-                });
+                console.log(index, "success>>index>>", index, res);
+                that.updateColor(index, res.data);
+                that.initPointImageColor(++index);
             },
             fail: res => {
-                console.log("canvasGetImageData fail", res);
+                console.log("fail>>index>>", index, res)
+            }
+        })
+    },
+    moveGps: e => {
+        console.log("moveGps>", e)
+        let index = e.currentTarget.dataset.index,
+            movableViewColorInfo = that.data.movableViewColorInfo,
+            detail = e.detail,
+            init_color = that.data.init_color;
+        wx.canvasGetImageData({
+            canvasId: that.canvasId,
+            x: detail.x + utils.rpxToPx(90 / 2),
+            y: detail.y + utils.rpxToPx(90),
+            width: 1,
+            height: 1,
+            success(res) {
+                console.log("moveGps canvasGetImageData success", res);
+                that.updateColor(index, res.data);
+            },
+            fail: res => {
+                console.log("moveGps canvasGetImageData fail", res);
             }
         }, that)
-    }
+    },
+    updateColor(index, colors) {
+        let
+            movableViewColorInfo = that.data.movableViewColorInfo,
+            init_color = that.data.init_color;
+        movableViewColorInfo[index] = [
+            colors[0], colors[1], colors[2]
+        ];
+        let hex = utils.rgbToHex("rgb(" + movableViewColorInfo[index].join(",") + ")");
+        init_color["color" + index] = hex;
+        that.setData({
+            init_color: init_color,
+            movableViewColorInfo: movableViewColorInfo
+        });
+    },
+    showDialog(dialog_type) {
+        this.setData({
+            dialog_type: dialog_type
+        });
+        this.dialog.showDialog();
+    },
+    hiddenDialog: function() {
+        this.dialog.hideDialog();
+    },
+    cancelEvent() {
+        this.hiddenDialog();
+    },
+    chooseItem(e) {
+        console.log(e);
+        let item = e.currentTarget.dataset.item; console.log(item);
+        item.index = parseInt(item.index);
+        item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
+        that.setData({
+            dialogData: item
+        });
+        that.showDialog("color_detail")
+    },
 })
