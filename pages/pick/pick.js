@@ -17,9 +17,9 @@ Page({
             "color2": "084C61",
             "index": -1
         },
-        src: "/images/trst.jpg",
+        // src: "/images/trst.jpg",
         pickImgInfo: {
-            src: "/images/gps.png",
+            // src: "/images/gps.png",
             width: utils.rpxToPx(90),
             height: utils.rpxToPx(90),
         },
@@ -55,13 +55,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-        that.drawCanvas();
+        // that.drawCanvas();
         that.dialog = that.selectComponent("#dialog");
     },
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function (event) {
+    onShareAppMessage: function(event) {
         return app.createShareAppMessageParams(event);
     },
     choosePic() {
@@ -186,7 +186,8 @@ Page({
         let item = e.currentTarget.dataset.item;
         console.log(item);
         item.index = parseInt(item.index);
-        item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
+        item.isUGC = 1; item.isPick= 1;
+        item.copyStr = "色卡 " + "自定义"+ "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
         that.setData({
             dialogData: item
         });

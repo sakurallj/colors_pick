@@ -55,8 +55,9 @@ Page({
     },
     chooseItem(e) {
         console.log(e);
-        let item = e.currentTarget.dataset.item;
+        let item = e.currentTarget.dataset.item, index = e.currentTarget.dataset.index, colors = that.data.colors, UGCArrs = colors.UGCArrs, len = UGCArrs.length;
         item.index = parseInt(item.index);
+        item.data_index = len - 1 - index;
         item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
         that.setData({
             dialogData: item

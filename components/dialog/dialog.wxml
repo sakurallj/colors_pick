@@ -45,7 +45,8 @@
             </view>
             <view class='cd_title'>
                 <text class='cd_title_min'>色卡</text>
-                <text class='cd_title_max'>No.{{d_data.index+1}}</text>
+                <text class='cd_title_max' wx:if="{{d_data.isPick==1}}">自定义</text>
+                <text class='cd_title_max' wx:else> No.{{d_data.index+1}}</text>
             </view>
             <view class='cd_bottom'>
                 <button class='cd_bottom_item right' open-type='share'>
@@ -54,15 +55,15 @@
                 <view class='cd_bottom_item right' catchtap='_copyColor' data-value='{{d_data.copyStr}}'>
                     <image class='cd_bottom_img' src="/images/copy.png"></image>
                 </view>
-                <view class='cd_bottom_item right' catchtap='_edit'>
+                <view class='cd_bottom_item right' catchtap='_edit' wx:if="{{d_data.isPick!=1}}">
                     <image class='cd_bottom_img' src="/images/edit.png"></image>
                 </view>
                 <view class='cd_bottom_item right' catchtap='_like' wx:if="{{d_data.isUGC!=1}}">
                     <image class='cd_bottom_img' src="/images/smile_active.png" wx:if="{{d_data.is_like==1}}"></image>
                     <image class='cd_bottom_img' src="/images/smile.png" wx:else></image>
                 </view>
-                <view class='cd_bottom_item right' catchtap='_delete' wx:if="{{d_data.isUGC==1}}">
-                    <image class='cd_bottom_img' src="/images/delete.png" ></image>
+                <view class='cd_bottom_item right' catchtap='_delete' wx:if="{{d_data.isUGC==1&&d_data.isPick!=1}}">
+                    <image class='cd_bottom_img' src="/images/delete.png"></image>
                 </view>
                 <view class='clear_both'></view>
             </view>

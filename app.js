@@ -35,9 +35,9 @@ App({
         deleteCard(item, callback) {
             let colors = wx.getStorageSync("colors");
             if (item.isUGC == 1) {
-                colors.UGCArrs.splice(parseInt(item.index), 1);
+                colors.UGCArrs.splice(parseInt(item.data_index), 1);
             } else {
-                colors.builtInArrs.splice(parseInt(item.index), 1);
+                colors.builtInArrs.splice(parseInt(item.data_index), 1);
             }
             wx.setStorageSync("colors", colors);
             typeof callback == "function" && callback();
@@ -48,5 +48,5 @@ App({
         return {
             title: "你要的颜色都在这里"
         }
-    },
+    }
 })
