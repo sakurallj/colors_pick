@@ -11,6 +11,7 @@ Page({
         let colors = wx.getStorageSync("colors");
         if (!colors) {
             colors = default_colors.colors;
+            wx.setStorageSync("colors", colors);
         }
         let i = 0,
             len = colors.builtInArrs.length,
@@ -21,11 +22,11 @@ Page({
                 break;
             }
         }
+        colors.UGCArrs = colors.UGCArrs.reverse()
         this.setData({
             has_like: has_like,
             colors: colors
         });
-        wx.setStorageSync("colors", colors);
     },
     onShow() {
         that.initColors();
@@ -34,6 +35,10 @@ Page({
         //     dialogData: default_colors.colors.builtInArrs[0]
         // });
         // that.showDialog("color_detail")
+    },
+    deleteCard() {
+        console.log("deleteCard");
+        that.initColors();
     },
     showDialog(dialog_type) {
         this.setData({
@@ -59,8 +64,6 @@ Page({
         that.showDialog("color_detail")
     },
     onShareAppMessage: function(event) {
-        return {
-            title: "你要的颜色都在这里"
-        }
+        return app.createShareAppMessageParams(event);
     },
 })

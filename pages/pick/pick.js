@@ -1,6 +1,9 @@
 let that;
 let utils = require('../..//utils/util.js');
 utils = utils.utils;
+let app = getApp();
+let appData = app.data;
+let api = app.api;
 Page({
 
     /**
@@ -37,7 +40,8 @@ Page({
             x: utils.rpxToPx(440),
             y: 0,
         }],
-        movableViewColorInfo: []
+        movableViewColorInfo: [],
+        btnText: "添加色卡"
 
     },
 
@@ -57,10 +61,8 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
-        return {
-            title: "你要的颜色都在这里"
-        }
+    onShareAppMessage: function (event) {
+        return app.createShareAppMessageParams(event);
     },
     choosePic() {
         wx.chooseImage({
@@ -181,7 +183,8 @@ Page({
     },
     chooseItem(e) {
         console.log(e);
-        let item = e.currentTarget.dataset.item; console.log(item);
+        let item = e.currentTarget.dataset.item;
+        console.log(item);
         item.index = parseInt(item.index);
         item.copyStr = "色卡 " + (!!item.name ? item.name : "No." + (item.index + 1)) + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
         that.setData({
@@ -189,7 +192,35 @@ Page({
         });
         that.showDialog("color_detail")
     },
-    addCard(){
-        
+    canAdd: true,
+    addCard() {
+        if (!this.canAdd) {
+            return false;
+        }
+        this.canAdd = false;
+        that.setData({
+            btnText: "添加中..."
+        });
+        let init_color = that.data.init_color;
+        api.saveOneBuiltColor(init_color.index, {
+            color3: init_color.color3,
+            color0: init_color.color0,
+            color1: init_color.color1,
+            color2: init_color.color2,
+            index: init_color.index,
+            isUGC: 1,
+        }, function() {
+            setTimeout(function() {
+                that.setData({
+                    btnText: "添加色卡"
+                });
+                wx.showToast({
+                    title: '添加成功',
+                    duration: 2000,
+                    icon: "success"
+                })
+                that.canAdd = true;
+            }, 500);
+        });
     }
 })

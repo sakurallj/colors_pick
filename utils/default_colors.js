@@ -2520,7 +2520,8 @@ let defaultColors = {
         "color0": "89c2a2",
         "color1": "1f6e6a",
         "color2": "202c2c",
-        "isUGC": true,
+        "isUGC": 1, 
+        "index": "0",
         "identifier": "defaultUGC"
     }]
 }

@@ -100,6 +100,19 @@ Component({
                 is_like: d_data.is_like
             });
         },
+        _delete() {
+            let d_data = this.data.d_data,
+                that = this;
+            api.deleteCard(d_data, function() {
+                wx.showToast({
+                    title: '删除成功',
+                    icon: "success",
+                    duration: 2000
+                });
+                that.hideDialog(); console.log("_delete deleteCard");
+                that.triggerEvent("deleteCard");
+            })
+        },
         _edit() {
             this.setData({
                 sub_type: "edit"
@@ -114,7 +127,8 @@ Component({
         _confirmEventSub() {
             this.setData({
                 sub_type: ""
-            }); console.log("this.inputValue ", this.inputValue );
+            });
+            console.log("this.inputValue ", this.inputValue);
             if (this.inputValue === 0 || this.inputValue === '0' || !!this.inputValue) {
                 let d_data = this.data.d_data;
                 d_data.name = this.inputValue;
@@ -127,6 +141,7 @@ Component({
                     color0: d_data.color0,
                     color1: d_data.color1,
                     color2: d_data.color2,
+                    isUGC: d_data.isUGC,
                     index: d_data.index,
                     name: d_data.name,
                     is_like: d_data.is_like

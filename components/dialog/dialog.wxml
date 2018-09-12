@@ -57,9 +57,12 @@
                 <view class='cd_bottom_item right' catchtap='_edit'>
                     <image class='cd_bottom_img' src="/images/edit.png"></image>
                 </view>
-                <view class='cd_bottom_item right' catchtap='_like'  wx:if="{{d_data.index>=0}}">
+                <view class='cd_bottom_item right' catchtap='_like' wx:if="{{d_data.isUGC!=1}}">
                     <image class='cd_bottom_img' src="/images/smile_active.png" wx:if="{{d_data.is_like==1}}"></image>
                     <image class='cd_bottom_img' src="/images/smile.png" wx:else></image>
+                </view>
+                <view class='cd_bottom_item right' catchtap='_delete' wx:if="{{d_data.isUGC==1}}">
+                    <image class='cd_bottom_img' src="/images/delete.png" ></image>
                 </view>
                 <view class='clear_both'></view>
             </view>
@@ -75,4 +78,3 @@
         </view>
     </view>
 </view>
-

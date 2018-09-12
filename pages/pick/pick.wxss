@@ -138,7 +138,7 @@
 }
 
 .pic_canvas {
-    /* margin-top: 1000rpx; */
+    margin-top: 1000rpx;
     opacity: 0;
 }
 

@@ -1,4 +1,12 @@
-<view class='colors_container' wx:if="{{has_like}}">
+<view class='colors_container' wx:if="{{has_like||colors.UGCArrs.length>0}}">
+    <view class='color_item left' wx:for="{{colors.UGCArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}" >
+        <view class='color_item_title cut'>{{item.name}}</view>
+        <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
+        <view class='color_item_cell_1' style='background:#{{item.color0}}'></view>
+        <view class='color_item_cell_3' style='background:#{{item.color2}}'></view>
+        <view class='color_item_text'>U_{{index+1}}</view>
+        <image class='color_item_img_smile' src="/images/alarm.png"  ></image>
+    </view>
     <view class='color_item left' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}" wx:if="{{item.is_like==1}}">
         <view class='color_item_title cut'>{{item.name}}</view>
         <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
@@ -7,8 +15,9 @@
         <view class='color_item_text'>{{index+1}}</view>
         <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
     </view>
+    <view class='clear_both'></view>
 </view>
 <view class='colors_container_empty' wx:else>
     还没有自己喜欢的颜色，去收藏吧
 </view>
-<dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
+<dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}" bind:deleteCard="deleteCard"></dialog>
