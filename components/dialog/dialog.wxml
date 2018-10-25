@@ -46,10 +46,11 @@
             <view class='cd_title'>
                 <text class='cd_title_min'>色卡</text>
                 <text class='cd_title_max' wx:if="{{d_data.isPick==1}}">自定义</text>
+                <text class='cd_title_max' wx:elif="{{d_data.fromShare==1}}">来自用户分享</text>
                 <text class='cd_title_max' wx:else> No.{{d_data.index+1}}</text>
             </view>
             <view class='cd_bottom'>
-                <button class='cd_bottom_item right' open-type='share'>
+                <button class='cd_bottom_item right' data-item="{{d_data}}" open-type='share'>
                     <image class='cd_bottom_img' src="/images/share.png"></image>
                 </button>
                 <view class='cd_bottom_item right' catchtap='_copyColor' data-value='{{d_data.copyStr}}'>

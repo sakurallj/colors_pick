@@ -1,17 +1,49 @@
 let default_colors = require('../..//utils/default_colors.js');
 let that;
+let app = getApp(),
+    api = app.api;
 Page({
     data: {
 
     },
-    onLoad: function() {
+    onLoad: function(opt) {
         that = this;
+        console.log(opt);
+        if (!!opt) {
+            that.setData({
+                opt: opt
+            });
+        }
     },
     initColors() {
-        let colors = wx.getStorageSync("colors");
-        if (!colors) {
-            colors = default_colors.colors;
+        let colors = wx.getStorageSync("colors"),
+            that = this;
+        if (colors) {
+            this.setData({
+                colors: colors
+            });
+        } else {
+            api.getMyColorFromCDB().then(res => {
+                let data = res[0];
+                if (!data || !data.builtInArrs) {
+                    that.setColorsToDefaultColors();
+                }
+                colors = {
+                    builtInArrs: data.builtInArrs,
+                    UGCArrs: !data.UGCArrs ? [] : data.UGCArrs
+                };
+                wx.setStorageSync("colors", colors);
+                wx.setStorageSync("color_id", data._id);
+                that.setData({
+                    colors: colors
+                });
+            }, res => {
+                that.setColorsToDefaultColors();
+            });
         }
+    },
+    setColorsToDefaultColors() {
+        let colors = default_colors.colors;
         this.setData({
             colors: colors
         });
@@ -24,6 +56,28 @@ Page({
         //     dialogData: default_colors.colors.builtInArrs[0]
         // });
         // that.showDialog("color_detail")
+        let opt = that.data.opt;
+        that.doLoadOpt(opt);
+    },
+    onHide() {
+        this.hiddenDialog();
+    },
+    doLoadOpt(opt) {
+        if (!opt) {
+            return false;
+        }
+        if (!opt.item || typeof opt.item != "string") {
+            return false;
+        }
+        let item = JSON.parse(opt.item);
+        if (!!item) {
+            opt.item = null;
+            this.setData({
+                dialogData: item,
+                opt: opt
+            });
+            that.showDialog("color_detail")
+        }
     },
     showDialog(dialog_type) {
         this.setData({
@@ -48,7 +102,7 @@ Page({
         });
         that.showDialog("color_detail")
     },
-    onShareAppMessage: function (event) {
+    onShareAppMessage: function(event) {
         return app.createShareAppMessageParams(event);
     },
 })

@@ -97,6 +97,7 @@ Component({
                 color2: d_data.color2,
                 index: d_data.index,
                 name: d_data.name,
+                fromShare: d_data.fromShare,
                 is_like: d_data.is_like
             });
         },
@@ -144,7 +145,8 @@ Component({
                     isUGC: d_data.isUGC,
                     index: d_data.index,
                     name: d_data.name,
-                    is_like: d_data.is_like
+                    is_like: d_data.is_like,
+                    fromShare: d_data.fromShare
                 });
             }
 

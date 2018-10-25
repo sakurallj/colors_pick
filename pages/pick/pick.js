@@ -223,5 +223,8 @@ Page({
                 that.canAdd = true;
             }, 500);
         });
-    }
+    },
+    onHide() {
+        this.hiddenDialog();
+    },
 })

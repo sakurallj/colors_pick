@@ -44,8 +44,10 @@
             </movable-area>
         </view>
     </view>
-    <view class='hiden_text'>以下内容本该隐藏的，但是因小程序的局限，我们无法隐藏，很抱歉，没能给您带来尽美的产品</view>
-    <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas">
-    </canvas>
+    <block wx:if="{{src}}">
+        <view class='hiden_text'>以下内容本该隐藏的，但是因小程序的局限，我们无法隐藏，很抱歉，没能给您带来尽美的产品</view>
+        <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas"></canvas>
+    </block>
+
 </view>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
