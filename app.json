@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/my/my",
-        "pages/pick/pick" 
+        "pages/pick/pick" ,
+                "pages/about/about"
     ],
     "cloud": true,
     "window": {
@@ -30,6 +31,12 @@
                 "text": "拾色",
                 "iconPath": "/images/search.png",
                 "selectedIconPath": "/images/search_active.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "关于",
+                "iconPath": "/images/about.png",
+                "selectedIconPath": "/images/about_active.png"
             }
         ],
         "color": "#B1B5BB",

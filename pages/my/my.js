@@ -1,32 +1,41 @@
 let default_colors = require('../..//utils/default_colors.js');
-let that;
-let app = getApp();
+let that, app = getApp(),
+    api = app.api,
+    util = app.util;
 Page({
     data: {
-
+        showTop: false
     },
+    windowHeight: 0,
     onLoad: function() {
         that = this;
+        let info = util.getSystemInfo();
+        that.windowHeight = info.windowHeight;
     },
     initColors() {
-        let colors = wx.getStorageSync("colors");
-        if (!colors) {
-            colors = default_colors.colors;
-            wx.setStorageSync("colors", colors);
-        }
-        let i = 0,
-            len = colors.builtInArrs.length,
-            has_like = false;
-        for (; i < len; i++) {
-            if (colors.builtInArrs[i].is_like == 1) {
-                has_like = true;
-                break;
+        api.initColors().then(colors => {
+            console.log("initColors api.initColors() success colors", colors);
+            let i = 0,
+                len = colors.builtInArrs.length,
+                has_like = false;
+            for (; i < len; i++) {
+                if (colors.builtInArrs[i].is_like == 1) {
+                    has_like = true;
+                    break;
+                }
             }
-        }
-        colors.UGCArrs = colors.UGCArrs.reverse()
-        this.setData({
-            has_like: has_like,
-            colors: colors
+            colors.UGCArrs = colors.UGCArrs.reverse()
+            that.setData({
+                has_like: has_like,
+                colors: colors
+            });
+        }, res => {
+            wx.showModal({
+                title: '初始化失败',
+                content: '请确保网络畅通，然后删除小程序，再重新进入',
+                showCancel: false
+            })
+            console.log("initColors api.initColors() fail res", res);
         });
     },
     onShow() {
@@ -74,5 +83,25 @@ Page({
     },
     onHide() {
         this.hiddenDialog();
+    },
+    onPageScroll(e) {
+        let scrollTop = e.scrollTop,
+            showTop = that.data.showTop;
+        console.log("onPageScroll", scrollTop, that.windowHeight);
+        if (scrollTop >= that.windowHeight / 2 && !showTop) {
+            that.setData({
+                showTop: true
+            });
+        } else if (scrollTop < that.windowHeight / 2 && showTop) {
+            that.setData({
+                showTop: false
+            });
+        }
+    },
+    gotoTop() {
+        wx.pageScrollTo({
+            scrollTop: 0,
+            duration:300
+        });
     }
 })

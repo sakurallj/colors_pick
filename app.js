@@ -1,5 +1,8 @@
+let utils = require('./utils/util.js');
+utils = utils.utils;
 App({
     onLaunch: function() {
+        this.doUpdateApp();
         if (!wx.cloud) {
             console.log('请使用 2.2.3 或以上的基础库以使用云能力')
             wx.setStorageSync("canNotWxCloud", true);
@@ -9,23 +12,13 @@ App({
                 traceUser: true,
             })
             this.api = require('./utils/api.js');
-
-            wx.cloud.callFunction({
-                // 要调用的云函数名称
-                name: 'login',
-            }).then(res => {
-                console.log('  wx.cloud.callFunction then', res)
-                wx.setStorageSync("openid", res.result.userInfo.openId);
-            }, res => {
-                console.log('  wx.cloud.callFunction then fail', res)
-            }).catch(err => {
-                console.log('  wx.cloud.callFunction catch', err)
-            })
         }
+        console.log("onLaunch");
     },
     globalData: {
         userInfo: null
     },
+    util: utils,
     api: null,
     createShareAppMessageParams: event => {
         console.log(event);
@@ -48,5 +41,32 @@ App({
             title: "你要的颜色都在这里",
             path: path
         }
+    },
+    /**
+    * 检查更新小程序
+    */
+    doUpdateApp() {
+        let updateManager = wx.getUpdateManager()
+        updateManager.onCheckForUpdate(function (res) {
+            // 请求完新版本信息的回调
+            console.log(res.hasUpdate)
+        })
+        updateManager.onUpdateReady(function () {
+            console.log(" updateManager.onUpdateReady");
+            // updateManager.applyUpdate()
+            wx.showModal({
+                title: '更新提示',
+                content: "新版本已经准备好，是否重启应用？ 1、增加了云存储更能，喜欢的颜色再也不怕丢失了; 2、优化了分享方式，可以保存朋友分享的卡片了。",
+                success: function (res) {
+                    if (res.confirm) {
+                        updateManager.applyUpdate()
+                    }
+                }
+            })
+        })
+        updateManager.onUpdateFailed(function () {
+            // 新版本下载失败
+            console.log("updateManager.onUpdateFailed");
+        })
     }
 })

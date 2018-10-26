@@ -78,3 +78,11 @@
     font-weight: bolder;
     opacity: 0.8;
 }
+
+.goto_top_img {
+    position: fixed;
+    bottom: 80rpx;
+    right: 10rpx;
+    width: 45rpx;
+    height: 45rpx;
+}

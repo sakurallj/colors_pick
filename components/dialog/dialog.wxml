@@ -1,5 +1,6 @@
 <view class="wx_dialog_container" hidden="{{!isShow}}">
     <view class="wx_mask" catchtap="{{sub_type=='edit'?'':'_cancelEvent'}}" style="{{sub_type=='edit'?'z-index: 1000;':''}}"></view>
+    <image class='close_dialog' src="/images/close_circle.png" catchtap="_cancelEvent" wx:if="{{sub_type!='edit'}}"></image>
     <view class="wc_dialog_continer" wx:if="{{dialog_type=='color_detail'}}">
         <view class='cd_dialog_out'>
             <view class="wx_dialog cd_dialog ">

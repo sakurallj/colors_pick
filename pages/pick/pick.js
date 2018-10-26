@@ -185,9 +185,13 @@ Page({
         console.log(e);
         let item = e.currentTarget.dataset.item;
         console.log(item);
+        that.showCard(item);
+    },
+    showCard(item) {
         item.index = parseInt(item.index);
-        item.isUGC = 1; item.isPick= 1;
-        item.copyStr = "色卡 " + "自定义"+ "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
+        item.isUGC = 1;
+        item.isPick = 1;
+        item.copyStr = "色卡 " + "自定义" + "\n" + "[1]:#" + item.color0 + "\n" + "[2]:#" + item.color1 + "\n" + "[3]:#" + item.color2 + "\n" + "[4]:#" + item.color3;
         that.setData({
             dialogData: item
         });
@@ -202,15 +206,17 @@ Page({
         that.setData({
             btnText: "添加中..."
         });
-        let init_color = that.data.init_color;
-        api.saveOneBuiltColor(init_color.index, {
-            color3: init_color.color3,
-            color0: init_color.color0,
-            color1: init_color.color1,
-            color2: init_color.color2,
-            index: init_color.index,
-            isUGC: 1,
-        }, function() {
+        let init_color = that.data.init_color,
+            item = {
+                color3: init_color.color3,
+                color0: init_color.color0,
+                color1: init_color.color1,
+                color2: init_color.color2,
+                index: init_color.index,
+                isUGC: 1,
+            };
+        api.saveOneBuiltColor(init_color.index, item).then(res => {
+            console.log("addCard   api.saveOneBuiltColor success res", res);
             setTimeout(function() {
                 that.setData({
                     btnText: "添加色卡"
@@ -221,6 +227,29 @@ Page({
                     icon: "success"
                 })
                 that.canAdd = true;
+                that.showCard(item);
+            }, 500);
+        }, res => {
+            console.log("addCard   api.saveOneBuiltColor fail res", res);
+            setTimeout(function() {
+                that.setData({
+                    btnText: "添加色卡"
+                });
+                that.canAdd = true;
+                if (typeof res == "object") {
+                    wx.showToast({
+                        title: '已经存在，编号:U' + (parseInt(res.index) + 1),
+                        duration: 2000,
+                        icon: "none"
+                    })
+                    that.showCard(res);
+                }else{
+                    wx.showToast({
+                        title: res,
+                        duration: 2000,
+                        icon: "none"
+                    })
+                }
             }, 500);
         });
     },

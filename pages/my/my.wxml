@@ -21,4 +21,5 @@
 <view class='colors_container_empty' wx:else>
     还没有自己喜欢的颜色，去收藏吧
 </view>
+<image class='goto_top_img' src="/images/goto_top.png" wx:if="{{showTop==1}}" catchtap='gotoTop'></image>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}" bind:deleteCard="deleteCard"></dialog>

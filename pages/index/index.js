@@ -1,11 +1,13 @@
 let default_colors = require('../..//utils/default_colors.js');
 let that;
 let app = getApp(),
-    api = app.api;
+    api = app.api,
+    util = app.util;
 Page({
     data: {
-
+        showTop: false
     },
+    windowHeight: 0,
     onLoad: function(opt) {
         that = this;
         console.log(opt);
@@ -14,40 +16,24 @@ Page({
                 opt: opt
             });
         }
+        console.log("page onLoad");
+        let info = util.getSystemInfo();
+        that.windowHeight = info.windowHeight;
     },
     initColors() {
-        let colors = wx.getStorageSync("colors"),
-            that = this;
-        if (colors) {
-            this.setData({
+        api.initColors().then(colors => {
+            console.log("initColors api.initColors() success colors", colors);
+            that.setData({
                 colors: colors
             });
-        } else {
-            api.getMyColorFromCDB().then(res => {
-                let data = res[0];
-                if (!data || !data.builtInArrs) {
-                    that.setColorsToDefaultColors();
-                }
-                colors = {
-                    builtInArrs: data.builtInArrs,
-                    UGCArrs: !data.UGCArrs ? [] : data.UGCArrs
-                };
-                wx.setStorageSync("colors", colors);
-                wx.setStorageSync("color_id", data._id);
-                that.setData({
-                    colors: colors
-                });
-            }, res => {
-                that.setColorsToDefaultColors();
-            });
-        }
-    },
-    setColorsToDefaultColors() {
-        let colors = default_colors.colors;
-        this.setData({
-            colors: colors
+        }, res => {
+            wx.showModal({
+                title: '初始化失败',
+                content: '请确保网络畅通，然后删除小程序，再重新进入',
+                showCancel: false
+            })
+            console.log("initColors api.initColors() fail res", res);
         });
-        wx.setStorageSync("colors", colors);
     },
     onShow() {
         that.initColors();
@@ -105,4 +91,27 @@ Page({
     onShareAppMessage: function(event) {
         return app.createShareAppMessageParams(event);
     },
+    scrollTop: 0,
+    onPageScroll(e) {
+        let scrollTop = e.scrollTop,
+            showTop = that.data.showTop;
+        that.scrollTop = scrollTop;
+        console.log("onPageScroll", scrollTop, that.windowHeight);
+        if (scrollTop >= that.windowHeight / 2 && !showTop) {
+            that.setData({
+                showTop: true
+            });
+        } else if (scrollTop < that.windowHeight / 2 && showTop) {
+            that.setData({
+                showTop: false
+            });
+        }
+    },
+    gotoTop() {
+        let time = 300;
+        wx.pageScrollTo({
+            scrollTop: 0,
+            duration: time
+        });
+    }
 })

@@ -260,11 +260,21 @@ button.cd_bottom_item::after {
 .cc_bottom_item:last-child {
     color: #6abe83;
 }
+
 .color_item_text {
     color: #fff;
     position: absolute;
     bottom: 20rpx;
     left: 20rpx;
     font-weight: bolder;
-    opacity: 0.5
+    opacity: 0.5;
+}
+
+.close_dialog {
+    width:50rpx;
+    height: 50rpx;
+    z-index: 100;
+    position: absolute;
+    top: 24rpx;
+    right: 24rpx;
 }
