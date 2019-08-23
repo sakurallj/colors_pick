@@ -29,9 +29,9 @@
     </view>
 
 
-    <view class="n_t" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='title'}}">
-        <view class="n_title_box" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} ">
-            <view class="n_title">{{navTitle}}</view>
+    <view class="t_left" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='title_left'}}">
+        <view class="t_left_title_box" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} ">
+            <view class="t_left_title">{{navTitle}}</view>
         </view>
     </view>
 

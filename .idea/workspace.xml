@@ -3,6 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="02537ea2-d7b6-4f63-a387-ed8a6e338bb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dialog/dialog.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/components/dialog/dialog.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navBar/navBar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/navBar/navBar.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navBar/navBar.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/components/navBar/navBar.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my/my.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my/my.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my/my.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my/my.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my/my.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my/my.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pick/pick.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pick/pick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pick/pick.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pick/pick.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pick/pick.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pick/pick.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/chinese_colors.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+              <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#!!top" expanded="true" />
@@ -43,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/pages/pick/pick.wxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="39" column="121" lean-forward="true" selection-start-line="39" selection-start-column="121" selection-end-line="39" selection-end-column="121" />
+              <caret line="39" column="121" selection-start-line="39" selection-start-column="121" selection-end-line="39" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -51,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state relative-caret-position="210">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -180,16 +192,15 @@
       <updated>1563863124123</updated>
       <workItem from="1563863126192" duration="4674000" />
       <workItem from="1564647842333" duration="526000" />
-      <workItem from="1566532464088" duration="571000" />
+      <workItem from="1566532464088" duration="781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5771000" />
+    <option name="totallyTimeSpent" value="5981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1309" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24970461" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -255,7 +266,7 @@
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#!!top" expanded="true" />
@@ -275,14 +286,14 @@
     <entry file="file://$PROJECT_DIR$/pages/pick/pick.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="39" column="121" lean-forward="true" selection-start-line="39" selection-start-column="121" selection-end-line="39" selection-end-column="121" />
+          <caret line="39" column="121" selection-start-line="39" selection-start-column="121" selection-end-line="39" selection-end-column="121" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>

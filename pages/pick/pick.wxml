@@ -54,4 +54,4 @@
 </view>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
 <tabBarShadow></tabBarShadow>
-<navBar bindGoBack="onGoBack" navStyle="title" navTitle="拾色"></navBar>
+<navBar navStyle="title_left" navTitle="取色" ></navBar>

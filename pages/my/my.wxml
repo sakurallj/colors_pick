@@ -35,4 +35,4 @@
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}" bind:deleteCard="deleteCard"></dialog>
 
 <tabBarShadow></tabBarShadow>
-<navBar bindGoBack="onGoBack" navStyle="title" navTitle="我的"></navBar>
+<navBar bindGoBack="onGoBack" navStyle="title_left" navTitle="我的"></navBar>

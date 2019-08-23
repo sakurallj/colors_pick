@@ -1,12 +1,13 @@
 .container {
 }
 
-.text_back, .browse, .n_t {
+.text_back, .browse, .t_left {
     position: fixed;
     top: 0;
     left: 0;
     width: 750rpx;
-    background: #fffefb;
+    background: #858c96;
+    color: #fff;
 }
 
 .text_back_box {
@@ -100,20 +101,16 @@
 .browse_text {
     font-size: 30px;
     line-height: 32px;
-    color: #474b4a;
 }
 
-.n_title_box {
-    display: flex;
+.t_left_title_box {
     height: 32px;
-    align-items: center;
     width: 750rpx;
-    justify-content: center;
+    padding-left: 40rpx;
 }
 
-.n_title {
-    font-size: 18px;
+.t_left_title {
+    font-size: 26px;
     line-height: 32px;
     font-weight: 600;
-    color: #474b4a;
 }

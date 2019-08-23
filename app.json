@@ -1,34 +1,44 @@
 {
     "pages": [
+        "pages/pick/pick",
         "pages/index/index",
         "pages/my/my",
-        "pages/pick/pick",
+        "pages/explore/explore",
+        "pages/traditionalColor/traditionalColor",
         "pages/about/about"
     ],
     "cloud": true,
     "window": {
-        "backgroundTextStyle": "light",
+        "backgroundColor": "#858c96",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "色卡拾取",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "usingComponents": {
+        "navBar": "/components/navBar/navBar",
+        "tabBarShadow": "/components/tabBarShadow/tabBarShadow",
+        "dialog": "/components/dialog/dialog",
+        "navBarHolder": "/components/navBarHolder/navBarHolder"
     },
     "tabBar": {
         "list": [
             {
                 "pagePath": "pages/pick/pick",
-                "text": "拾色",
-                "iconPath": "/images/search.png",
-                "selectedIconPath": "/images/search_active.png"
+                "text": "",
+                "iconPath": "/images/pick.png",
+                "selectedIconPath": "/images/pick_active.png"
             },
             {
-                "pagePath": "pages/index/index",
-                "text": "色卡",
-                "iconPath": "/images/home.png",
-                "selectedIconPath": "/images/home_active.png"
+                "pagePath": "pages/explore/explore",
+                "text": "",
+                "iconPath": "/images/discover.png",
+                "selectedIconPath": "/images/discover_active.png"
             },
             {
                 "pagePath": "pages/my/my",
-                "text": "我的",
+                "text": "",
                 "iconPath": "/images/mine.png",
                 "selectedIconPath": "/images/mine_active.png"
             }
@@ -37,5 +47,6 @@
         "selectedColor": "#F0F1F2",
         "backgroundColor": "#5D656F",
         "borderStyle": "black"
-    }
+    },
+    "sitemapLocation": "sitemap88.json"
 }

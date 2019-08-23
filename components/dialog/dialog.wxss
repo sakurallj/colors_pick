@@ -276,5 +276,5 @@ button.cd_bottom_item::after {
     z-index: 100;
     position: absolute;
     top: 15vh;
-    right: 24rpx;
+    right: 50rpx;
 }
