@@ -1,6 +1,5 @@
-let defaultColors = require('./default_colors.js'),
-    chineseColors = require('./chinese_colors.js'),
-    gradients = require('./gradients.js');
+let services = require('./services/services') ;
+
 let apis = {};
 let canNotWxCloud = wx.getStorageSync("canNotWxCloud"),
     db = null;

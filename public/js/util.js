@@ -1,13 +1,9 @@
 let utils = {};
 utils.sysInfo = wx.getSystemInfoSync();
-utils.getSystemInfo = function() {
-    let info = wx.getStorageSync("system_info");
-    if (!info) {
-        info = wx.getSystemInfoSync();
-        wx.setStorageSync("system_info", info);
-    }
-    return info;
-};
+
+utils.menuButtonBoundingClientRect = wx.getMenuButtonBoundingClientRect();
+utils.sysInfo.navigationHeight = utils.menuButtonBoundingClientRect.bottom + 8;
+
 utils.sysInfo.isIOS = utils.sysInfo.system.indexOf('iOS') > -1;
 
 utils.rpxToPx = function(rpx) {
@@ -16,9 +12,9 @@ utils.rpxToPx = function(rpx) {
 utils.pxToRpx = function(px) {
     return px * 750 / utils.sysInfo.screenWidth;
 };
-utils.menuButtonBoundingClientRect = wx.getMenuButtonBoundingClientRect();
-utils.sysInfo.navigationHeight = utils.menuButtonBoundingClientRect.bottom + 8;
-console.log("utils.menuButtonBoundingClientRect",utils.menuButtonBoundingClientRect);
+
+
+
 
 utils.rgbToHex = function(rgbStr) {
     console.log("rgbToHex rgbStr", rgbStr);
@@ -145,6 +141,4 @@ utils.getColorTag = (hexColor) => {
     return 'Reds';
 };
 
-module.exports = {
-    utils: utils
-};
+module.exports = utils;

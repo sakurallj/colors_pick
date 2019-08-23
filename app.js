@@ -1,25 +1,22 @@
-let utils = require('./utils/util.js');
-utils = utils.utils;
 App({
-    onLaunch: function() {
-        this.doUpdateApp();
-        if (!wx.cloud) {
-            console.log('请使用 2.2.3 或以上的基础库以使用云能力')
-            wx.setStorageSync("canNotWxCloud", true);
-        } else {
-            wx.cloud.init({
-                env: 'release-b098f2',
-                traceUser: true,
-            })
-            this.api = require('./utils/api.js');
-        }
-        console.log("onLaunch");
-    },
     globalData: {
         userInfo: null
     },
-    util: utils,
+    util: require('./public/js/util.js'),
     api: null,
+    onLaunch: function () {
+        this.doUpdateApp();
+
+        wx.cloud.init({
+            env: 'release-b098f2',
+            traceUser: true,
+        });
+        this.api = require('./public/js/api');
+        // Page = require('./public/js/page');
+
+        console.log("onLaunch");
+    },
+
     createShareAppMessageParams: event => {
         console.log(event);
         wx.hideToast();
@@ -43,14 +40,14 @@ App({
         }
     },
     /**
-    * 检查更新小程序
-    */
+     * 检查更新小程序
+     */
     doUpdateApp() {
-        let updateManager = wx.getUpdateManager()
+        let updateManager = wx.getUpdateManager();
         updateManager.onCheckForUpdate(function (res) {
             // 请求完新版本信息的回调
             console.log(res.hasUpdate)
-        })
+        });
         updateManager.onUpdateReady(function () {
             console.log(" updateManager.onUpdateReady");
             // updateManager.applyUpdate()
@@ -63,10 +60,10 @@ App({
                     }
                 }
             })
-        })
+        });
         updateManager.onUpdateFailed(function () {
             // 新版本下载失败
             console.log("updateManager.onUpdateFailed");
         })
     }
-})
+});

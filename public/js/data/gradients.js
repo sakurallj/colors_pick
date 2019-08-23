@@ -1,4 +1,4 @@
-let util = require('./util.js').utils,
+let util = require('../util.js') ,
     gd = {};
 gd.data = [{
         "name": "Omolon",

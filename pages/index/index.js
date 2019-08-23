@@ -1,4 +1,4 @@
-let default_colors = require('../..//utils/default_colors.js');
+
 let that;
 let app = getApp(),
     api = app.api,

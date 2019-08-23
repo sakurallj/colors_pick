@@ -1,0 +1,2526 @@
+let cc = {};
+cc.colors = [{
+    "color3": "177E89",
+    "color0": "FFC857",
+    "color1": "DB3A34",
+    "color2": "084C61",
+    "index": "0"
+}, {
+    "color3": "1F2B40",
+    "color0": "2E7866",
+    "color1": "F2C640",
+    "color2": "3F485B",
+    "index": "1"
+}, {
+    "color3": "CFDEE7",
+    "color0": "4472CA",
+    "color1": "5E7CE2",
+    "color2": "92B4F4",
+    "index": "2"
+}, {
+    "color3": "DFDCE3",
+    "color0": "4ABDAC",
+    "color1": "FC4A1A",
+    "color2": "F7B733",
+    "index": "3"
+}, {
+    "color3": "526187",
+    "color0": "4D2831",
+    "color1": "B50B1E",
+    "color2": "0D1130",
+    "index": "4"
+}, {
+    "color3": "9dd7d5",
+    "color0": "1f9792",
+    "color1": "505050",
+    "color2": "fff4c5",
+    "index": "5"
+}, {
+    "color3": "e62739",
+    "color0": "6ed3cf",
+    "color1": "9068be",
+    "color2": "e1e8f0",
+    "index": "6"
+}, {
+    "color3": "3A4457",
+    "color0": "AE8D65",
+    "color1": "C29D73",
+    "color2": "717A84",
+    "index": "7"
+}, {
+    "color3": "F0E5D0",
+    "color0": "3B3115",
+    "color1": "EBAF60",
+    "color2": "205C55",
+    "index": "8"
+}, {
+    "color3": "4CC3D9",
+    "color0": "F16745",
+    "color1": "FFC65D",
+    "color2": "7BC8A4",
+    "index": "9"
+}, {
+    "color3": "FCAA67",
+    "color0": "D1DEDE",
+    "color1": "660000",
+    "color2": "204B57",
+    "index": "10"
+}, {
+    "color3": "381F21",
+    "color0": "631C23",
+    "color1": "393939",
+    "color2": "EDECF4",
+    "index": "11"
+}, {
+    "color3": "5B6049",
+    "color0": "7A5930",
+    "color1": "6C3A27",
+    "color2": "CF9B61",
+    "index": "12"
+}, {
+    "color3": "313d4b",
+    "color0": "cd5554",
+    "color1": "91684a",
+    "color2": "00c07f",
+    "index": "13"
+}, {
+    "color3": "DDE0DF",
+    "color0": "61727A",
+    "color1": "F2BDD0",
+    "color2": "D3BD74",
+    "index": "14"
+}, {
+    "color3": "D5A677",
+    "color0": "613123",
+    "color1": "0C182D",
+    "color2": "0E2646",
+    "index": "15"
+}, {
+    "color3": "100F14",
+    "color0": "835F46",
+    "color1": "1D215A",
+    "color2": "505460",
+    "index": "16"
+}, {
+    "color3": "947B89",
+    "color0": "AEB8C3",
+    "color1": "4E0E2E",
+    "color2": "E1E7EB",
+    "index": "17"
+}, {
+    "color3": "587AA5",
+    "color0": "F37C3D",
+    "color1": "16335F",
+    "color2": "8E0C24",
+    "index": "18"
+}, {
+    "color3": "8C95AA",
+    "color0": "B9A7C2",
+    "color1": "B6D0C9",
+    "color2": "C2DFEA",
+    "index": "19"
+}, {
+    "color3": "E1E0E7",
+    "color0": "B2998E",
+    "color1": "DCC6C6",
+    "color2": "BCA7A7",
+    "index": "20"
+}, {
+    "color3": "492711",
+    "color0": "B89582",
+    "color1": "130D0A",
+    "color2": "895B2E",
+    "index": "21"
+}, {
+    "color3": "1D212D",
+    "color0": "0E0D10",
+    "color1": "A4873B",
+    "color2": "432B1B",
+    "index": "22"
+}, {
+    "color3": "F4F4F4",
+    "color0": "181A19",
+    "color1": "383639",
+    "color2": "EADDDB",
+    "index": "23"
+}, {
+    "color3": "584B3F",
+    "color0": "CAB1AC",
+    "color1": "927076",
+    "color2": "B8B6C3",
+    "index": "24"
+}, {
+    "color3": "852426",
+    "color0": "23110D",
+    "color1": "936229",
+    "color2": "D09924",
+    "index": "25"
+}, {
+    "color3": "9EAFAE",
+    "color0": "D7C8B6",
+    "color1": "E9DC85",
+    "color2": "15120B",
+    "index": "26"
+}, {
+    "color3": "BCD8C1",
+    "color0": "422040",
+    "color1": "E57A44",
+    "color2": "E3D985",
+    "index": "27"
+}, {
+    "color3": "223843",
+    "color0": "D77A61",
+    "color1": "DBD3D8",
+    "color2": "EFF1F3",
+    "index": "28"
+}, {
+    "color3": "B89E97",
+    "color0": "000000",
+    "color1": "1098F7",
+    "color2": "FFFFFF",
+    "index": "29"
+}, {
+    "color3": "393E41",
+    "color0": "FFFC31",
+    "color1": "F6F7EB",
+    "color2": "E94F37",
+    "index": "30"
+}, {
+    "color3": "A7E8BD",
+    "color0": "FFD972",
+    "color1": "EFA7A7",
+    "color2": "FCBCB8",
+    "index": "31"
+}, {
+    "color3": "FFEBE7",
+    "color0": "7F95D1",
+    "color1": "FF82A9",
+    "color2": "FFC0BE",
+    "index": "32"
+}, {
+    "color3": "FFB4A2",
+    "color0": "6D6875",
+    "color1": "B5838D",
+    "color2": "E5989B",
+    "index": "33"
+}, {
+    "color3": "48B8D0",
+    "color0": "F5E5FC",
+    "color1": "8AE1FC",
+    "color2": "C08497",
+    "index": "34"
+}, {
+    "color3": "F7AF9D",
+    "color0": "FFCAD4",
+    "color1": "B0D0D3",
+    "color2": "C08497",
+    "index": "35"
+}, {
+    "color3": "6BA292",
+    "color0": "F40076",
+    "color1": "35CE8D",
+    "color2": "CED3DC",
+    "index": "36"
+}, {
+    "color3": "4E8098",
+    "color0": "A31621",
+    "color1": "FCF7F8",
+    "color2": "CED3DC",
+    "index": "37"
+}, {
+    "color3": "D6D5B3",
+    "color0": "F92A82",
+    "color1": "ED7B84",
+    "color2": "F5DBCB",
+    "index": "38"
+}, {
+    "color3": "74c239",
+    "color0": "03243a",
+    "color1": "558ad8",
+    "color2": "c5c5c5",
+    "index": "39"
+}, {
+    "color3": "1a202c",
+    "color0": "cf4037",
+    "color1": "dedaa9",
+    "color2": "74af96",
+    "index": "40"
+}, {
+    "color3": "fb7960",
+    "color0": "63b931",
+    "color1": "bef1ed",
+    "color2": "fc6453",
+    "index": "41"
+}, {
+    "color3": "63b931",
+    "color0": "3c67c0",
+    "color1": "000000",
+    "color2": "d14430",
+    "index": "42"
+}, {
+    "color3": "fce8d8",
+    "color0": "b86c99",
+    "color1": "d78ab7",
+    "color2": "ffffff",
+    "index": "43"
+}, {
+    "color3": "f7f3e9",
+    "color0": "f05945",
+    "color1": "747e80",
+    "color2": "d5e1dd",
+    "index": "44"
+}, {
+    "color3": "f05945",
+    "color0": "7abed1",
+    "color1": "f05945",
+    "color2": "f7f3e9",
+    "index": "45"
+}, {
+    "color3": "82052f",
+    "color0": "51c1f0",
+    "color1": "fc5c1f",
+    "color2": "b6082d",
+    "index": "46"
+}, {
+    "color3": "66c2cb",
+    "color0": "fbb731",
+    "color1": "f48b31",
+    "color2": "ef7030",
+    "index": "47"
+}, {
+    "color3": "f9b271",
+    "color0": "82c12f",
+    "color1": "bddb63",
+    "color2": "fd7923",
+    "index": "48"
+}, {
+    "color3": "dcdcdc",
+    "color0": "262626",
+    "color1": "3f3f3f",
+    "color2": "f5f5f5",
+    "index": "49"
+}, {
+    "color3": "eaeaea",
+    "color0": "368cbf",
+    "color1": "7ebc59",
+    "color2": "33363b",
+    "index": "50"
+}, {
+    "color3": "7A9D96",
+    "color0": "393939",
+    "color1": "FF5A09",
+    "color2": "00303F",
+    "index": "51"
+}, {
+    "color3": "7A9D96",
+    "color0": "CAE4DB",
+    "color1": "DCAE1D",
+    "color2": "00303F",
+    "index": "52"
+}, {
+    "color3": "f1f0ee",
+    "color0": "b11a21",
+    "color1": "e0474c",
+    "color2": "7acfd6",
+    "index": "53"
+}, {
+    "color3": "600473",
+    "color0": "fbf579",
+    "color1": "005995",
+    "color2": "fa625f",
+    "index": "54"
+}, {
+    "color3": "49494b",
+    "color0": "bd8c7d",
+    "color1": "d1bfa7",
+    "color2": "8e8e90",
+    "index": "55"
+}, {
+    "color3": "f9f8fd",
+    "color0": "7dce94",
+    "color1": "3d3d3f",
+    "color2": "f6f5f3",
+    "index": "56"
+}, {
+    "color3": "1d1e22",
+    "color0": "feda6a",
+    "color1": "d4d4dc",
+    "color2": "393f4d",
+    "index": "57"
+}, {
+    "color3": "845007",
+    "color0": "3a4660",
+    "color1": "c9af98",
+    "color2": "ed8a63",
+    "index": "58"
+}, {
+    "color3": "5b7d86",
+    "color0": "2e323c",
+    "color1": "2a4150",
+    "color2": "45405d",
+    "index": "59"
+}, {
+    "color3": "8acbc7",
+    "color0": "3c2e3d",
+    "color1": "fcad84",
+    "color2": "ecc7bf",
+    "index": "60"
+}, {
+    "color3": "a2a9af",
+    "color0": "3d3d3b",
+    "color1": "4c5870",
+    "color2": "ebedec",
+    "index": "61"
+}, {
+    "color3": "54b0bd",
+    "color0": "032a2f",
+    "color1": "d63932",
+    "color2": "076f8a",
+    "index": "62"
+}, {
+    "color3": "747081",
+    "color0": "38334a",
+    "color1": "6b4d6f",
+    "color2": "6981a7",
+    "index": "63"
+}, {
+    "color3": "99abb9",
+    "color0": "183346",
+    "color1": "e8c77a",
+    "color2": "e2b49a",
+    "index": "64"
+}, {
+    "color3": "e25d6e",
+    "color0": "fad6a6",
+    "color1": "f9b69c",
+    "color2": "866667",
+    "index": "65"
+}, {
+    "color3": "037365",
+    "color0": "7ad4cb",
+    "color1": "bea32e",
+    "color2": "7b885c",
+    "index": "66"
+}, {
+    "color3": "ffb5ba",
+    "color0": "4abbf3",
+    "color1": "61bfbe",
+    "color2": "baddd6",
+    "index": "67"
+}, {
+    "color3": "667572",
+    "color0": "f3e8d6",
+    "color1": "a1bad0",
+    "color2": "d0a727",
+    "index": "68"
+}, {
+    "color3": "99abb9",
+    "color0": "623f2b",
+    "color1": "3d455c",
+    "color2": "b37b56",
+    "index": "69"
+}, {
+    "color3": "e6cc8f",
+    "color0": "44120c",
+    "color1": "aa3c16",
+    "color2": "edaa53",
+    "index": "70"
+}, {
+    "color3": "e3d9cd",
+    "color0": "3f3830",
+    "color1": "6c7874",
+    "color2": "b0b1a1",
+    "index": "71"
+}, {
+    "color3": "f06966",
+    "color0": "313238",
+    "color1": "6abe83",
+    "color2": "dee2d1",
+    "index": "72"
+}, {
+    "color3": "6abe83",
+    "color0": "f1ac9d",
+    "color1": "f06966",
+    "color2": "dee2d1",
+    "index": "73"
+}, {
+    "color3": "839973",
+    "color0": "e8dbcb",
+    "color1": "e2b9b3",
+    "color2": "613942",
+    "index": "74"
+}, {
+    "color3": "745285",
+    "color0": "f4ab9a",
+    "color1": "ffb47b",
+    "color2": "ff7c5e",
+    "index": "75"
+}, {
+    "color3": "add9d8",
+    "color0": "125488",
+    "color1": "2a93d4",
+    "color2": "3dd9d6",
+    "index": "76"
+}, {
+    "color3": "854e4b",
+    "color0": "f6ded4",
+    "color1": "e9bba9",
+    "color2": "e2af90",
+    "index": "77"
+}, {
+    "color3": "2094b9",
+    "color0": "de6f20",
+    "color1": "c4909d",
+    "color2": "fad6a6",
+    "index": "78"
+}, {
+    "color3": "dcdcdc",
+    "color0": "262626",
+    "color1": "3f3f3f",
+    "color2": "f5f5f5",
+    "index": "79"
+}, {
+    "color3": "eaeaea",
+    "color0": "368cbf",
+    "color1": "7ebc59",
+    "color2": "33363b",
+    "index": "80"
+}, {
+    "color3": "DFDCE3",
+    "color0": "4ABDAC",
+    "color1": "FC4A1A",
+    "color2": "F7B733",
+    "index": "81"
+}, {
+    "color3": "7A9D96",
+    "color0": "393939",
+    "color1": "FF5A09",
+    "color2": "00303F",
+    "index": "82"
+}, {
+    "color3": "7A9D96",
+    "color0": "CAE4DB",
+    "color1": "DCAE1D",
+    "color2": "00303F",
+    "index": "83"
+}, {
+    "color3": "f1f0ee",
+    "color0": "b11a21",
+    "color1": "e0474c",
+    "color2": "7acfd6",
+    "index": "84"
+}, {
+    "color3": "313d4b",
+    "color0": "cd5554",
+    "color1": "91684a",
+    "color2": "00c07f",
+    "index": "85"
+}, {
+    "color3": "600473",
+    "color0": "fbf579",
+    "color1": "005995",
+    "color2": "fa625f",
+    "index": "86"
+}, {
+    "color3": "49494b",
+    "color0": "bd8c7d",
+    "color1": "d1bfa7",
+    "color2": "8e8e90",
+    "index": "87"
+}, {
+    "color3": "f9f8fd",
+    "color0": "7dce94",
+    "color1": "3d3d3f",
+    "color2": "f6f5f3",
+    "index": "88"
+}, {
+    "color3": "1d1e22",
+    "color0": "feda6a",
+    "color1": "d4d4dc",
+    "color2": "393f4d",
+    "index": "89"
+}, {
+    "color3": "845007",
+    "color0": "3a4660",
+    "color1": "c9af98",
+    "color2": "ed8a63",
+    "index": "90"
+}, {
+    "color3": "8f9299",
+    "color0": "c12127",
+    "color1": "2a333c",
+    "color2": "ffffff",
+    "index": "91"
+}, {
+    "color3": "1E1407",
+    "color0": "00A6ED",
+    "color1": "F6AE2D",
+    "color2": "FF652D",
+    "index": "92"
+}, {
+    "color3": "454851",
+    "color0": "6441A4",
+    "color1": "EAEAEA",
+    "color2": "3A3335",
+    "index": "93"
+}, {
+    "color3": "E2001A",
+    "color0": "494747",
+    "color1": "21A8A3",
+    "color2": "F2E6E6",
+    "index": "94"
+}, {
+    "color3": "E7E5DF",
+    "color0": "393E41",
+    "color1": "E8CA78",
+    "color2": "B1E0D8",
+    "index": "95"
+}, {
+    "color3": "F05D5E",
+    "color0": "A2FAA3",
+    "color1": "92C9B1",
+    "color2": "F2F5EA",
+    "index": "96"
+}, {
+    "color3": "B7CE63",
+    "color0": "96C120",
+    "color1": "DADDD8",
+    "color2": "C7D59F",
+    "index": "97"
+}, {
+    "color3": "4ECDC4",
+    "color0": "1A535C",
+    "color1": "F71735",
+    "color2": "225560",
+    "index": "98"
+}, {
+    "color3": "DCDCDD",
+    "color0": "2C363F",
+    "color1": "2F6665",
+    "color2": "E5BD47",
+    "index": "99"
+}, {
+    "color3": "210B29",
+    "color0": "180B25",
+    "color1": "FB2A27",
+    "color2": "AC8697",
+    "index": "100"
+}, {
+    "color3": "0062CC",
+    "color0": "007AFF",
+    "color1": "FFFFFF",
+    "color2": "1F8AFF",
+    "index": "101"
+}, {
+    "color3": "629460",
+    "color0": "2B4162",
+    "color1": "385F71",
+    "color2": "F5F0F6",
+    "index": "102"
+}, {
+    "color3": "F45B69",
+    "color0": "22181C",
+    "color1": "5A0001",
+    "color2": "F13030",
+    "index": "103"
+}, {
+    "color3": "6C596E",
+    "color0": "241023",
+    "color1": "6B0504",
+    "color2": "A3320B",
+    "index": "104"
+}, {
+    "color3": "13C4A3",
+    "color0": "4C6085",
+    "color1": "39A0ED",
+    "color2": "36F1CD",
+    "index": "105"
+}, {
+    "color3": "E5446D",
+    "color0": "FFC857",
+    "color1": "E9724C",
+    "color2": "F8F4E3",
+    "index": "106"
+}, {
+    "color3": "29335C",
+    "color0": "5CF2E8",
+    "color1": "F0CEA0",
+    "color2": "FE9000",
+    "index": "107"
+}, {
+    "color3": "FE9000",
+    "color0": "DB2B39",
+    "color1": "29335C",
+    "color2": "F0CEA0",
+    "index": "108"
+}, {
+    "color3": "FFFBBD",
+    "color0": "EEEBD0",
+    "color1": "0FFF95",
+    "color2": "F71735",
+    "index": "109"
+}, {
+    "color3": "75D4F2",
+    "color0": "00416D",
+    "color1": "2D7DBC",
+    "color2": "52BDF2",
+    "index": "110"
+}, {
+    "color3": "DC352B",
+    "color0": "1A1B1C",
+    "color1": "0C8235",
+    "color2": "C8B88E",
+    "index": "111"
+}, {
+    "color3": "3AF4D5",
+    "color0": "FF307F",
+    "color1": "FFA544",
+    "color2": "FFFC56",
+    "index": "112"
+}, {
+    "color3": "FFEB28",
+    "color0": "03359D",
+    "color1": "FE2370",
+    "color2": "F15631",
+    "index": "113"
+}, {
+    "color3": "474747",
+    "color0": "E0E0CE",
+    "color1": "D1603D",
+    "color2": "F2AF29",
+    "index": "114"
+}, {
+    "color3": "FE7F2D",
+    "color0": "4DC1EA",
+    "color1": "F18904",
+    "color2": "233D4D",
+    "index": "115"
+}, {
+    "color3": "83A263",
+    "color0": "433F3E",
+    "color1": "AD2D63",
+    "color2": "FDD5A3",
+    "index": "116"
+}, {
+    "color3": "FFE74C",
+    "color0": "4DC1EA",
+    "color1": "0D3B66",
+    "color2": "F18904",
+    "index": "117"
+}, {
+    "color3": "CFE0F3",
+    "color0": "0066B3",
+    "color1": "96C93D",
+    "color2": "679436",
+    "index": "118"
+}, {
+    "color3": "F2E9DC",
+    "color0": "595959",
+    "color1": "FFF000",
+    "color2": "91C499",
+    "index": "119"
+}, {
+    "color3": "FFFFFF",
+    "color0": "FF3B1D",
+    "color1": "7BDFF2",
+    "color2": "000000",
+    "index": "120"
+}, {
+    "color3": "C1292E",
+    "color0": "FDFFFC",
+    "color1": "235789",
+    "color2": "FFF000",
+    "index": "121"
+}, {
+    "color3": "4C4C4E",
+    "color0": "FF3B1D",
+    "color1": "3E78B2",
+    "color2": "FFFFFF",
+    "index": "122"
+}, {
+    "color3": "B00000",
+    "color0": "1C2A3F",
+    "color1": "CABD37",
+    "color2": "709B2B",
+    "index": "123"
+}, {
+    "color3": "000000",
+    "color0": "FF3B1D",
+    "color1": "58355E",
+    "color2": "FFFFFF",
+    "index": "124"
+}, {
+    "color3": "E9AFA3",
+    "color0": "3A405A",
+    "color1": "AEC5EB",
+    "color2": "F9DEC9",
+    "index": "125"
+}, {
+    "color3": "8ED2C9",
+    "color0": "FCF4D9",
+    "color1": "FFB85F",
+    "color2": "FF7A5A",
+    "index": "126"
+}, {
+    "color3": "D89D6A",
+    "color0": "96ADC8",
+    "color1": "F9DA4F",
+    "color2": "D7FFAB",
+    "index": "127"
+}, {
+    "color3": "A199E9",
+    "color0": "4551A5",
+    "color1": "456BC9",
+    "color2": "69619B",
+    "index": "128"
+}, {
+    "color3": "595959",
+    "color0": "64A6BD",
+    "color1": "F5CB5C",
+    "color2": "CC2936",
+    "index": "129"
+}, {
+    "color3": "90352B",
+    "color0": "A63F53",
+    "color1": "A07D7B",
+    "color2": "3B0520",
+    "index": "130"
+}, {
+    "color3": "35A7FF",
+    "color0": "FFE74C",
+    "color1": "FF5964",
+    "color2": "FFFFFF",
+    "index": "131"
+}, {
+    "color3": "FF5964",
+    "color0": "64F58D",
+    "color1": "35A7FF",
+    "color2": "053225",
+    "index": "132"
+}, {
+    "color3": "696D7D",
+    "color0": "C84630",
+    "color1": "A3E7FC",
+    "color2": "23B5D3",
+    "index": "133"
+}, {
+    "color3": "D81159",
+    "color0": "FFBE0B",
+    "color1": "DFD9E2",
+    "color2": "30BCED",
+    "index": "134"
+}, {
+    "color3": "6BCBCA",
+    "color0": "BDBAB4",
+    "color1": "FF6766",
+    "color2": "97CE68",
+    "index": "135"
+}, {
+    "color3": "008F68",
+    "color0": "D11250",
+    "color1": "DB5800",
+    "color2": "006899",
+    "index": "136"
+}, {
+    "color3": "FFFFFF",
+    "color0": "EDEDE4",
+    "color1": "F74906",
+    "color2": "554E44",
+    "index": "137"
+}, {
+    "color3": "FFFCEC",
+    "color0": "EB593C",
+    "color1": "333333",
+    "color2": "ABDCD6",
+    "index": "138"
+}, {
+    "color3": "E1E1E1",
+    "color0": "99CD4E",
+    "color1": "FFFFFF",
+    "color2": "343434",
+    "index": "139"
+}, {
+    "color3": "424242",
+    "color0": "8A0651",
+    "color1": "FFFFFF",
+    "color2": "000000",
+    "index": "140"
+}, {
+    "color3": "404040",
+    "color0": "D43F3F",
+    "color1": "6A9A1F",
+    "color2": "F6F6E8",
+    "index": "141"
+}, {
+    "color3": "E9E581",
+    "color0": "2B2B2B",
+    "color1": "DE1B1B",
+    "color2": "F6F6F6",
+    "index": "142"
+}, {
+    "color3": "FFFFFF",
+    "color0": "191919",
+    "color1": "DFE2DB",
+    "color2": "FFF056",
+    "index": "143"
+}, {
+    "color3": "383127",
+    "color0": "E4DBBF",
+    "color1": "DC5B21",
+    "color2": "70AB8F",
+    "index": "144"
+}, {
+    "color3": "E9C92D",
+    "color0": "FFD500",
+    "color1": "FFFFFF",
+    "color2": "38300A",
+    "index": "145"
+}, {
+    "color3": "47AFAF",
+    "color0": "B94629",
+    "color1": "E3DEC1",
+    "color2": "E89F65",
+    "index": "146"
+}, {
+    "color3": "BD3632",
+    "color0": "F2EFE4",
+    "color1": "CB8C1D",
+    "color2": "4C3327",
+    "index": "147"
+}, {
+    "color3": "FFFFFF",
+    "color0": "AC2832",
+    "color1": "000000",
+    "color2": "DFD297",
+    "index": "148"
+}, {
+    "color3": "E9633B",
+    "color0": "221E1D",
+    "color1": "ECEAE0",
+    "color2": "63AA9C",
+    "index": "149"
+}, {
+    "color3": "E3AE57",
+    "color0": "DC3D24",
+    "color1": "232B2B",
+    "color2": "FFFFFF",
+    "index": "150"
+}, {
+    "color3": "333333",
+    "color0": "0072BB",
+    "color1": "FF4C3B",
+    "color2": "FFD034",
+    "index": "151"
+}, {
+    "color3": "00AAA0",
+    "color0": "462066",
+    "color1": "FFB85F",
+    "color2": "FF7A5A",
+    "index": "152"
+}, {
+    "color3": "F9D08B",
+    "color0": "82AFF9",
+    "color1": "9881F5",
+    "color2": "F97D81",
+    "index": "153"
+}, {
+    "color3": "A9DDD9",
+    "color0": "EEBA4C",
+    "color1": "E3493B",
+    "color2": "23B5AF",
+    "index": "154"
+}, {
+    "color3": "F59ABE",
+    "color0": "363A42",
+    "color1": "FFD966",
+    "color2": "6DD0F2",
+    "index": "155"
+}, {
+    "color3": "B1938B",
+    "color0": "4E4E56",
+    "color1": "DA635D",
+    "color2": "DCD0C0",
+    "index": "156"
+}, {
+    "color3": "F6F7F8",
+    "color0": "F4733D",
+    "color1": "2CC0B3",
+    "color2": "38595E",
+    "index": "157"
+}, {
+    "color3": "FAFAFA",
+    "color0": "28B78D",
+    "color1": "243743",
+    "color2": "8A949B",
+    "index": "158"
+}, {
+    "color3": "94DAF0",
+    "color0": "E8487F",
+    "color1": "19376A",
+    "color2": "F6D55D",
+    "index": "159"
+}, {
+    "color3": "FFFFFF",
+    "color0": "0A4958",
+    "color1": "01B6AD",
+    "color2": "F6E7D2",
+    "index": "160"
+}, {
+    "color3": "FFFFFF",
+    "color0": "57BE85",
+    "color1": "D87575",
+    "color2": "7BCED7",
+    "index": "161"
+}, {
+    "color3": "FF5959",
+    "color0": "FFC56C",
+    "color1": "6EC5E9",
+    "color2": "003A6F",
+    "index": "162"
+}, {
+    "color3": "102E37",
+    "color0": "FCD271",
+    "color1": "F78D3F",
+    "color2": "2BBBD8",
+    "index": "163"
+}, {
+    "color3": "354B5E",
+    "color0": "D74B4B",
+    "color1": "DCDDD8",
+    "color2": "475F77",
+    "index": "164"
+}, {
+    "color3": "F9D654",
+    "color0": "EC633F",
+    "color1": "E44D2E",
+    "color2": "EC6C3F",
+    "index": "165"
+}, {
+    "color3": "017890",
+    "color0": "D9CCB9",
+    "color1": "DF7782",
+    "color2": "E95D22",
+    "index": "166"
+}, {
+    "color3": "8EBD99",
+    "color0": "C84D5F",
+    "color1": "7DC24B",
+    "color2": "D8DEAE",
+    "index": "167"
+}, {
+    "color3": "B85750",
+    "color0": "D5A253",
+    "color1": "301F0D",
+    "color2": "936A4A",
+    "index": "168"
+}, {
+    "color3": "EEDCC6",
+    "color0": "DC3C30",
+    "color1": "CAAE33",
+    "color2": "5B6A27",
+    "index": "169"
+}, {
+    "color3": "3D4935",
+    "color0": "969577",
+    "color1": "CA6259",
+    "color2": "C19E82",
+    "index": "170"
+}, {
+    "color3": "70B7BA",
+    "color0": "F1433F",
+    "color1": "F7E967",
+    "color2": "A9CF54",
+    "index": "171"
+}, {
+    "color3": "C0BCB6",
+    "color0": "1FBED6",
+    "color1": "97C30A",
+    "color2": "FF717E",
+    "index": "172"
+}, {
+    "color3": "9BCA3E",
+    "color0": "ED5314",
+    "color1": "FFB92A",
+    "color2": "FEEB51",
+    "index": "173"
+}, {
+    "color3": "1F7872",
+    "color0": "D13F31",
+    "color1": "DEDBA7",
+    "color2": "72B095",
+    "index": "174"
+}, {
+    "color3": "9CC5C9",
+    "color0": "A08689",
+    "color1": "CDB599",
+    "color2": "D5544F",
+    "index": "175"
+}, {
+    "color3": "6195C5",
+    "color0": "E39183",
+    "color1": "E49E7A",
+    "color2": "EECD86",
+    "index": "176"
+}, {
+    "color3": "505050",
+    "color0": "FF7260",
+    "color1": "9BD7D5",
+    "color2": "FFF5C3",
+    "index": "177"
+}, {
+    "color3": "D4E8C1",
+    "color0": "ED8A3F",
+    "color1": "F5D769",
+    "color2": "8DB87C",
+    "index": "178"
+}, {
+    "color3": "D3E397",
+    "color0": "EB6E44",
+    "color1": "FFF5C3",
+    "color2": "F8DCDC",
+    "index": "179"
+}, {
+    "color3": "1B1112",
+    "color0": "616536",
+    "color1": "A4E666",
+    "color2": "31B96E",
+    "index": "180"
+}, {
+    "color3": "350608",
+    "color0": "C73B0B",
+    "color1": "F2C545",
+    "color2": "978E43",
+    "index": "181"
+}, {
+    "color3": "A8B1B8",
+    "color0": "6D98AB",
+    "color1": "00275E",
+    "color2": "FEB729",
+    "index": "182"
+}, {
+    "color3": "62C2CC",
+    "color0": "FDB813",
+    "color1": "F68B1F",
+    "color2": "F17022",
+    "index": "183"
+}, {
+    "color3": "B80028",
+    "color0": "F2F5ED",
+    "color1": "FFC200",
+    "color2": "FF5B00",
+    "index": "184"
+}, {
+    "color3": "F4F4F4",
+    "color0": "1A2828",
+    "color1": "28AF63",
+    "color2": "C2D98B",
+    "index": "185"
+}, {
+    "color3": "333333",
+    "color0": "E8110F",
+    "color1": "FBC723",
+    "color2": "1B6AA5",
+    "index": "186"
+}, {
+    "color3": "C64521",
+    "color0": "E7DBBD",
+    "color1": "CEDFEF",
+    "color2": "525552",
+    "index": "187"
+}, {
+    "color3": "701112",
+    "color0": "424242",
+    "color1": "C5BD99",
+    "color2": "FFFFFF",
+    "index": "188"
+}, {
+    "color3": "4A4A4A",
+    "color0": "E2DC7C",
+    "color1": "A3CD39",
+    "color2": "F43E71",
+    "index": "189"
+}, {
+    "color3": "FF6D31",
+    "color0": "29A2C6",
+    "color1": "FFCB18",
+    "color2": "73B66B",
+    "index": "190"
+}, {
+    "color3": "533419",
+    "color0": "FFCC33",
+    "color1": "FF6600",
+    "color2": "A45209",
+    "index": "191"
+}, {
+    "color3": "2B2B2B",
+    "color0": "FF8F00",
+    "color1": "5A8F29",
+    "color2": "3C7DC4",
+    "index": "192"
+}, {
+    "color3": "42361E",
+    "color0": "FFB310",
+    "color1": "6F684E",
+    "color2": "FA0026",
+    "index": "193"
+}, {
+    "color3": "D1E6E7",
+    "color0": "EDBD3E",
+    "color1": "5B7778",
+    "color2": "93A8A9",
+    "index": "194"
+}, {
+    "color3": "D84E13",
+    "color0": "859797",
+    "color1": "919581",
+    "color2": "DEE0D5",
+    "index": "195"
+}, {
+    "color3": "41924B",
+    "color0": "FE8402",
+    "color1": "87E293",
+    "color2": "AFEAAA",
+    "index": "196"
+}, {
+    "color3": "DDECEF",
+    "color0": "484452",
+    "color1": "F8F2DA",
+    "color2": "C7AFBD",
+    "index": "197"
+}, {
+    "color3": "CFD6DE",
+    "color0": "F2BC00",
+    "color1": "FFF0BA",
+    "color2": "FF542E",
+    "index": "198"
+}, {
+    "color3": "FFFFFF",
+    "color0": "9C0063",
+    "color1": "D693BD",
+    "color2": "EFD3E7",
+    "index": "199"
+}, {
+    "color3": "FFFFFF",
+    "color0": "84596B",
+    "color1": "B58AA5",
+    "color2": "CECFCE",
+    "index": "200"
+}, {
+    "color3": "8C8984",
+    "color0": "005B9A",
+    "color1": "0191C8",
+    "color2": "74C2E1",
+    "index": "201"
+}, {
+    "color3": "CEFFCE",
+    "color0": "009A31",
+    "color1": "84CF96",
+    "color2": "C6E7CE",
+    "index": "202"
+}, {
+    "color3": "FFCC00",
+    "color0": "000066",
+    "color1": "E0F4FF",
+    "color2": "FFFFFF",
+    "index": "203"
+}, {
+    "color3": "000044",
+    "color0": "6699CC",
+    "color1": "003366",
+    "color2": "C0C0C0",
+    "index": "204"
+}, {
+    "color3": "CC6600",
+    "color0": "663300",
+    "color1": "CC9900",
+    "color2": "333300",
+    "index": "205"
+}, {
+    "color3": "003366",
+    "color0": "336699",
+    "color1": "FFCC66",
+    "color2": "FFFFFF",
+    "index": "206"
+}, {
+    "color3": "EEDB00",
+    "color0": "8B88FF",
+    "color1": "FF9C00",
+    "color2": "7BB31A",
+    "index": "207"
+}, {
+    "color3": "000000",
+    "color0": "333366",
+    "color1": "FFFFFF",
+    "color2": "FF9933",
+    "index": "208"
+}, {
+    "color3": "CCCCCC",
+    "color0": "FF9933",
+    "color1": "003399",
+    "color2": "99CCCC",
+    "index": "209"
+}, {
+    "color3": "000000",
+    "color0": "CC0000",
+    "color1": "FF6600",
+    "color2": "660099",
+    "index": "210"
+}, {
+    "color3": "663333",
+    "color0": "666633",
+    "color1": "999966",
+    "color2": "CC6666",
+    "index": "211"
+}, {
+    "color3": "333333",
+    "color0": "000044",
+    "color1": "555555",
+    "color2": "444444",
+    "index": "212"
+}, {
+    "color3": "CCCC99",
+    "color0": "9999CC",
+    "color1": "FFFFCC",
+    "color2": "99CC99",
+    "index": "213"
+}, {
+    "color3": "000000",
+    "color0": "CC3300",
+    "color1": "663333",
+    "color2": "FFCC99",
+    "index": "214"
+}, {
+    "color3": "003366",
+    "color0": "003333",
+    "color1": "CCCC99",
+    "color2": "666699",
+    "index": "215"
+}, {
+    "color3": "993366",
+    "color0": "333333",
+    "color1": "FFCC00",
+    "color2": "669966",
+    "index": "216"
+}, {
+    "color3": "266A2E",
+    "color0": "79BEDB",
+    "color1": "593E1A",
+    "color2": "6B78B4",
+    "index": "217"
+}, {
+    "color3": "005502",
+    "color0": "005A04",
+    "color1": "CCFFBB",
+    "color2": "3A5F0B",
+    "index": "218"
+}, {
+    "color3": "FFCC00",
+    "color0": "FF6600",
+    "color1": "666633",
+    "color2": "000099",
+    "index": "219"
+}, {
+    "color3": "FF9966",
+    "color0": "003366",
+    "color1": "3399FF",
+    "color2": "FFCC99",
+    "index": "220"
+}, {
+    "color3": "CDFFFF",
+    "color0": "400D12",
+    "color1": "4FD5D6",
+    "color2": "FF0000",
+    "index": "221"
+}, {
+    "color3": "003333",
+    "color0": "FF3333",
+    "color1": "999999",
+    "color2": "669999",
+    "index": "222"
+}, {
+    "color3": "660066",
+    "color0": "000000",
+    "color1": "CC99CC",
+    "color2": "FFFFFF",
+    "index": "223"
+}, {
+    "color3": "E86850",
+    "color0": "FFD800",
+    "color1": "587058",
+    "color2": "587498",
+    "index": "224"
+}, {
+    "color3": "C13100",
+    "color0": "CC6600",
+    "color1": "FFFBD0",
+    "color2": "FF9900",
+    "index": "225"
+}, {
+    "color3": "9A3334",
+    "color0": "217C7E",
+    "color1": "F3EFE0",
+    "color2": "3399FF",
+    "index": "226"
+}, {
+    "color3": "006699",
+    "color0": "996699",
+    "color1": "CCCCCC",
+    "color2": "000000",
+    "index": "227"
+}, {
+    "color3": "006699",
+    "color0": "996699",
+    "color1": "CCCCCC",
+    "color2": "000000",
+    "index": "228"
+}, {
+    "color3": "330000",
+    "color0": "3399CC",
+    "color1": "CDB99C",
+    "color2": "FFFFFF",
+    "index": "229"
+}, {
+    "color3": "3366CC",
+    "color0": "003399",
+    "color1": "3399FF",
+    "color2": "FFFFFF",
+    "index": "230"
+}, {
+    "color3": "003399",
+    "color0": "0099CC",
+    "color1": "CCFFCC",
+    "color2": "66CCFF",
+    "index": "231"
+}, {
+    "color3": "8C489F",
+    "color0": "443266",
+    "color1": "C3C3E5",
+    "color2": "F1F0FF",
+    "index": "232"
+}, {
+    "color3": "FF0000",
+    "color0": "FFFF66",
+    "color1": "FFCC00",
+    "color2": "FF9900",
+    "index": "233"
+}, {
+    "color3": "CCCC99",
+    "color0": "CCCCCC",
+    "color1": "003366",
+    "color2": "FFFFFF",
+    "index": "234"
+}, {
+    "color3": "834C24",
+    "color0": "1F1209",
+    "color1": "003366",
+    "color2": "FFF8DC",
+    "index": "235"
+}, {
+    "color3": "CC0000",
+    "color0": "6600CC",
+    "color1": "FFCC00",
+    "color2": "000000",
+    "index": "236"
+}, {
+    "color3": "990033",
+    "color0": "666633",
+    "color1": "CCCC99",
+    "color2": "FFFFFF",
+    "index": "237"
+}, {
+    "color3": "C0C0C0",
+    "color0": "000080",
+    "color1": "FFFFFF",
+    "color2": "000000",
+    "index": "238"
+}, {
+    "color3": "FF9900",
+    "color0": "097054",
+    "color1": "6599FF",
+    "color2": "FFDE00",
+    "index": "239"
+}, {
+    "color3": "b3b3b3",
+    "color0": "468a98",
+    "color1": "d9ac57",
+    "color2": "4b575c",
+    "index": "240"
+}, {
+    "color3": "e79686",
+    "color0": "a39391",
+    "color1": "716e77",
+    "color2": "ecd6c7",
+    "index": "241"
+}, {
+    "color3": "66b8c9",
+    "color0": "b3d9be",
+    "color1": "fd0000",
+    "color2": "fbf4f4",
+    "index": "242"
+}, {
+    "color3": "79a2a6",
+    "color0": "dcdede",
+    "color1": "232020",
+    "color2": "a4bf5b",
+    "index": "243"
+}, {
+    "color3": "128b8e",
+    "color0": "051181",
+    "color1": "fb3c3c",
+    "color2": "feb64a",
+    "index": "244"
+}, {
+    "color3": "e2525c",
+    "color0": "806f5c",
+    "color1": "f9ac3b",
+    "color2": "e28433",
+    "index": "245"
+}, {
+    "color3": "1b4a58",
+    "color0": "0e1f37",
+    "color1": "8d776e",
+    "color2": "f45249",
+    "index": "246"
+}, {
+    "color3": "19405e",
+    "color0": "febebc",
+    "color1": "fafaf9",
+    "color2": "3279ad",
+    "index": "247"
+}, {
+    "color3": "87a44f",
+    "color0": "f9cc49",
+    "color1": "a1a499",
+    "color2": "282523",
+    "index": "248"
+}, {
+    "color3": "f0dac7",
+    "color0": "403138",
+    "color1": "6a2d2b",
+    "color2": "9e4536",
+    "index": "249"
+}, {
+    "color3": "c19445",
+    "color0": "872325",
+    "color1": "ccbea5",
+    "color2": "312f2f",
+    "index": "250"
+}, {
+    "color3": "614f49",
+    "color0": "242d33",
+    "color1": "f24a4a",
+    "color2": "f1d1ba",
+    "index": "251"
+}, {
+    "color3": "a47c64",
+    "color0": "668b8a",
+    "color1": "9fb083",
+    "color2": "f9eed3",
+    "index": "252"
+}, {
+    "color3": "bac2c6",
+    "color0": "942514",
+    "color1": "fefefe",
+    "color2": "1c1c20",
+    "index": "253"
+}, {
+    "color3": "574c45",
+    "color0": "080604",
+    "color1": "ededed",
+    "color2": "cfb080",
+    "index": "254"
+}, {
+    "color3": "e6542b",
+    "color0": "334d8f",
+    "color1": "5bc4ed",
+    "color2": "feb545",
+    "index": "255"
+}, {
+    "color3": "886e69",
+    "color0": "d45246",
+    "color1": "fea477",
+    "color2": "f8f8fe",
+    "index": "256"
+}, {
+    "color3": "9f1b25",
+    "color0": "202228",
+    "color1": "aabdbd",
+    "color2": "f2f2ee",
+    "index": "257"
+}, {
+    "color3": "dfaf6a",
+    "color0": "444a5b",
+    "color1": "cc5856",
+    "color2": "78a4a1",
+    "index": "258"
+}, {
+    "color3": "4d4944",
+    "color0": "6a5d5a",
+    "color1": "cbaa81",
+    "color2": "d8c2b3",
+    "index": "259"
+}, {
+    "color3": "2d2d28",
+    "color0": "30a1aa",
+    "color1": "af1b1b",
+    "color2": "f0edf0",
+    "index": "260"
+}, {
+    "color3": "fe8c3e",
+    "color0": "736666",
+    "color1": "dbd8d3",
+    "color2": "343b3e",
+    "index": "261"
+}, {
+    "color3": "385098",
+    "color0": "2d2d33",
+    "color1": "d4d4d1",
+    "color2": "fefefe",
+    "index": "262"
+}, {
+    "color3": "e6462d",
+    "color0": "518f8b",
+    "color1": "e3e1c8",
+    "color2": "472c33",
+    "index": "263"
+}, {
+    "color3": "585d37",
+    "color0": "8f9435",
+    "color1": "514938",
+    "color2": "fffadf",
+    "index": "264"
+}, {
+    "color3": "96b7c2",
+    "color0": "d25b36",
+    "color1": "be9976",
+    "color2": "d4c5b9",
+    "index": "265"
+}, {
+    "color3": "c4bdb8",
+    "color0": "c30019",
+    "color1": "e3e3d9",
+    "color2": "103641",
+    "index": "266"
+}, {
+    "color3": "e1c399",
+    "color0": "8a0004",
+    "color1": "c60008",
+    "color2": "e7a634",
+    "index": "267"
+}, {
+    "color3": "e2e7e2",
+    "color0": "fecbba",
+    "color1": "6db3be",
+    "color2": "006a83",
+    "index": "268"
+}, {
+    "color3": "2c2e32",
+    "color0": "325151",
+    "color1": "d3dcdf",
+    "color2": "a94a40",
+    "index": "269"
+}, {
+    "color3": "e38b73",
+    "color0": "fac674",
+    "color1": "b9a795",
+    "color2": "e4ccb3",
+    "index": "270"
+}, {
+    "color3": "fe4446",
+    "color0": "247885",
+    "color1": "5ca7a5",
+    "color2": "fefefe",
+    "index": "271"
+}, {
+    "color3": "a89d3c",
+    "color0": "a4c1ce",
+    "color1": "f1d2b7",
+    "color2": "e39c5c",
+    "index": "272"
+}, {
+    "color3": "010409",
+    "color0": "00cff9",
+    "color1": "fe0036",
+    "color2": "fecc36",
+    "index": "273"
+}, {
+    "color3": "f98c60",
+    "color0": "29606b",
+    "color1": "b0d9d4",
+    "color2": "ffffff",
+    "index": "274"
+}, {
+    "color3": "dca186",
+    "color0": "8592ac",
+    "color1": "594e4c",
+    "color2": "7c665c",
+    "index": "275"
+}, {
+    "color3": "cc7112",
+    "color0": "16243c",
+    "color1": "002b52",
+    "color2": "edb408",
+    "index": "276"
+}, {
+    "color3": "aabc78",
+    "color0": "a2c8bb",
+    "color1": "e8b263",
+    "color2": "b0463c",
+    "index": "277"
+}, {
+    "color3": "008bca",
+    "color0": "f27d4a",
+    "color1": "e0305a",
+    "color2": "feeb5b",
+    "index": "278"
+}, {
+    "color3": "7c5441",
+    "color0": "4e6b2d",
+    "color1": "292920",
+    "color2": "f2eadd",
+    "index": "279"
+}, {
+    "color3": "b9c2c8",
+    "color0": "004c45",
+    "color1": "118077",
+    "color2": "52948b",
+    "index": "280"
+}, {
+    "color3": "201f2f",
+    "color0": "207ba1",
+    "color1": "e1982f",
+    "color2": "31364d",
+    "index": "281"
+}, {
+    "color3": "775845",
+    "color0": "d14035",
+    "color1": "eb8a3c",
+    "color2": "ebb481",
+    "index": "282"
+}, {
+    "color3": "c7cfc6",
+    "color0": "04202a",
+    "color1": "2e4040",
+    "color2": "5a6e65",
+    "index": "283"
+}, {
+    "color3": "2e3131",
+    "color0": "f8b831",
+    "color1": "416d85",
+    "color2": "f6f0e3",
+    "index": "284"
+}, {
+    "color3": "bb6b4e",
+    "color0": "1c0000",
+    "color1": "4f0804",
+    "color2": "9c331e",
+    "index": "285"
+}, {
+    "color3": "ecb83c",
+    "color0": "000928",
+    "color1": "d50025",
+    "color2": "f7f5f1",
+    "index": "286"
+}, {
+    "color3": "eb8b71",
+    "color0": "2987ba",
+    "color1": "2e496e",
+    "color2": "f2e9dd",
+    "index": "287"
+}, {
+    "color3": "f5c999",
+    "color0": "d6402d",
+    "color1": "fe7846",
+    "color2": "fafbfe",
+    "index": "288"
+}, {
+    "color3": "735247",
+    "color0": "4a4144",
+    "color1": "546baa",
+    "color2": "f69a77",
+    "index": "289"
+}, {
+    "color3": "7c5c3b",
+    "color0": "652024",
+    "color1": "b41b09",
+    "color2": "e8d29c",
+    "index": "290"
+}, {
+    "color3": "b28440",
+    "color0": "eadd00",
+    "color1": "7d7a15",
+    "color2": "543c20",
+    "index": "291"
+}, {
+    "color3": "dcc4a2",
+    "color0": "2f1b27",
+    "color1": "513533",
+    "color2": "b4442a",
+    "index": "292"
+}, {
+    "color3": "e2b400",
+    "color0": "c6d900",
+    "color1": "79a701",
+    "color2": "f58a2c",
+    "index": "293"
+}, {
+    "color3": "beb1b4",
+    "color0": "a10015",
+    "color1": "d52b15",
+    "color2": "efeee9",
+    "index": "294"
+}, {
+    "color3": "fcfefe",
+    "color0": "245c00",
+    "color1": "67a125",
+    "color2": "b2de81",
+    "index": "295"
+}, {
+    "color3": "e0b70c",
+    "color0": "e8e1d4",
+    "color1": "d4c1a9",
+    "color2": "857465",
+    "index": "296"
+}, {
+    "color3": "e74d08",
+    "color0": "7e152e",
+    "color1": "d51600",
+    "color2": "ebad00",
+    "index": "297"
+}, {
+    "color3": "221a12",
+    "color0": "f67504",
+    "color1": "b8d00a",
+    "color2": "f46a56",
+    "index": "298"
+}, {
+    "color3": "80593b",
+    "color0": "fdf1e2",
+    "color1": "fb964d",
+    "color2": "c50000",
+    "index": "299"
+}, {
+    "color3": "a11f0b",
+    "color0": "f2eb69",
+    "color1": "b9ce4a",
+    "color2": "e63f0a",
+    "index": "300"
+}, {
+    "color3": "fef1e1",
+    "color0": "f9ae08",
+    "color1": "f9802d",
+    "color2": "f94032",
+    "index": "301"
+}, {
+    "color3": "466624",
+    "color0": "4a3e53",
+    "color1": "cf3425",
+    "color2": "f0bf57",
+    "index": "302"
+}, {
+    "color3": "fbd373",
+    "color0": "c1e0da",
+    "color1": "fecbaa",
+    "color2": "ffeb94",
+    "index": "303"
+}, {
+    "color3": "c8a569",
+    "color0": "af4324",
+    "color1": "662d1a",
+    "color2": "eadab0",
+    "index": "304"
+}, {
+    "color3": "f69e53",
+    "color0": "4695d6",
+    "color1": "fed95c",
+    "color2": "fa6e57",
+    "index": "305"
+}, {
+    "color3": "eb5651",
+    "color0": "a1bd93",
+    "color1": "e1dda1",
+    "color2": "90a9c6",
+    "index": "306"
+}, {
+    "color3": "f9a602",
+    "color0": "f60025",
+    "color1": "f5ede1",
+    "color2": "f15b00",
+    "index": "307"
+}, {
+    "color3": "cfe0f9",
+    "color0": "1c1e24",
+    "color1": "283654",
+    "color2": "4d638c",
+    "index": "308"
+}, {
+    "color3": "eb5c2f",
+    "color0": "b8d9c2",
+    "color1": "742906",
+    "color2": "f9ca79",
+    "index": "309"
+}, {
+    "color3": "739e3b",
+    "color0": "ec693f",
+    "color1": "f49452",
+    "color2": "fafbfd",
+    "index": "310"
+}, {
+    "color3": "b38766",
+    "color0": "606c70",
+    "color1": "ccccbf",
+    "color2": "ddbb93",
+    "index": "311"
+}, {
+    "color3": "f42800",
+    "color0": "00283b",
+    "color1": "1d646c",
+    "color2": "f0f2cc",
+    "index": "312"
+}, {
+    "color3": "c5cf65",
+    "color0": "0d1b06",
+    "color1": "fefefe",
+    "color2": "5c811a",
+    "index": "313"
+}, {
+    "color3": "ca6217",
+    "color0": "32868a",
+    "color1": "7ca92d",
+    "color2": "f4e354",
+    "index": "314"
+}, {
+    "color3": "3e6a45",
+    "color0": "4e302d",
+    "color1": "ca0000",
+    "color2": "e3e88b",
+    "index": "315"
+}, {
+    "color3": "d99400",
+    "color0": "2d2200",
+    "color1": "6d6601",
+    "color2": "bf5704",
+    "index": "316"
+}, {
+    "color3": "9abf1a",
+    "color0": "f42448",
+    "color1": "f96574",
+    "color2": "fed44d",
+    "index": "317"
+}, {
+    "color3": "cf9482",
+    "color0": "363236",
+    "color1": "2d4160",
+    "color2": "725f5a",
+    "index": "318"
+}, {
+    "color3": "8db842",
+    "color0": "ea8943",
+    "color1": "f9da24",
+    "color2": "4a7246",
+    "index": "319"
+}, {
+    "color3": "aacfbf",
+    "color0": "73afa7",
+    "color1": "d9b44a",
+    "color2": "4d6356",
+    "index": "320"
+}, {
+    "color3": "e4dd44",
+    "color0": "001a25",
+    "color1": "043651",
+    "color2": "ef800d",
+    "index": "321"
+}, {
+    "color3": "dde065",
+    "color0": "989cab",
+    "color1": "5b525c",
+    "color2": "eb94a2",
+    "index": "322"
+}, {
+    "color3": "1794ac",
+    "color0": "f0f0f0",
+    "color1": "bab8bd",
+    "color2": "a1d4e2",
+    "index": "323"
+}, {
+    "color3": "c89c0e",
+    "color0": "8b220d",
+    "color1": "1c414b",
+    "color2": "994e0d",
+    "index": "324"
+}, {
+    "color3": "69af86",
+    "color0": "f3cc6f",
+    "color1": "de7921",
+    "color2": "20938b",
+    "index": "325"
+}, {
+    "color3": "b2c000",
+    "color0": "4ab4f4",
+    "color1": "b5b7b4",
+    "color2": "203f49",
+    "index": "326"
+}, {
+    "color3": "7ca2a1",
+    "color0": "31464f",
+    "color1": "86aa40",
+    "color2": "33655b",
+    "index": "327"
+}, {
+    "color3": "f18c9d",
+    "color0": "97d9c6",
+    "color1": "5ac6aa",
+    "color2": "e4d528",
+    "index": "328"
+}, {
+    "color3": "3e661a",
+    "color0": "375c95",
+    "color1": "f96441",
+    "color2": "feb900",
+    "index": "329"
+}, {
+    "color3": "6fb88e",
+    "color0": "011b1d",
+    "color1": "004445",
+    "color2": "2a7772",
+    "index": "330"
+}, {
+    "color3": "7c4326",
+    "color0": "2e4500",
+    "color1": "466900",
+    "color2": "a1c323",
+    "index": "331"
+}, {
+    "color3": "c2dde4",
+    "color0": "003a44",
+    "color1": "06565b",
+    "color2": "66a4ac",
+    "index": "332"
+}, {
+    "color3": "588133",
+    "color0": "4e505f",
+    "color1": "66809c",
+    "color2": "adbd37",
+    "index": "333"
+}, {
+    "color3": "a33620",
+    "color0": "442019",
+    "color1": "693b3b",
+    "color2": "b85436",
+    "index": "334"
+}, {
+    "color3": "743525",
+    "color0": "8eaec4",
+    "color1": "326986",
+    "color2": "283132",
+    "index": "335"
+}, {
+    "color3": "89da59",
+    "color0": "F98866",
+    "color1": "ff420e",
+    "color2": "80bd9e",
+    "index": "336"
+}, {
+    "color3": "f6c2c2",
+    "color0": "d4edf4",
+    "color1": "e2f2d5",
+    "color2": "f9fbba",
+    "index": "337"
+}, {
+    "color3": "cc0063",
+    "color0": "00b796",
+    "color1": "00d2f1",
+    "color2": "86269b",
+    "index": "338"
+}, {
+    "color3": "0241e2",
+    "color0": "000000",
+    "color1": "ff534b",
+    "color2": "021542",
+    "index": "339"
+}, {
+    "color3": "bfe1bf",
+    "color0": "de5842",
+    "color1": "fcd059",
+    "color2": "ededea",
+    "index": "340"
+}, {
+    "color3": "02c9c9",
+    "color0": "e8a0b8",
+    "color1": "ffc300",
+    "color2": "bccf3d",
+    "index": "341"
+}, {
+    "color3": "000000",
+    "color0": "ff5108",
+    "color1": "fffdf8",
+    "color2": "ff2321",
+    "index": "342"
+}, {
+    "color3": "2d3033",
+    "color0": "fff568",
+    "color1": "0c98cf",
+    "color2": "0aa0d9",
+    "index": "343"
+}, {
+    "color3": "ef9950",
+    "color0": "28be9b",
+    "color1": "92dce0",
+    "color2": "609194",
+    "index": "344"
+}, {
+    "color3": "73503c",
+    "color0": "d94e67",
+    "color1": "f2d8a7",
+    "color2": "a68572",
+    "index": "345"
+}, {
+    "color3": "fb6964",
+    "color0": "333332",
+    "color1": "1352a2",
+    "color2": "ffd464",
+    "index": "346"
+}, {
+    "color3": "333332",
+    "color0": "cbbb58",
+    "color1": "9aadbd",
+    "color2": "c05949",
+    "index": "347"
+}, {
+    "color3": "a68f58",
+    "color0": "f15d58",
+    "color1": "363635",
+    "color2": "83bf17",
+    "index": "348"
+}, {
+    "color3": "f5df65",
+    "color0": "d14d28",
+    "color1": "59c8df",
+    "color2": "2b9464",
+    "index": "349"
+}, {
+    "color3": "77ba9b",
+    "color0": "293e6a",
+    "color1": "3b5998",
+    "color2": "74aaf7",
+    "index": "350"
+}, {
+    "color3": "5c2d50",
+    "color0": "fce014",
+    "color1": "cd1719",
+    "color2": "d40e52",
+    "index": "351"
+}, {
+    "color3": "c4d4af",
+    "color0": "f17d80",
+    "color1": "737495",
+    "color2": "68a8ad",
+    "index": "352"
+}, {
+    "color3": "ffe600",
+    "color0": "3a0256",
+    "color1": "b9006e",
+    "color2": "f05a28",
+    "index": "353"
+}, {
+    "color3": "424242",
+    "color0": "ffd900",
+    "color1": "000000",
+    "color2": "00ccd6",
+    "index": "354"
+}, {
+    "color3": "1499d3",
+    "color0": "e74700",
+    "color1": "3d3d3d",
+    "color2": "4d6684",
+    "index": "355"
+}, {
+    "color3": "17a697",
+    "color0": "d93240",
+    "color1": "8fd4d9",
+    "color2": "638ca6",
+    "index": "356"
+}, {
+    "color3": "60047a",
+    "color0": "f2671f",
+    "color1": "c91b26",
+    "color2": "9c0f5f",
+    "index": "357"
+}, {
+    "color3": "4aaaa5",
+    "color0": "e45f56",
+    "color1": "a3d39c",
+    "color2": "7accc8",
+    "index": "358"
+}, {
+    "color3": "fb6648",
+    "color0": "3b3a35",
+    "color1": "20457c",
+    "color2": "5e3448",
+    "index": "359"
+}, {
+    "color3": "f05b47",
+    "color0": "bff073",
+    "color1": "0dc9f7",
+    "color2": "7f7f7f",
+    "index": "360"
+}, {
+    "color3": "59323c",
+    "color0": "8c6954",
+    "color1": "bfaf80",
+    "color2": "f2eeb3",
+    "index": "361"
+}, {
+    "color3": "0087cb",
+    "color0": "ffa200",
+    "color1": "00a03e",
+    "color2": "24a8ac",
+    "index": "362"
+}, {
+    "color3": "4298b5",
+    "color0": "dd5f32",
+    "color1": "e19d29",
+    "color2": "92b06a",
+    "index": "363"
+}, {
+    "color3": "e9e0d6",
+    "color0": "354458",
+    "color1": "3a9ad9",
+    "color2": "29aba4",
+    "index": "364"
+}, {
+    "color3": "53bbf4",
+    "color0": "ffac00",
+    "color1": "ff432e",
+    "color2": "ff85cb",
+    "index": "365"
+}, {
+    "color3": "da4624",
+    "color0": "6e9ecf",
+    "color1": "ffd041",
+    "color2": "de593a",
+    "index": "366"
+}, {
+    "color3": "f07818",
+    "color0": "5e412f",
+    "color1": "fcebb6",
+    "color2": "78c0a8",
+    "index": "367"
+}, {
+    "color3": "fbe2b4",
+    "color0": "00c8f8",
+    "color1": "59c4c5",
+    "color2": "ffc33c",
+    "index": "368"
+}, {
+    "color3": "df514c",
+    "color0": "d0c91f",
+    "color1": "626262",
+    "color2": "008bba",
+    "index": "369"
+}, {
+    "color3": "d96459",
+    "color0": "588c73",
+    "color1": "f2e394",
+    "color2": "f2ae72",
+    "index": "370"
+}, {
+    "color3": "1fda9a",
+    "color0": "db3340",
+    "color1": "e8b71a",
+    "color2": "f7eac8",
+    "index": "371"
+}, {
+    "color3": "c6d5cd",
+    "color0": "e94c6f",
+    "color1": "542733",
+    "color2": "5a6a62",
+    "index": "372"
+}, {
+    "color3": "f38630",
+    "color0": "69d2e7",
+    "color1": "a7dbdb",
+    "color2": "e0e4cc",
+    "index": "373"
+}, {
+    "color3": "6C49B8",
+    "color0": "379392",
+    "color1": "4FB0C6",
+    "color2": "4F86C6",
+    "index": "374"
+}, {
+    "color3": "EC6A5C",
+    "color0": "AF4034",
+    "color1": "3E4348",
+    "color2": "C65146",
+    "index": "375"
+}, {
+    "color3": "9B8281",
+    "color0": "D09E88",
+    "color1": "FADAD8",
+    "color2": "534847",
+    "index": "376"
+}, {
+    "color3": "353848",
+    "color0": "a3c9c7",
+    "color1": "cb7575",
+    "color2": "ef9e9f",
+    "index": "377"
+}, {
+    "color3": "2b90d9",
+    "color0": "282c37",
+    "color1": "9baec8",
+    "color2": "d9e1e8",
+    "index": "378"
+}, {
+    "color3": "CDBB79",
+    "color0": "814374",
+    "color1": "51A39D",
+    "color2": "B7695C",
+    "index": "379"
+}, {
+    "color3": "F4D00C",
+    "color0": "004C70",
+    "color1": "0093D1",
+    "color2": "F2635F",
+    "index": "380"
+}, {
+    "color3": "00AAA0",
+    "color0": "462066",
+    "color1": "FFB85F",
+    "color2": "FF7A5A",
+    "index": "381"
+}, {
+    "color3": "C25B56",
+    "color0": "525564",
+    "color1": "74828F",
+    "color2": "96C0CE",
+    "index": "382"
+}, {
+    "color3": "5D4C46",
+    "color0": "44B3C2",
+    "color1": "F1A94E",
+    "color2": "E45641",
+    "index": "383"
+}, {
+    "color3": "F8F8F2",
+    "color0": "6F3662",
+    "color1": "FF7182",
+    "color2": "FFAE5D",
+    "index": "384"
+}, {
+    "color3": "000000",
+    "color0": "0072BB",
+    "color1": "FF4C3B",
+    "color2": "FFD034",
+    "index": "385"
+}, {
+    "color3": "03a6ff",
+    "color0": "a3daff",
+    "color1": "1ec0ff",
+    "color2": "0080ff",
+    "index": "386"
+}, {
+    "color3": "454552",
+    "color0": "e85a71",
+    "color1": "d8e9ef",
+    "color2": "4ea1d3",
+    "index": "387"
+}, {
+    "color3": "08182b",
+    "color0": "45d9fd",
+    "color1": "f4f4f4",
+    "color2": "ee2560",
+    "index": "388"
+}, {
+    "color3": "252c41",
+    "color0": "f1404b",
+    "color1": "dddfe6",
+    "color2": "f4f5f9",
+    "index": "389"
+}, {
+    "color3": "fbd14b",
+    "color0": "fffcf0",
+    "color1": "dedcee",
+    "color2": "6a60a9",
+    "index": "390"
+}, {
+    "color3": "f8ca00",
+    "color0": "490a3d",
+    "color1": "bd1550",
+    "color2": "e97f02",
+    "index": "391"
+}, {
+    "color3": "343838",
+    "color0": "00dffc",
+    "color1": "008c9e",
+    "color2": "005f6b",
+    "index": "392"
+}, {
+    "color3": "c8c8a9",
+    "color0": "fe4365",
+    "color1": "fc9d9a",
+    "color2": "f9cdad",
+    "index": "393"
+}, {
+    "color3": "cbe86b",
+    "color0": "cbe86b",
+    "color1": "1c140d",
+    "color2": "f2e9e1",
+    "index": "394"
+}, {
+    "color3": "3b8686",
+    "color0": "cff09e",
+    "color1": "a8dba8",
+    "color2": "79bd9a",
+    "index": "395"
+}, {
+    "color3": "272625",
+    "color0": "fff1b9",
+    "color1": "5e5e5f",
+    "color2": "3f4040",
+    "index": "396"
+}, {
+    "color3": "274555",
+    "color0": "ff7761",
+    "color1": "fdc23e",
+    "color2": "f9a11b",
+    "index": "397"
+}, {
+    "color3": "5c196b",
+    "color0": "fffff5",
+    "color1": "ffda8e",
+    "color2": "80d4f6",
+    "index": "398"
+}, {
+    "color3": "34314c",
+    "color0": "ff7473",
+    "color1": "ffc952",
+    "color2": "47b8e0",
+    "index": "399"
+}, {
+    "color3": "004e66",
+    "color0": "e1eef6",
+    "color1": "ff5f2e",
+    "color2": "fcbe32",
+    "index": "400"
+}, {
+    "color3": "333030",
+    "color0": "a3a1a1",
+    "color1": "e3dede",
+    "color2": "8b8687",
+    "index": "401"
+}, {
+    "color3": "492540",
+    "color0": "f6ea8c",
+    "color1": "f26d5b",
+    "color2": "c03546",
+    "index": "402"
+}, {
+    "color3": "feee7d",
+    "color0": "a5dff9",
+    "color1": "ef5285",
+    "color2": "60c5ba",
+    "index": "403"
+}, {
+    "color3": "f9320c",
+    "color0": "f9c00c",
+    "color1": "00b9f1",
+    "color2": "7200da",
+    "index": "404"
+}, {
+    "color3": "3C3530",
+    "color0": "F16B6F",
+    "color1": "C5C6B6",
+    "color2": "AACD6E",
+    "index": "405"
+}, {
+    "color3": "218380",
+    "color0": "FFBC42",
+    "color1": "D81159",
+    "color2": "8F2D56",
+    "index": "406"
+}, {
+    "color3": "41D3BD",
+    "color0": "DE6449",
+    "color1": "791E94",
+    "color2": "FFFFF2",
+    "index": "407"
+}, {
+    "color3": "1F2124",
+    "color0": "F6B352",
+    "color1": "F68657",
+    "color2": "383A3F",
+    "index": "408"
+}, {
+    "color3": "090707",
+    "color0": "30A9DE",
+    "color1": "EFDC05",
+    "color2": "E53A40",
+    "index": "409"
+}, {
+    "color3": "F2F2F2",
+    "color0": "2B2B2B",
+    "color1": "F06D06",
+    "color2": "00A0FF",
+    "index": "410"
+}, {
+    "color3": "42B4E7",
+    "color0": "2C3E50",
+    "color1": "FC6621",
+    "color2": "EDF1F2",
+    "index": "411"
+}, {
+    "color3": "FF4B68",
+    "color0": "004182",
+    "color1": "118DF0",
+    "color2": "FBFFA3",
+    "index": "412"
+}, {
+    "color3": "FFA700",
+    "color0": "008744",
+    "color1": "0057e7",
+    "color2": "D62D20",
+    "index": "413"
+}, {
+    "color3": "F7FAFA",
+    "color0": "0F2105",
+    "color1": "2BDE73",
+    "color2": "00A0FF",
+    "index": "414"
+}, {
+    "color3": "FFFFFF",
+    "color0": "444444",
+    "color1": "28CC75",
+    "color2": "298EEA",
+    "index": "415"
+}, {
+    "color3": "ECF0F1",
+    "color0": "19191A",
+    "color1": "F1C40F",
+    "color2": "607D8B",
+    "index": "416"
+}, {
+    "color3": "F5F5F5",
+    "color0": "003246",
+    "color1": "E4491C",
+    "color2": "0387B1",
+    "index": "417"
+}, {
+    "color3": "FFFFFF",
+    "color0": "BEC2C5",
+    "color1": "FF0000",
+    "color2": "003061",
+    "index": "418"
+}];
+cc.UGCArrs = [{
+    "color3": "39ab94",
+    "color0": "89c2a2",
+    "color1": "1f6e6a",
+    "color2": "202c2c",
+    "isUGC": 1,
+    "index": "0",
+    "identifier": "defaultUGC"
+}];
+module.exports = cc;
