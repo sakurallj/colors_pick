@@ -87,7 +87,6 @@ Page({
     onPageScroll(e) {
         let scrollTop = e.scrollTop,
             showTop = that.data.showTop;
-        console.log("onPageScroll", scrollTop, that.windowHeight);
         if (scrollTop >= that.windowHeight / 2 && !showTop) {
             that.setData({
                 showTop: true

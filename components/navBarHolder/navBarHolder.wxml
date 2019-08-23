@@ -1,0 +1,3 @@
+<view class="place_holder" style="{{!!navHeight?'height:'+navHeight+'px':''}}">
+
+</view>

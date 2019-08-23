@@ -3,6 +3,8 @@ let that;
 let app = getApp(),
     api = app.api,
     util = app.util;
+// 在页面中定义插屏广告
+let interstitialAd = null
 Page({
     data: {
         showTop: false
@@ -16,9 +18,26 @@ Page({
                 opt: opt
             });
         }
-        console.log("page onLoad");
         let info = util.getSystemInfo();
         that.windowHeight = info.windowHeight;
+
+      // 在页面onLoad回调事件中创建插屏广告实例
+      if (wx.createInterstitialAd) {
+        interstitialAd = wx.createInterstitialAd({
+          adUnitId: 'adunit-ead5b04b8df5bc7a'
+        })
+        interstitialAd.onLoad(() => { console.log("interstitialAd.onLoad"); })
+        interstitialAd.onError((err) => { console.log("interstitialAd.onError",err); })
+        interstitialAd.onClose(() => { console.log("interstitialAd.onClose" ); })
+
+
+        if (interstitialAd) {
+          interstitialAd.show().catch((err) => {
+            console.error(err)
+          })
+        }
+      }
+
     },
     initColors() {
         api.initColors().then(colors => {
@@ -44,6 +63,7 @@ Page({
         // that.showDialog("color_detail")
         let opt = that.data.opt;
         that.doLoadOpt(opt);
+
     },
     onHide() {
         this.hiddenDialog();
@@ -96,7 +116,6 @@ Page({
         let scrollTop = e.scrollTop,
             showTop = that.data.showTop;
         that.scrollTop = scrollTop;
-        console.log("onPageScroll", scrollTop, that.windowHeight);
         if (scrollTop >= that.windowHeight / 2 && !showTop) {
             that.setData({
                 showTop: true

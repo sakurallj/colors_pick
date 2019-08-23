@@ -4,7 +4,6 @@
     "navigationBarTitleText": "拾色",
     "backgroundColor": "#858C96",
     "backgroundTextStyle": "light",
-    "usingComponents": {
-        "dialog": "/components/dialog/dialog"
+    "usingComponents": { 
     }
 }

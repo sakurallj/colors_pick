@@ -2,14 +2,14 @@
     "pages": [
         "pages/index/index",
         "pages/my/my",
-        "pages/pick/pick" ,
-                "pages/about/about"
+        "pages/pick/pick",
+        "pages/about/about"
     ],
     "cloud": true,
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "色卡拾取",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
@@ -31,13 +31,7 @@
                 "text": "拾色",
                 "iconPath": "/images/search.png",
                 "selectedIconPath": "/images/search_active.png"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "关于",
-                "iconPath": "/images/about.png",
-                "selectedIconPath": "/images/about_active.png"
-            }
+            } 
         ],
         "color": "#B1B5BB",
         "selectedColor": "#F0F1F2",

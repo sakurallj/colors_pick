@@ -1,3 +1,4 @@
+<navBarHolder></navBarHolder>
 <view class='colors_container' wx:if="{{has_like||colors.UGCArrs.length>0}}">
     <view class='color_item left' wx:for="{{colors.UGCArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}" data-index="{{index}}">
         <view class='color_item_title cut'>{{item.name}}</view>
@@ -17,9 +18,21 @@
         <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
     </view>
     <view class='clear_both'></view>
+    <view class="ad_top">
+        <ad class="ad" unit-id="adunit-1124d8d6c60595d7"></ad>
+    </view>
 </view>
-<view class='colors_container_empty' wx:else>
-    还没有自己喜欢的颜色，去收藏吧
-</view>
+<block wx:else>
+    <view class='colors_container_empty'>
+        还没有自己喜欢的颜色，去收藏吧
+    </view>
+    <view class="ad_top">
+        <ad class="ad" unit-id="adunit-1124d8d6c60595d7"></ad>
+    </view>
+</block>
+
 <image class='goto_top_img' src="/images/goto_top.png" wx:if="{{showTop==1}}" catchtap='gotoTop'></image>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}" bind:deleteCard="deleteCard"></dialog>
+
+<tabBarShadow></tabBarShadow>
+<navBar bindGoBack="onGoBack" navStyle="title" navTitle="我的"></navBar>
