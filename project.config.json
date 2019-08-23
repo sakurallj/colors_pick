@@ -16,6 +16,8 @@
 	"appid": "wxfab83528e76d3f2e",
 	"projectname": "color_picker",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/pick/pick",
         "pages/index/index",
         "pages/my/my",
-        "pages/pick/pick" ,
-                "pages/about/about"
+        "pages/about/about"
     ],
     "cloud": true,
     "window": {
@@ -15,6 +15,12 @@
     "tabBar": {
         "list": [
             {
+                "pagePath": "pages/pick/pick",
+                "text": "拾色",
+                "iconPath": "/images/search.png",
+                "selectedIconPath": "/images/search_active.png"
+            },
+            {
                 "pagePath": "pages/index/index",
                 "text": "色卡",
                 "iconPath": "/images/home.png",
@@ -25,23 +31,12 @@
                 "text": "我的",
                 "iconPath": "/images/mine.png",
                 "selectedIconPath": "/images/mine_active.png"
-            },
-            {
-                "pagePath": "pages/pick/pick",
-                "text": "拾色",
-                "iconPath": "/images/search.png",
-                "selectedIconPath": "/images/search_active.png"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "关于",
-                "iconPath": "/images/about.png",
-                "selectedIconPath": "/images/about_active.png"
             }
         ],
         "color": "#B1B5BB",
         "selectedColor": "#F0F1F2",
         "backgroundColor": "#5D656F",
         "borderStyle": "black"
-    }
+    },
+    "sitemapLocation": "sitemap.json"
 }
