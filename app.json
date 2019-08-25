@@ -25,6 +25,7 @@
     "tabBar": {
         "list": [
             {
+                "pagePath": "pages/pick/pick",
                 "text": "",
                 "iconPath": "/images/pick.png",
                 "selectedIconPath": "/images/pick_active.png"
