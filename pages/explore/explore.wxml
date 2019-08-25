@@ -1,7 +1,8 @@
 <navBarHolder></navBarHolder>
 <view class='container'>
-    <view class='item'>
-        
+    <view class='item' wx:for="{{datas}}">
+        <view class="item_cell">
+        </view>
     </view>
     <view class="ad_top">
         <ad class="ad" unit-id="adunit-cc68f5ae50e6d817"></ad>
