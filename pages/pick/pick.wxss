@@ -152,5 +152,10 @@
     width: 160rpx;
     border: 1px solid #fff;
     text-align: center;
-    border-radius: 6rpx ;
+    border-radius: 6rpx;
+}
+
+.ad {
+    margin-top: 30rpx;
+    border-radius: 10rpx;
 }

@@ -1,7 +1,6 @@
 <navBarHolder></navBarHolder>
 <view class='colors_container' wx:if="{{colors.builtInArrs.length>0}}">
-    <view class='color_item' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem'
-          data-item="{{item}}">
+    <view class='color_item' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}">
         <view class='color_item_title cut'>{{item.name}}</view>
         <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
         <view class='color_item_cell_1' style='background:#{{item.color0}}'></view>
@@ -14,7 +13,5 @@
     </view>
 </view>
 
-<image class='goto_top_img' src="/images/goto_top.png" wx:if="{{showTop==1}}" catchtap='gotoTop'></image>
-<dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
 <tabBarShadow></tabBarShadow>
-<navBar bindGoBack="onGoBack" navStyle="title" navTitle="色卡"></navBar>
+<navBar bindGoBack="onGoBack" navStyle="title_left" navTitle="探索"></navBar>

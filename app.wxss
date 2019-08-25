@@ -1,5 +1,5 @@
-page{
-      background: linear-gradient( #858C96,#414854);
+page {
+    background: linear-gradient(#858c96, #414854);
 }
 
 .cut {
@@ -8,6 +8,7 @@ page{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .left {
     float: left;
 }

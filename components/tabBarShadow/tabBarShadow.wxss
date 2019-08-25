@@ -1,0 +1,8 @@
+.shadow {
+  box-shadow: 0 0rpx 20rpx rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 2rpx;
+}

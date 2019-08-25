@@ -80,7 +80,7 @@
 .cd_dialog {
     height: 620rpx;
     width: 520rpx;
-    margin-top: 140rpx;
+    margin-top: 20vh;
     padding: 40rpx;
     box-sizing: border-box;
 }
@@ -216,7 +216,7 @@ button.cd_bottom_item::after {
 .cc_sub_dialog {
     width: 540rpx;
     height: 324rpx;
-    margin-top: 200rpx;
+    margin-top: 22vh;
     color: #333;
     text-align: center;
     padding: 40rpx;
@@ -275,6 +275,6 @@ button.cd_bottom_item::after {
     height: 50rpx;
     z-index: 100;
     position: absolute;
-    top: 24rpx;
-    right: 24rpx;
+    top: 15vh;
+    right: 50rpx;
 }

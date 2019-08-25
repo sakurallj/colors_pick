@@ -1,3 +1,4 @@
+<navBarHolder></navBarHolder>
 <view class='colors_container'>
     <view class='color_item left' style='background:#{{init_color.color3}}' bindtap='chooseItem' data-item="{{init_color}}">
         <view class='color_item_cell_2' style='background:#{{init_color.color1}}'></view>
@@ -44,6 +45,7 @@
             </movable-area>
         </view>
     </view>
+    <ad class="ad" unit-id="adunit-52cd5d12f66ddde3"></ad>
     <block wx:if="{{src}}">
         <view class='hiden_text'>以下内容本该隐藏的，但是因小程序的局限，我们无法隐藏，很抱歉，没能给您带来尽美的产品</view>
         <canvas class='pic_canvas' style="width: {{canvasInfo.width}}rpx; height:  {{canvasInfo.height}}rpx;" canvas-id="ch_pic_canvas"></canvas>
@@ -51,3 +53,5 @@
 
 </view>
 <dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
+<tabBarShadow></tabBarShadow>
+<navBar navStyle="title_left" navTitle="取色" ></navBar>

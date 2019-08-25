@@ -1,4 +1,4 @@
-let default_colors = require('../..//utils/default_colors.js');
+
 let that, app = getApp(),
     api = app.api,
     util = app.util;
@@ -87,7 +87,6 @@ Page({
     onPageScroll(e) {
         let scrollTop = e.scrollTop,
             showTop = that.data.showTop;
-        console.log("onPageScroll", scrollTop, that.windowHeight);
         if (scrollTop >= that.windowHeight / 2 && !showTop) {
             that.setData({
                 showTop: true

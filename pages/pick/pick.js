@@ -1,9 +1,8 @@
 let that;
-let utils = require('../..//utils/util.js');
-utils = utils.utils;
 let app = getApp();
 let appData = app.data;
 let api = app.api;
+
 Page({
 
     /**
@@ -17,27 +16,25 @@ Page({
             "color2": "084C61",
             "index": -1
         },
-        // src: "/images/trst.jpg",
         pickImgInfo: {
-            // src: "/images/gps.png",
-            width: utils.rpxToPx(90),
-            height: utils.rpxToPx(90),
+            width: app.util.rpxToPx(90),
+            height: app.util.rpxToPx(90),
         },
         canvasInfo: {
             width: 630,
             height: 394
         },
         movableViewInfo: [{
-            x: utils.rpxToPx(80),
-            y: utils.rpxToPx(80),
+            x: app.util.rpxToPx(80),
+            y: app.util.rpxToPx(80),
         }, {
-            x: utils.rpxToPx(440),
-            y: utils.rpxToPx(80),
+            x: app.util.rpxToPx(440),
+            y: app.util.rpxToPx(80),
         }, {
-            x: utils.rpxToPx(80),
+            x: app.util.rpxToPx(80),
             y: 0,
         }, {
-            x: utils.rpxToPx(440),
+            x: app.util.rpxToPx(440),
             y: 0,
         }],
         movableViewColorInfo: [],
@@ -48,20 +45,20 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
         that = this;
     },
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
         // that.drawCanvas();
         that.dialog = that.selectComponent("#dialog");
     },
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function(event) {
+    onShareAppMessage: function (event) {
         return app.createShareAppMessageParams(event);
     },
     choosePic() {
@@ -69,7 +66,7 @@ Page({
             count: 1,
             sizeType: ['original', 'compressed'],
             sourceType: ['album', 'camera'],
-            success: function(res) {
+            success: function (res) {
                 console.log("choosePic", res);
                 that.setData({
                     src: res.tempFilePaths[0]
@@ -85,13 +82,13 @@ Page({
             movableViewInfo = that.data.movableViewInfo;
         wx.getImageInfo({
             src: that.data.src,
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
                 let height = res.height,
                     width = res.width,
                     imgWidth = canvasInfo.width,
                     imgHeight = imgWidth * height / width,
-                    y = utils.rpxToPx(imgHeight - 80 - 90),
+                    y = app.util.rpxToPx(imgHeight - 80 - 90),
                     ctx = that.ctx;
                 canvasInfo.height = imgHeight;
                 movableViewInfo[2].y = y;
@@ -101,9 +98,9 @@ Page({
                     canvasInfo: canvasInfo
                 });
                 ctx.clearRect(0, 0, canvasInfo.width, canvasInfo.height)
-                ctx.drawImage(that.data.src, 0, 0, utils.rpxToPx(canvasInfo.width), utils.rpxToPx(canvasInfo.height));
+                ctx.drawImage(that.data.src, 0, 0, app.util.rpxToPx(canvasInfo.width), app.util.rpxToPx(canvasInfo.height));
                 ctx.draw();
-                setTimeout(function() {
+                setTimeout(function () {
                     that.initPointImageColor(0);
                 }, 500);
             }
@@ -117,11 +114,11 @@ Page({
             console.log("big");
             return false;
         }
-        console.log(movableViewInfo[index].x - utils.rpxToPx(90 / 2), movableViewInfo[index].y - utils.rpxToPx(90));
+        console.log(movableViewInfo[index].x - app.util.rpxToPx(90 / 2), movableViewInfo[index].y - app.util.rpxToPx(90));
         wx.canvasGetImageData({
             canvasId: "ch_pic_canvas",
-            x: movableViewInfo[index].x + utils.rpxToPx(90 / 2),
-            y: movableViewInfo[index].y + utils.rpxToPx(90),
+            x: movableViewInfo[index].x + app.util.rpxToPx(90 / 2),
+            y: movableViewInfo[index].y + app.util.rpxToPx(90),
             width: 1,
             height: 1,
             success(res) {
@@ -142,12 +139,12 @@ Page({
             init_color = that.data.init_color;
         wx.canvasGetImageData({
             canvasId: that.canvasId,
-            x: detail.x + utils.rpxToPx(90 / 2),
-            y: detail.y + utils.rpxToPx(90),
+            x: detail.x + app.util.rpxToPx(90 / 2),
+            y: detail.y + app.util.rpxToPx(90),
             width: 1,
             height: 1,
             success(res) {
-                console.log("moveGps canvasGetImageData success", res);
+                console.log("moveGps canvasGetImageData success", res, res.data);
                 that.updateColor(index, res.data);
             },
             fail: res => {
@@ -156,13 +153,15 @@ Page({
         }, that)
     },
     updateColor(index, colors) {
-        let
-            movableViewColorInfo = that.data.movableViewColorInfo,
+        let movableViewColorInfo = that.data.movableViewColorInfo,
             init_color = that.data.init_color;
+
+        console.log(index, colors, movableViewColorInfo);
+
         movableViewColorInfo[index] = [
             colors[0], colors[1], colors[2]
         ];
-        let hex = utils.rgbToHex("rgb(" + movableViewColorInfo[index].join(",") + ")");
+        let hex = app.util.rgbToHex("rgb(" + movableViewColorInfo[index].join(",") + ")");
         init_color["color" + index] = hex;
         that.setData({
             init_color: init_color,
@@ -175,7 +174,7 @@ Page({
         });
         this.dialog.showDialog();
     },
-    hiddenDialog: function() {
+    hiddenDialog: function () {
         this.dialog.hideDialog();
     },
     cancelEvent() {
@@ -217,7 +216,7 @@ Page({
             };
         api.saveOneBuiltColor(init_color.index, item).then(res => {
             console.log("addCard   api.saveOneBuiltColor success res", res);
-            setTimeout(function() {
+            setTimeout(function () {
                 that.setData({
                     btnText: "添加色卡"
                 });
@@ -225,13 +224,13 @@ Page({
                     title: '添加成功',
                     duration: 2000,
                     icon: "success"
-                })
+                });
                 that.canAdd = true;
                 that.showCard(item);
             }, 500);
         }, res => {
             console.log("addCard   api.saveOneBuiltColor fail res", res);
-            setTimeout(function() {
+            setTimeout(function () {
                 that.setData({
                     btnText: "添加色卡"
                 });
@@ -241,9 +240,9 @@ Page({
                         title: '已经存在，编号:U' + (parseInt(res.index) + 1),
                         duration: 2000,
                         icon: "none"
-                    })
+                    });
                     that.showCard(res);
-                }else{
+                } else {
                     wx.showToast({
                         title: res,
                         duration: 2000,
@@ -256,4 +255,4 @@ Page({
     onHide() {
         this.hiddenDialog();
     },
-})
+});

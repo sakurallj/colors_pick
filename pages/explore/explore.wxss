@@ -1,0 +1,8 @@
+.colors_container {
+    padding: 0 60rpx;
+    padding-top: 30rpx;
+    background: linear-gradient(#858c96, #414854);
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 150rpx;
+}
