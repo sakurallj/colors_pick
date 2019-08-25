@@ -1,8 +1,23 @@
-.colors_container {
-    padding: 0 60rpx;
+.container {
     padding-top: 30rpx;
     background: linear-gradient(#858c96, #414854);
     min-height: 100vh;
     box-sizing: border-box;
     padding-bottom: 150rpx;
+}
+
+.item {
+    background: #fff;
+    width: 700rpx;
+    height: 703rpx;
+    margin: 0 auto;
+    border-radius: 20rpx;
+}
+
+.ad_top {
+    margin: 0 auto;
+    border-radius: 20rpx;
+    margin-top: 60rpx;
+    width: 700rpx;
+    overflow: hidden;
 }
