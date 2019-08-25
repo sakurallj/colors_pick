@@ -14,7 +14,7 @@ tmp/*
 # IDE Files
 #-------------------------
 /nbproject/
-.idea/*
+#.idea/*
 /.idea/
 .project/*
 .project
