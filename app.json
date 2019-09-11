@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/home/home",
         "pages/pick/pick",
         "pages/index/index",
         "pages/my/my",
