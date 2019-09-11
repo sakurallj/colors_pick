@@ -1,17 +1,12 @@
 <navBarHolder></navBarHolder>
-<view class='colors_container' wx:if="{{colors.builtInArrs.length>0}}">
-    <view class='color_item' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem' data-item="{{item}}">
-        <view class='color_item_title cut'>{{item.name}}</view>
-        <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
-        <view class='color_item_cell_1' style='background:#{{item.color0}}'></view>
-        <view class='color_item_cell_3' style='background:#{{item.color2}}'></view>
-        <view class='color_item_text'>{{index+1}}</view>
-        <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
+<view class='container'>
+    <view class='item' wx:for="{{datas}}">
+        <view class="item_cell">
+        </view>
     </view>
     <view class="ad_top">
         <ad class="ad" unit-id="adunit-cc68f5ae50e6d817"></ad>
     </view>
 </view>
-
 <tabBarShadow></tabBarShadow>
-<navBar bindGoBack="onGoBack" navStyle="title_left" navTitle="探索"></navBar>
+<navBar navStyle="title_left" navTitle="探索"></navBar>
