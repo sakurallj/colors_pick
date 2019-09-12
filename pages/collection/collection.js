@@ -7,31 +7,34 @@ Page({
     data: {
         cData: {
             list: [{
-                title: "经典配色",
-                bgType: "color",
-                bgValue: "#DFDCE3",
-            },
-            {
-                title: "Material Design规范色",
-                bgType: "color",
-                bgValue: "#526187",
-            }, {
-                title: "渐变色",
-                bgType: "color",
-                bgValue: "#4D2831",
-            }, {
-                title: "中国传统色",
-                bgType: "color",
-                bgValue: "#B50B1E",
-            }, {
-                title: "日本传统色",
-                bgType: "color",
-                bgValue: "#0D1130",
-            }, {
-                title: "Html规范色",
-                bgType: "color",
-                bgValue: "#e62739",
-            },
+                    title: "经典配色",
+                    bgType: "color",
+                    bgValue: "#DFDCE3",
+                    desc: "经典"
+                },
+                {
+                    title: "Material Design\n规范色",
+                    bgType: "color",
+                    bgValue: "#526187",
+                    desc: "经典"
+                }, {
+                    title: "渐变色",
+                    bgType: "color",
+                    bgValue: "#4D2831",
+                    desc: "经典"
+                }, {
+                    title: "中国传统色",
+                    bgType: "color",
+                    bgValue: "#B50B1E",
+                }, {
+                    title: "日本传统色",
+                    bgType: "color",
+                    bgValue: "#0D1130",
+                }, {
+                    title: "Html规范色",
+                    bgType: "color",
+                    bgValue: "#e62739",
+                },
             ]
         }
     },

@@ -1,5 +1,14 @@
 <view class="container">
     <view class="item" style="{{item.style}}" wx:for="{{cData.list}}">
+        <image src="/images/collected.png" class="collect" wx:if="{{isCollected}}"></image>
+        <image src="/images/collect.png" class="collect" wx:else></image>
+        <image src="/images/i.png" class="i_icon"></image>
+        <view class="text_box">
+            <view class="title">
+                <text>{{item.title}}</text>
+            </view>
+            <view class="desc"> <text>{{item.desc}}</text></view>
+        </view>
 
     </view>
 </view>
