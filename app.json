@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/home/home",
-        "pages/pick/pick",
         "pages/index/index",
+        "pages/pick/pick",
+        "pages/collection/collection",
         "pages/my/my",
         "pages/explore/explore",
         "pages/traditionalColor/traditionalColor",

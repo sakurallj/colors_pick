@@ -1,20 +1,26 @@
-<navBarHolder></navBarHolder>
-<view class='colors_container' wx:if="{{colors.builtInArrs.length>0}}">
-    <view class='color_item' wx:for="{{colors.builtInArrs}}" style='background:#{{item.color3}}' bindtap='chooseItem'
-          data-item="{{item}}">
-        <view class='color_item_title cut'>{{item.name}}</view>
-        <view class='color_item_cell_2' style='background:#{{item.color1}}'></view>
-        <view class='color_item_cell_1' style='background:#{{item.color0}}'></view>
-        <view class='color_item_cell_3' style='background:#{{item.color2}}'></view>
-        <view class='color_item_text'>{{index+1}}</view>
-        <image class='color_item_img_smile' src="/images/smile_active.png" wx:if="{{item.is_like==1}}"></image>
-    </view>
-    <view class="ad_top">
-        <ad class="ad" unit-id="adunit-cc68f5ae50e6d817"></ad>
+<view class="box {{isActive?'active':''}}" wx:if="{{isShow}}">
+    <view class="logo">
+        <view class="loading_box">
+            <image src="/images/loading.gif" class="loading"></image>
+        </view>
+        <view class="text">色卡拾取</view>
     </view>
 </view>
+<view class="tool_box" wx:else>
+    <view class="logo">
+        <view class="loading_box">
+            <image src="/images/loading.gif" class="loading"></image>
+        </view>
+        <view class="text">色卡拾取</view>
+    </view>
+    <view class="tool_container">
+        <view class="tool_item" bindtap="gotoCollection">色集</view>
+        <view class="tool_item" bindtap="gotoCollection">潘通</view>
+        <view class="tool_item" bindtap="gotoMyCollection">收藏</view>
 
-<image class='goto_top_img' src="/images/goto_top.png" wx:if="{{showTop==1}}" catchtap='gotoTop'></image>
-<dialog id="dialog" bind:cancelEvent="cancelEvent" dialog_type="{{dialog_type}}" d_data="{{dialogData}}"></dialog>
-<tabBarShadow></tabBarShadow>
-<navBar bindGoBack="onGoBack" navStyle="title" navTitle="色卡"></navBar>
+        <view class="tool_icon">
+            <image src="/images/camera.png" class="tool_icon_image" bindtap="gotoPicker"></image>
+            <image src="/images/find.png" class="tool_icon_image" bindtap="gotoSearch"></image>
+        </view>
+    </view>
+</view>

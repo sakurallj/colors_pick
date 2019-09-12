@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="item" style="{{item.style}}" wx:for="{{cData.list}}">
+
+    </view>
+</view>

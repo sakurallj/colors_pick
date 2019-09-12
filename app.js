@@ -6,17 +6,8 @@ App({
     api: null,
     onLaunch: function () {
         this.doUpdateApp();
-
-        wx.cloud.init({
-            env: 'release-b098f2',
-            traceUser: true,
-        });
         this.api = require('./public/js/api');
-        // Page = require('./public/js/page');
-
-        console.log("onLaunch");
     },
-
     createShareAppMessageParams: event => {
         console.log(event);
         wx.hideToast();
@@ -53,7 +44,7 @@ App({
             // updateManager.applyUpdate()
             wx.showModal({
                 title: '更新提示',
-                content: "新版本已经准备好，是否重启应用？ 1、增加了云存储更能，喜欢的颜色再也不怕丢失了; 2、优化了分享方式，可以保存朋友分享的卡片了。",
+                content: "新版本已经准备好，是否重启应用？",
                 success: function (res) {
                     if (res.confirm) {
                         updateManager.applyUpdate()

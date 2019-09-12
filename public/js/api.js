@@ -1,13 +1,15 @@
-let services = require('./services/services') ;
-
+ 
+let services = require('./services/services');
 let apis = {};
-let canNotWxCloud = wx.getStorageSync("canNotWxCloud"),
-    db = null;
-canNotWxCloud = !!canNotWxCloud;
-if (!canNotWxCloud) {
-    db = wx.cloud.database();
-}
-apis.saveOneBuiltColor = function (index, item) {
+
+wx.cloud.init({
+    env: 'release-b098f2',
+    traceUser: true,
+});
+let db = wx.cloud.database();
+
+
+apis.saveOneBuiltColor = function(index, item) {
     return new Promise((resolve, reject) => {
         let colors = wx.getStorageSync("colors"),
             UGCArrs = colors.UGCArrs,
@@ -42,7 +44,7 @@ apis.saveOneBuiltColor = function (index, item) {
         });
     });
 };
-apis.deleteCard = function (item, callback) {
+apis.deleteCard = function(item, callback) {
     let colors = wx.getStorageSync("colors");
     if (item.isUGC == 1) {
         colors.UGCArrs.splice(parseInt(item.data_index), 1);
@@ -53,7 +55,7 @@ apis.deleteCard = function (item, callback) {
     apis.updateColorsToCDB(colors);
     typeof callback == "function" && callback();
 };
-apis.addColorsToCDB = function (colors) {
+apis.addColorsToCDB = function(colors) {
     return new Promise((resolve, reject) => {
         !!db && db.collection('colors')
             .add({
@@ -67,7 +69,7 @@ apis.addColorsToCDB = function (colors) {
             })
     });
 };
-apis.updateColorsToCDB = function (colors) {
+apis.updateColorsToCDB = function(colors) {
     return new Promise((resolve, reject) => {
         let color_id = wx.getStorageSync("color_id");
         if (!color_id) {
@@ -88,7 +90,7 @@ apis.updateColorsToCDB = function (colors) {
         }
     });
 };
-apis.getMyColorsFromCDB = function (callback) {
+apis.getMyColorsFromCDB = function(callback) {
     return new Promise((resolve, reject) => {
         apis.getOpenid().then(res => {
             let openid = res;
@@ -108,7 +110,7 @@ apis.getMyColorsFromCDB = function (callback) {
         });
     });
 };
-apis.getOpenid = function () {
+apis.getOpenid = function() {
     return new Promise((resolve, reject) => {
         let openid = wx.getStorageSync("openid");
         if (!!openid) {
@@ -137,7 +139,7 @@ apis.getOpenid = function () {
     });
 };
 
-apis.initColors = function () {
+apis.initColors = function() {
     return new Promise((resolve, reject) => {
         let colors = wx.getStorageSync("colors");
         if (colors) {
@@ -180,7 +182,7 @@ apis.initColors = function () {
         }
     });
 };
-apis.setColorsToDefaultColors = function () {
+apis.setColorsToDefaultColors = function() {
     console.log("apis.setColorsToDefaultColors ");
     return new Promise((resolve, reject) => {
         let colors = defaultColors.colors;

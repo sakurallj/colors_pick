@@ -1,5 +1,5 @@
 page {
-    background: linear-gradient(#858c96, #414854);
+    /* background: linear-gradient(#858c96, #414854); */
 }
 
 .cut {
