@@ -30,7 +30,7 @@ Component({
             for (let i in cData.list) {
                 let item = cData.list[i];
                 if (item.bgType == "color") {
-                    item.style = "background: " + item.bgValue + ";"
+                    item.style = "background: " + item.mainColorRGB + ";"
                 }
             }
             that.setData({

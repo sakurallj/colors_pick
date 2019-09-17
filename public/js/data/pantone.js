@@ -1,7 +1,6 @@
-import db from '../data/db';
-
 let cc = {};
-cc.collectionData = [{
+cc.collectionData = [
+    {
         title: "经典配色",
         bgType: "color",
         bgValue: "#DFDCE3",
@@ -28,8 +27,4 @@ cc.collectionData = [{
         bgValue: "e62739",
     },
 ];
-cc.pantoneGuides = {
-    list: db.pantoneGuides.guides
-};
-
 module.exports = cc;

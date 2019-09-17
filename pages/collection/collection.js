@@ -1,42 +1,14 @@
-// pages/collection/collection.js
+let that;
+let app = getApp();
+let appData = app.data;
+let api = app.api; let services = app.services;
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        cData: {
-            list: [{
-                    title: "经典配色",
-                    bgType: "color",
-                    bgValue: "#DFDCE3",
-                    desc: "经典"
-                },
-                {
-                    title: "Material Design\n规范色",
-                    bgType: "color",
-                    bgValue: "#526187",
-                    desc: "经典"
-                }, {
-                    title: "渐变色",
-                    bgType: "color",
-                    bgValue: "#4D2831",
-                    desc: "经典"
-                }, {
-                    title: "中国传统色",
-                    bgType: "color",
-                    bgValue: "#B50B1E",
-                }, {
-                    title: "日本传统色",
-                    bgType: "color",
-                    bgValue: "#0D1130",
-                }, {
-                    title: "Html规范色",
-                    bgType: "color",
-                    bgValue: "#e62739",
-                },
-            ]
-        }
+        cData: services.pageData.pantoneGuides
     },
 
     /**

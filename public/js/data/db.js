@@ -1,10 +1,14 @@
 import chineseColors from './cardColors';
 import pageData from './chineseColors';
 import gradients from './gradients';
+import pantone from './pantone';
+import pantoneGuides from './pantoneGuides';
 
 let cc = {
     chineseColors: chineseColors,
-    pageData: pageData
+    pantoneGuides: pantoneGuides,
+    pantone: pantone,
+
 };
 
 

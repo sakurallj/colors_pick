@@ -5,7 +5,7 @@
         <image src="/images/i.png" class="i_icon"></image>
         <view class="text_box">
             <view class="title">
-                <text>{{item.title}}</text>
+                <text>{{item.name}}</text>
             </view>
             <view class="desc"> <text>{{item.desc}}</text></view>
         </view>
