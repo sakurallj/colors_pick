@@ -1,3 +1,4 @@
+@import "/public/css/common.wxss";
 .container {
     padding-top: 60rpx;
     padding-bottom: 60rpx;
@@ -9,9 +10,9 @@
     width: 590rpx;
     height: 590rpx;
     margin-bottom: 60rpx;
-    box-shadow: 0px 0px 32rpx 0px rgba(58, 60, 90, 0.8);
+    /* box-shadow: 0px 0px 32rpx 0px rgba(58, 60, 90, 0.8); */
     position: relative;
-    border-radius: 20rpx;
+    /* border-radius: 20rpx; */
 }
 
 .item:last-child {
@@ -50,4 +51,9 @@
 .desc {
     font-size: 36rpx;
     opacity: 0.6;
+}
+
+.row_item{
+    height: 1050rpx;
+    width: 750rpx;
 }

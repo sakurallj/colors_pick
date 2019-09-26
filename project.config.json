@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
@@ -46,14 +46,15 @@
 				},
 				{
 					"id": 1,
-					"name": "my",
-					"pathName": "pages/my/my",
-					"query": ""
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "pages/collection/collection",
-					"pathName": "pages/collection/collection",
+					"name": "pages/pantone/pantone",
+					"pathName": "pages/pantone/pantone",
 					"query": "",
 					"scene": null
 				}

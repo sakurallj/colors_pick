@@ -1,14 +1,22 @@
-<view class="container">
-    <view class="item" style="{{item.style}}" wx:for="{{cData.list}}">
+<view wx:if="{{cData.layout=='swiper'}}">
+    <scroll-view class="row_container" scroll-x="true" scroll-with-animation>
+        <view class="row_item dark_am  " wx:for="{{cData.list}}" wx:key="{{item.id}}"  style="{{item.outStyle}}" >
+
+        </view>
+    </scroll-view>
+</view>
+<view class="container" wx:elif="{{cData.layout=='list'}}">
+    <view class="item dark_am" style="{{item.style}}" wx:for="{{cData.list}}">
         <image src="/images/collected.png" class="collect" wx:if="{{isCollected}}"></image>
         <image src="/images/collect.png" class="collect" wx:else></image>
         <image src="/images/i.png" class="i_icon"></image>
         <view class="text_box">
             <view class="title">
-                <text>{{item.name}}</text>
+                <text>{{item.title}}</text>
             </view>
-            <view class="desc"> <text>{{item.desc}}</text></view>
+            <view class="desc">
+                <text>{{item.subTitle}}</text>
+            </view>
         </view>
-
     </view>
 </view>

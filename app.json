@@ -2,8 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/pick/pick",
-        "pages/collection/collection",
+        "pages/pantone/pantone",
         "pages/my/my",
+        "pages/test/test",
         "pages/explore/explore",
         "pages/traditionalColor/traditionalColor",
         "pages/about/about"

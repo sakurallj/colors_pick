@@ -1,11 +1,12 @@
 import db from '../data/db';
 
 let cc = {};
+
 cc.collectionData = [{
-        title: "经典配色",
-        bgType: "color",
-        bgValue: "#DFDCE3",
-    },
+    title: "经典配色",
+    bgType: "color",
+    bgValue: "#DFDCE3",
+},
     {
         title: "Material Design规范色",
         bgType: "color",
@@ -28,7 +29,9 @@ cc.collectionData = [{
         bgValue: "e62739",
     },
 ];
+
 cc.pantoneGuides = {
+    type: "list",
     list: db.pantoneGuides.guides
 };
 

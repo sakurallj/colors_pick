@@ -1,4 +1,3 @@
- 
 let services = require('./services/services');
 let apis = {};
 
@@ -8,8 +7,41 @@ wx.cloud.init({
 });
 let db = wx.cloud.database();
 
+apis.login = function () {
+   return  apis.getOpenid();
+};
 
-apis.saveOneBuiltColor = function(index, item) {
+apis.getOpenid = function () {
+    return new Promise((resolve, reject) => {
+        let openid = wx.getStorageSync("openid");
+        if (!!openid) {
+            resolve(openid);
+        } else {
+            wx.cloud.callFunction({
+                // 要调用的云函数名称
+                name: 'login',
+            }).then(res => {
+                console.log('apis.getOpenid wx.cloud.callFunction then success res', res);
+                let openid = res.result.userInfo.openId;
+                if (openid) {
+                    wx.setStorageSync("openid", openid);
+                    resolve(openid);
+                } else {
+                    reject("openid is null");
+                }
+            }, res => {
+                console.log('apis.getOpenid wx.cloud.callFunction then fail res', res);
+                reject("get openid fail");
+            }).catch(err => {
+                console.log('apis.getOpenid wx.cloud.callFunction catch res', err);
+                reject("get openid fail");
+            })
+        }
+    });
+};
+
+
+apis.saveOneBuiltColor = function (index, item) {
     return new Promise((resolve, reject) => {
         let colors = wx.getStorageSync("colors"),
             UGCArrs = colors.UGCArrs,
@@ -44,7 +76,7 @@ apis.saveOneBuiltColor = function(index, item) {
         });
     });
 };
-apis.deleteCard = function(item, callback) {
+apis.deleteCard = function (item, callback) {
     let colors = wx.getStorageSync("colors");
     if (item.isUGC == 1) {
         colors.UGCArrs.splice(parseInt(item.data_index), 1);
@@ -55,7 +87,7 @@ apis.deleteCard = function(item, callback) {
     apis.updateColorsToCDB(colors);
     typeof callback == "function" && callback();
 };
-apis.addColorsToCDB = function(colors) {
+apis.addColorsToCDB = function (colors) {
     return new Promise((resolve, reject) => {
         !!db && db.collection('colors')
             .add({
@@ -69,7 +101,7 @@ apis.addColorsToCDB = function(colors) {
             })
     });
 };
-apis.updateColorsToCDB = function(colors) {
+apis.updateColorsToCDB = function (colors) {
     return new Promise((resolve, reject) => {
         let color_id = wx.getStorageSync("color_id");
         if (!color_id) {
@@ -90,7 +122,7 @@ apis.updateColorsToCDB = function(colors) {
         }
     });
 };
-apis.getMyColorsFromCDB = function(callback) {
+apis.getMyColorsFromCDB = function (callback) {
     return new Promise((resolve, reject) => {
         apis.getOpenid().then(res => {
             let openid = res;
@@ -110,36 +142,9 @@ apis.getMyColorsFromCDB = function(callback) {
         });
     });
 };
-apis.getOpenid = function() {
-    return new Promise((resolve, reject) => {
-        let openid = wx.getStorageSync("openid");
-        if (!!openid) {
-            resolve(openid);
-        } else {
-            wx.cloud.callFunction({
-                // 要调用的云函数名称
-                name: 'login',
-            }).then(res => {
-                console.log('apis.getOpenid wx.cloud.callFunction then success res', res)
-                let openid = res.result.userInfo.openId;
-                if (openid) {
-                    wx.setStorageSync("openid", openid);
-                    resolve(openid);
-                } else {
-                    reject("openid is null");
-                }
-            }, res => {
-                console.log('apis.getOpenid wx.cloud.callFunction then fail res', res)
-                reject("get openid fail");
-            }).catch(err => {
-                console.log('apis.getOpenid wx.cloud.callFunction catch res', err)
-                reject("get openid fail");
-            })
-        }
-    });
-};
 
-apis.initColors = function() {
+
+apis.initColors = function () {
     return new Promise((resolve, reject) => {
         let colors = wx.getStorageSync("colors");
         if (colors) {
@@ -182,7 +187,7 @@ apis.initColors = function() {
         }
     });
 };
-apis.setColorsToDefaultColors = function() {
+apis.setColorsToDefaultColors = function () {
     console.log("apis.setColorsToDefaultColors ");
     return new Promise((resolve, reject) => {
         let colors = defaultColors.colors;

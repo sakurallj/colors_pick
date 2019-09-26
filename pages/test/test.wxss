@@ -1,0 +1,48 @@
+.idx-content {
+    overflow: hidden;
+}
+
+.idx-content .idx-swiper {
+    position: relative;
+    margin: 40rpx 0;
+    padding-bottom: 100%;
+}
+
+.idx-content .idx-swiper .idx-cswp {
+    width: 590rpx;
+    height: 590rpx;
+    position: absolute;
+    top: 0;
+}
+
+.swp-left {
+    /*左边样式*/
+    transition: all 0.3s ease;
+    left: -562rpx;
+}
+
+.swp-center {
+    /*中间样式*/
+    left: 80rpx;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.swp-right {
+    /*右边样式*/
+    transition: all 0.3s ease;
+    /* transform: scale(0.8); */
+    left: 723rpx;
+}
+
+.swp-rightNo {
+    /*最右边样式*/
+    transition: all 0.3s ease;
+    left: 150%;
+}
+
+.swp-leftNo {
+    /*最左边样式*/
+    transition: all 0.3s ease;
+    left: -150%;
+}

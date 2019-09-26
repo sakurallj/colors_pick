@@ -1,0 +1,9 @@
+
+<navBarHolder></navBarHolder>
+<view class='idx-content'>
+    <view class='idx-swiper'>
+        <view   class='idx-cswp {{item.swpClass}}' style="{{item.style}}" wx:for="{{swiperList}}" wx:key=""  bindtouchend="touchEnd"    bindtouchmove="touchMove"  data-index="{{index}}">
+        
+        </view>
+    </view>
+</view>

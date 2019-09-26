@@ -1,0 +1,9 @@
+.title {
+    color: #666666;
+    margin: 0 auto;
+    width: 590rpx;
+    margin-top: 108rpx;
+    font-size: 40rpx;
+    /* margin-bottom: 60rpx; */
+}
+ 
