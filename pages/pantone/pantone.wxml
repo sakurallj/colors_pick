@@ -1,9 +1,2 @@
-
-
-<!-- <navBarHolder></navBarHolder> -->
-
+<collectionPage cData="{{cData}}" cScrollTop="{{cScrollTop}}"></collectionPage>
  
-<!-- <view class="title"> 所有色彩指南</view> -->
-<collectionList cData="{{myCData}}"> </collectionList>
-<collectionList cData="{{cData}}"> </collectionList>
-<!-- <navBar navStyle="title_left" navTitle="潘通"></navBar> -->

@@ -1,0 +1,3 @@
+<view class="container" style="{{cMaxWidth?'width:'+cMaxWidth+'rpx':''}}">
+    <view class="dots" wx:for="{{cData.list}}" wx:key="{{item}}" wx:for-index="idx" style="{{cCurrIndex==idx?activeStyle:style}}"></view>
+</view>

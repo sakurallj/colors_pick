@@ -9,9 +9,9 @@
     </view>
 </view>
 <view class="item  " style="{{cData.style}}" wx:else >
-    <image src="/images/collected.png" class="collect" wx:if="{{isCollected}}"></image>
+    <image src="/images/collected.png" class="collect" wx:if="{{cData.isLike}}" ></image>
     <image src="/images/collect.png" class="collect" wx:else></image>
-    <image src="/images/i.png" class="i_icon"></image>
+    <image src="/images/i.png"  bindtap="showInfo" class="i_icon"></image>
     <view class="text_box">
         <view class="title">
             <text>{{cData.title}}</text>

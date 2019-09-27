@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "collectionList": "/components/collectionList/collectionList",
+        "collectionAlbum": "/components/collectionAlbum/collectionAlbum",
+        "collectionInfo": "/components/collectionInfo/collectionInfo"
+    }
+}

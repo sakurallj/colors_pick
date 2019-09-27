@@ -1,20 +1,18 @@
-import pantone from "../../public/js/services/pantone";
-
 let that;
 let app = getApp();
 let appData = app.data;
 let services = app.services;
 Page({
 
+  
     data: {
-        cData: {}
+        cData: {
+
+        }
     },
 
-    onLoad: function() {
-        that = this;
-        that.setData({
-            pages: getCurrentPages()
-        });
+    onLoad: function(options) {
+        that=this;
         that.getData();
     },
     getData() {
@@ -23,24 +21,22 @@ Page({
         });
         services.pantone.getPantonePageData().then(res => {
             wx.hideLoading();
+
             that.setData({
-                cData: res
+                cData: res.allGuides.list[6],
+                 
             });
         }, res => {
             wx.hideLoading();
         });
 
     },
-
-    onShow: function() {
-
-    },
-    onPageScroll: function(event) {
-        that.setData({
-            cScrollTop: event.scrollTop
-        });
-    },
     onShareAppMessage: function() {
 
+    }, gotoCollection() {
+        wx.navigateTo({
+            url: '/pages/index/index',
+        })
     }
-});
+
+})

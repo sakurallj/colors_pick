@@ -12,7 +12,11 @@ Component({
             type: String,
             value: ''
         },
-        navStyle: {
+        navType: {
+            type: String,
+            value: ''
+        },
+        navBgStyle:{
             type: String,
             value: ''
         },
@@ -38,6 +42,7 @@ Component({
             circleImageWidth: util.menuButtonBoundingClientRect.height * 0.6,
             circleImageHeight: util.menuButtonBoundingClientRect.height * 0.6,
         });
+        console.log("getCurrentPages",getCurrentPages());
     },
     data: {
         isShowHome: false

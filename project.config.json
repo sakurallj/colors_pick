@@ -46,8 +46,8 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/test/test",
-					"pathName": "pages/test/test",
+					"name": "pages/testCom/testCom",
+					"pathName": "pages/testCom/testCom",
 					"query": "",
 					"scene": null
 				},

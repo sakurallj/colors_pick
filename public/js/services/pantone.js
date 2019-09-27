@@ -11,10 +11,7 @@ let cc = {
  */
 cc.getPantoneGuides = () => {
     return new Promise((resolve, reject) => {
-        resolve({
-            layout: "list",
-            list: db.pantoneGuides.guides
-        });
+        resolve(db.pantoneGuides.guides);
     });
 };
 
@@ -22,7 +19,7 @@ cc.getPantoneGuides = () => {
  * 获得我收藏的潘通指南
  * @type {function(): Promise<any>}
  */
-cc.getMyPantoneCollections = interceptor.waitOpenIdInterceptor(() => {
+cc.getMyPantoneCollectionIds = interceptor.waitOpenIdInterceptor(() => {
     let openId = userService.getOpenIdFromCache();
     return new Promise((resolve, reject) => {
         db.cloudDB.collection('userCollections').where({
@@ -37,43 +34,63 @@ cc.getMyPantoneCollections = interceptor.waitOpenIdInterceptor(() => {
             if (!list) {
                 list = cc.defaultMyPantoneCollections();
             }
-            let data = cc.formatMyPantoneCollections(list);
-            resolve(data);
+            resolve(list);
         }, res => {
-            let data = cc.formatMyPantoneCollections(cc.defaultMyPantoneCollections());
-            resolve(data);
+            resolve(cc.defaultMyPantoneCollections());
         })
     });
 });
 /**
- * 处理我收藏的潘通指南
- * @param list
- * @returns {{layout: string, outBgColorValue: string, tip: string, title: string, bgColorValue: string}[]}
+ * 处理 潘通指南
+ * @param myPantoneIds
+ * @param allpantoneGuides
+ * @returns {{layout: string, list: {layout: string, bgType: string, subTitle: string, outBgColorValue: string, title: string, bgColorValue: string}[]}}
  */
-cc.formatMyPantoneCollections = (list) => {
-    let rtnData = [
-        {
-            layout: "tip",
-            title: "试着在这里\n寻找您的色彩灵感吧！",
-            subTitle: "您可以轻触各个色集上的心形按钮来编辑您色彩集内的指南",
-            outBgColorValue: "#2F244C",
-            bgColorValue: "#443C5E", 
-            bgType :"color"
-        }
-    ];
-    let pantoneGuides = db.pantoneGuides.guides;
-    for (let i in list) {
-        for (let pI in pantoneGuides) {
-            if (pantoneGuides[pI].id === list[i]) {
-                rtnData[rtnData.length] = pantoneGuides[pI];
+cc.formatPantoneCollections = (myPantoneIds, allpantoneGuides) => {
+    let rtnData = [{
+        layout: "tip",
+        title: "试着在这里\n寻找您的色彩灵感吧！",
+        subTitle: "您可以轻触各个色集上的心形按钮来编辑您色彩集内的指南",
+        outBgColorValue: "#2F244C",
+        bgColorValue: "#443C5E",
+        bgType: "color",
+    }];
+    rtnData[0].style = "background: " + rtnData[0].bgColorValue + ";";
+    rtnData[0].outStyle = "background: " + rtnData[0].outBgColorValue + ";";
+
+    for (let i in myPantoneIds) {
+        for (let pI in allpantoneGuides) {
+            if (allpantoneGuides[pI].id === myPantoneIds[i]) {
+                allpantoneGuides[pI].isLike = true;
+                rtnData[rtnData.length] = allpantoneGuides[pI];
                 break;
             }
         }
     }
     return {
-        layout: "swiper",
-        list: rtnData
+        allGuides: {
+            layout: "list",
+            list: allpantoneGuides
+        },
+        myGuides: {
+            layout: "swiper",
+            list: rtnData
+        }
     };
 };
 
+cc.getPantonePageData = () => {
+    return new Promise((resolve, reject) => {
+        cc.getPantoneGuides().then(allpantoneGuides => {
+            console.log("     cc.getPantoneGuides", allpantoneGuides);
+            cc.getMyPantoneCollectionIds().then(myPantoneIds => {
+                resolve(cc.formatPantoneCollections(myPantoneIds, allpantoneGuides));
+            }, res => {
+                resolve(cc.formatPantoneCollections(cc.defaultMyPantoneCollections(), allpantoneGuides));
+            })
+        }, res => {
+            reject(res)
+        });
+    });
+};
 module.exports = cc;

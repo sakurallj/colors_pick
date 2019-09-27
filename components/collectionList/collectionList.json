@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "collectionAlbum": "/components/collectionAlbum/collectionAlbum"
+        "collectionAlbum": "/components/collectionAlbum/collectionAlbum",
+        "swiperDots": "/components/swiperDots/swiperDots"
     }
 }

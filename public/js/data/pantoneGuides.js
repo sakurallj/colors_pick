@@ -359,7 +359,9 @@ for (let i in cc.guides) {
     let item = cc.guides[i];
     item.bgColorValue = "rgb(" + item.bgColorValue[0] + ", " + item.bgColorValue[1] + ", " + item.bgColorValue[2] + ")";
     item.bgType = "color";
+    item.style = "background: " + item.bgColorValue + ";";
     item.outBgColorValue = item.bgColorValue;
+    item.outStyle = "background: " + item.outBgColorValue + ";";
     data[item.order - 1] = item;
 }
 cc.guides = data;

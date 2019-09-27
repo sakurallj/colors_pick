@@ -1,19 +1,24 @@
 <block wx:if="{{cData.layout=='swiper'}}">
     <view class="row_container" style="{{rowStyle}}">
         <view class="row_title">您的色彩集</view>
-        <swiper indicator-dots="{{false}}" indicator-color="{{'rgba(255, 255, 255, .3)'}}" indicator-active-color="{{'#ffffff'}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange"  class="row_swiper" >
+        <swiper indicator-dots="{{false}}" indicator-color="{{'rgba(255, 255, 255, .3)'}}" indicator-active-color="{{'#ffffff'}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" class="row_swiper">
             <swiper-item wx:for="{{cData.list}}" wx:key="{{item.id}}">
-                <view class="row_item" >
+                <view class="row_item">
                     <view class="row_item_surround">
-                        <collectionAlbum cData="{{item}}"></collectionAlbum>
+                        <collectionAlbum bindShowInfo="showInfo" cData="{{item}}"></collectionAlbum>
                     </view>
                 </view>
             </swiper-item>
         </swiper>
+        <view class="swiper_dots">
+            <swiperDots cData="{{swiperDots}}" cCurrIndex="{{swiperDotsCurrIndex}}" cMaxWidth="{{750}}"></swiperDots>
+        </view>
     </view>
 </block>
 <view class="container" wx:elif="{{cData.layout=='list'}}">
-    <view class="list_item" wx:for="{{cData.list}}">
-        <collectionAlbum cData="{{item}}"></collectionAlbum>
+    <view class="list_item" wx:for="{{cData.list}}" wx:key="{{item.id}}">
+        <view class="list_item_out">
+            <collectionAlbum  bindShowInfo="showInfo"  cData="{{item}}"></collectionAlbum>
+        </view>
     </view>
 </view>

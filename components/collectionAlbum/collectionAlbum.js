@@ -7,7 +7,7 @@ Component({
         cData: {
             type: Object,
             value: {}
-        },
+        } 
     },
 
     /**
@@ -21,6 +21,8 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        showInfo(){
+            this.triggerEvent('ShowInfo', this.data.cData);
+        }
     }
 })

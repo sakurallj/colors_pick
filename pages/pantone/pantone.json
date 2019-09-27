@@ -1,5 +1,5 @@
 {
     "usingComponents": {
-        "collectionList": "/components/collectionList/collectionList" 
+        "collectionPage": "/components/collectionPage/collectionPage" 
     }
 }

@@ -1,35 +1,37 @@
 <view class="container">
-    <view class="text_back" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='text'}}">
-        <view class="text_back_box" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} {{!!boxHeight?'height: '+boxHeight+'px;':''}}">
-            <image class="text_back_image" bindtap="goBack" style="{{!!imageWidth?'width: '+imageWidth+'px;':''}}{{!!imageHeight?'height: '+imageHeight+'px;':''}}" src="/images/angle-left-red.png"></image>
-            <text class="text_back_text" bindtap="goBack" style="{{!!textFontSize?'font-size: '+textFontSize+'px;':''}}">返回</text>
+    <view class="text_back" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px':''}}"
+          wx:if="{{navType=='text'}}">
+        <view class="text_back_box"
+              style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} {{!!boxHeight?'height: '+boxHeight+'px;':''}}">
+            <image class="text_back_image" bindtap="goBack"
+                   style="{{!!imageWidth?'width: '+imageWidth+'px;':''}}{{!!imageHeight?'height: '+imageHeight+'px;':''}}"
+                   src="/images/angle-left-red.png"></image>
+            <text class="text_back_text" bindtap="goBack"
+                  style="{{!!textFontSize?'font-size: '+textFontSize+'px;':''}}">返回
+            </text>
         </view>
     </view>
-    <view class="circle_back" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='circle'}}">
+    <view class="circle_back" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px':''}}"
+          wx:if="{{navType=='circle'}}">
         <view class="circle_box {{!!isShowHome?'home':''}}" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}}   ">
-            <block wx:if="{{isShowHome}}">
-                <view class="circle_image_left_box" bindtap="goBack">
-                    <image class="circle_image_left" src="/images/left_white.png"></image>
-                </view>
-                <image class="circle_image_line" src="/images/line.png"></image>
-                <view class="circle_image_home_box" bindtap="backHome">
-                    <image class="circle_image_home" src="/images/home.png"></image>
-                </view>
-            </block>
-            <block wx:else>
-                <image class="circle_image" bindtap="goBack" src="/images/angle-left-circle-black.png"></image>
-            </block>
+            <view class="circle_image_out" bindtap="goBack">
+
+                <image class="circle_image" src="/images/arrowleft.png"></image>
+
+            </view>
         </view>
     </view>
 
-    <view class="browse" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='browse'}}">
+    <view class="browse" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px':''}}"
+          wx:if="{{navType=='browse'}}">
         <view class="browse_box" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} ">
             <text class="browse_text" bindtap="goBack">{{navTitle}}</text>
         </view>
     </view>
 
 
-    <view class="t_left" style="{{!!navHeight?'height:'+navHeight+'px':''}}" wx:if="{{navStyle=='title_left'}}">
+    <view class="t_left" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px':''}}"
+          wx:if="{{navType=='title_left'}}">
         <view class="t_left_title_box" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}} ">
             <view class="t_left_title">{{navTitle}}</view>
         </view>

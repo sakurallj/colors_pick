@@ -1,0 +1,32 @@
+.scroll_view {
+    height: 100vh;
+    width: 100vw;
+}
+
+.title {
+    color: #999;
+    margin: 0 auto;
+    width: 590rpx;
+    margin-top: 108rpx;
+    font-size: 40rpx;
+    /* margin-bottom: 60rpx; */
+}
+
+.collection_info {
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation: sport ease-in-out 1s;
+}
+
+@keyframes sport {
+    0% {
+        top: 100vh;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}

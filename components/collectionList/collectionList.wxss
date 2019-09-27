@@ -10,6 +10,12 @@
     margin-bottom: 40rpx;
 }
 
+.list_item_out {
+    margin: 0 auto;
+    height: 590rpx;
+    width: 590rpx;
+}
+
 .row_container {
     height: 1050rpx;
     width: 750rpx;
@@ -17,6 +23,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .row_title {
@@ -42,9 +49,17 @@
 .row_item_surround {
     display: inline-block;
     box-shadow: 0 0 22rpx rgba(0, 0, 0, 0.3);
+    height: 590rpx;
+    width: 590rpx;
 }
 
 .row_sub_item {
     height: 590rpx;
     width: 590rpx;
+}
+
+.swiper_dots {
+    position: absolute;
+    left: 0;
+    bottom: 35rpx;
 }

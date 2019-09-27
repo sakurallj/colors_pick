@@ -5,6 +5,7 @@
         "pages/pantone/pantone",
         "pages/my/my",
         "pages/test/test",
+        "pages/testCom/testCom",
         "pages/explore/explore",
         "pages/traditionalColor/traditionalColor",
         "pages/about/about"
@@ -15,7 +16,7 @@
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "色卡拾取",
-        "navigationBarTextStyle": "black",
+        "navigationBarTextStyle": "white",
         "navigationStyle": "custom"
     },
     "usingComponents": {

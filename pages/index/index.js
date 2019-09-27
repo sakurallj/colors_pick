@@ -38,7 +38,7 @@ Page({
     },
     gotoCollection() {
         wx.navigateTo({
-            url: '/pages/collection/collection',
+            url: '/pages/pantone/pantone',
         })
     }
 

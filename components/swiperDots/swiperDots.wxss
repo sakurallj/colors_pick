@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dots {
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+    margin-right: 18rpx;
+}
