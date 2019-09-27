@@ -1,5 +1,6 @@
 import db from '../data/db';
 import interceptor from '../interceptor';
+import util from '../util';
 import userService from './user';
 
 let cc = {
@@ -22,21 +23,34 @@ cc.getPantoneGuides = () => {
 cc.getMyPantoneCollectionIds = interceptor.waitOpenIdInterceptor(() => {
     let openId = userService.getOpenIdFromCache();
     return new Promise((resolve, reject) => {
+        let myPantoneIds = wx.getStorageSync("myPantoneIds");
+        if (!!myPantoneIds) {
+            resolve(myPantoneIds);
+            return true;
+        }
         db.cloudDB.collection('userCollections').where({
             _openid: openId,
             type: "panton"
         }).limit(1).get().then(res => {
             console.log(res);
-            let list = null;
+            let list = null,
+                data = {};
             if (res.data.length > 0) {
-                list = res.data[0].list;
+                data = res.data[0];
+                list = data.list;
             }
             if (!list) {
                 list = cc.defaultMyPantoneCollections();
             }
-            resolve(list);
+            data.list = list;
+            wx.setStorageSync("myPantoneIds", data);
+            resolve(data);
         }, res => {
-            resolve(cc.defaultMyPantoneCollections());
+            let data = {
+                list: cc.defaultMyPantoneCollections()
+            };
+            wx.setStorageSync("myPantoneIds", data);
+            resolve(data);
         })
     });
 });
@@ -83,7 +97,8 @@ cc.getPantonePageData = () => {
     return new Promise((resolve, reject) => {
         cc.getPantoneGuides().then(allpantoneGuides => {
             console.log("     cc.getPantoneGuides", allpantoneGuides);
-            cc.getMyPantoneCollectionIds().then(myPantoneIds => {
+            cc.getMyPantoneCollectionIds().then(res => {
+                let myPantoneIds = res.list;
                 resolve(cc.formatPantoneCollections(myPantoneIds, allpantoneGuides));
             }, res => {
                 resolve(cc.formatPantoneCollections(cc.defaultMyPantoneCollections(), allpantoneGuides));
@@ -93,4 +108,36 @@ cc.getPantonePageData = () => {
         });
     });
 };
+
+cc.saveLike = interceptor.waitOpenIdInterceptor((cId) => {
+    let openId = userService.getOpenIdFromCache();
+    return new Promise((resolve, reject) => {
+        cc.getMyPantoneCollectionIds().then(res => {
+            if (util.inArray(cId, res)) {
+                res = util.delFromArrayByValue(cId, res);
+            } else {
+                res[res.length] = cId;
+            }
+            db.cloudDB.collection('userCollections').where({
+                _openid: openId,
+                type: "panton"
+            }).limit(1).get().then(res => {
+                console.log(res);
+                let list = null;
+                if (res.data.length > 0) {
+                    list = res.data[0].list;
+                }
+                if (!list) {
+                    list = cc.defaultMyPantoneCollections();
+                }
+                resolve(list);
+            }, res => {
+                resolve(cc.defaultMyPantoneCollections());
+            });
+        }, res => {
+            reject(res);
+        });
+
+    });
+});
 module.exports = cc;

@@ -23,6 +23,11 @@ Component({
     methods: {
         showInfo(){
             this.triggerEvent('ShowInfo', this.data.cData);
+        },
+        likeOrUnlike(){
+            this.triggerEvent('LikeOrUnlike',{
+                id: this.data.cData.id
+            });
         }
     }
 })

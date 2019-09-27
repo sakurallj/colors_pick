@@ -1,2 +1,2 @@
-<collectionPage cData="{{cData}}" cScrollTop="{{cScrollTop}}"></collectionPage>
+<collectionPage cData="{{cData}}" cScrollTop="{{cScrollTop}}" bindGoBack="goBack" bindRefreshData="refreshData"></collectionPage>
  

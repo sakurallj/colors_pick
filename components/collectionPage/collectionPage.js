@@ -1,7 +1,8 @@
 let app = getApp();
 let appData = app.data;
 let api = app.apis,
-    util = app.util;
+    util = app.util,
+    services = app.services;
 Component({
     /**
      * 组件的属性列表
@@ -10,14 +11,14 @@ Component({
         cData: {
             type: Object,
             value: {},
-            observer: function(newData, oldData) {
+            observer: function (newData, oldData) {
                 this.onCDataChange(newData, oldData);
             }
         },
         cScrollTop: {
             type: Number,
             value: 0,
-            observer: function(newData, oldData) {
+            observer: function (newData, oldData) {
                 this.onScrollTopChange(newData, oldData);
             }
         },
@@ -55,7 +56,7 @@ Component({
             if (!!data.myGuides) {
                 const query = this.createSelectorQuery()
                 query.select('#swiper_collection_list').boundingClientRect()
-                query.exec(function(res) {
+                query.exec(function (res) {
                     if (!!res && !!res[0] && res[0].height) {
                         that.setData({
                             swiperHeight: res[0].height
@@ -96,6 +97,21 @@ Component({
             this.setData({
                 colInfo: ""
             });
+        },
+        goBack: function () {
+            this.triggerEvent('GoBack')
+        },
+        likeOrUnlike(event) {
+            wx.showLoading({
+                title: "加载中"
+            });
+            services.pantone.saveLike(event.detail.id).then(res => {
+                wx.hideLoading();
+                this.triggerEvent('RefreshData', event.detail);
+            }, res => {
+                wx.hideLoading();
+            });
+
         }
     }
-})
+});

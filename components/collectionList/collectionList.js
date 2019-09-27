@@ -79,6 +79,9 @@ Component({
         },
         showInfo(event) {
             this.triggerEvent('ShowAlbumInfo', event.detail);
-        }
+        },
+        likeOrUnlike(event) {
+            this.triggerEvent('LikeOrUnlike', event.detail);
+        },
     }
 });

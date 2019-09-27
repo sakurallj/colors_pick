@@ -31,7 +31,9 @@ Page({
         });
 
     },
-
+    refreshData(){
+        that.getData();
+    },
     onShow: function() {
 
     },
@@ -40,7 +42,9 @@ Page({
             cScrollTop: event.scrollTop
         });
     },
-    onShareAppMessage: function() {
+    goBack: function() {
+        wx.navigateBack({
 
+        });
     }
 });

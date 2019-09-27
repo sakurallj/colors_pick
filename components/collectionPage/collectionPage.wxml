@@ -1,9 +1,9 @@
 <view id="swiper_collection_list">
-    <collectionList bindShowAlbumInfo="showAlbumInfo" cData="{{myGuides}}" bindSwiperChange="swiperColChange"></collectionList>
+    <collectionList bindShowAlbumInfo="showAlbumInfo"  bindLikeOrUnlike="likeOrUnlike"  cData="{{myGuides}}" bindSwiperChange="swiperColChange"></collectionList>
 </view>
 <view class="title">所有色彩集</view>
-<collectionList cData="{{allGuides}}" bindShowAlbumInfo="showAlbumInfo"></collectionList>
-<navBar navType="circle" navBgStyle="{{navBgStyle}}"></navBar>
+<collectionList cData="{{allGuides}}" bindShowAlbumInfo="showAlbumInfo"  bindLikeOrUnlike="likeOrUnlike" ></collectionList>
+<navBar navType="circle" navBgStyle="{{navBgStyle}}" bindGoBack="goBack"></navBar>
 
 
 <view wx:if="{{colInfo.isShowAlbumInfo}}" class="collection_info" style="">

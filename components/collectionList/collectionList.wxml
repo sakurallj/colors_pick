@@ -5,7 +5,7 @@
             <swiper-item wx:for="{{cData.list}}" wx:key="{{item.id}}">
                 <view class="row_item">
                     <view class="row_item_surround">
-                        <collectionAlbum bindShowInfo="showInfo" cData="{{item}}"></collectionAlbum>
+                        <collectionAlbum bindShowInfo="showInfo" bindLikeOrUnlike="likeOrUnlike" cData="{{item}}"></collectionAlbum>
                     </view>
                 </view>
             </swiper-item>
@@ -18,7 +18,7 @@
 <view class="container" wx:elif="{{cData.layout=='list'}}">
     <view class="list_item" wx:for="{{cData.list}}" wx:key="{{item.id}}">
         <view class="list_item_out">
-            <collectionAlbum  bindShowInfo="showInfo"  cData="{{item}}"></collectionAlbum>
+            <collectionAlbum  bindShowInfo="showInfo"  bindLikeOrUnlike="likeOrUnlike"  cData="{{item}}"></collectionAlbum>
         </view>
     </view>
 </view>

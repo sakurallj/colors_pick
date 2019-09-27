@@ -6,17 +6,15 @@ utils.sysInfo.navigationHeight = utils.menuButtonBoundingClientRect.bottom + 8;
 
 utils.sysInfo.isIOS = utils.sysInfo.system.indexOf('iOS') > -1;
 
-utils.rpxToPx = function(rpx) {
+utils.rpxToPx = function (rpx) {
     return rpx * utils.sysInfo.screenWidth / 750;
 };
-utils.pxToRpx = function(px) {
+utils.pxToRpx = function (px) {
     return px * 750 / utils.sysInfo.screenWidth;
 };
 
 
-
-
-utils.rgbToHex = function(rgbStr) {
+utils.rgbToHex = function (rgbStr) {
     console.log("rgbToHex rgbStr", rgbStr);
     //十六进制颜色值的正则表达式
     var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
@@ -52,7 +50,7 @@ utils.rgbToHex = function(rgbStr) {
     }
     return rgbStr;
 };
-utils.rgbToHsl = function(r, g, b) {
+utils.rgbToHsl = function (r, g, b) {
     let d, h, l, max, min, s;
     r /= 255;
     g /= 255;
@@ -84,7 +82,7 @@ utils.rgbToHsl = function(r, g, b) {
     l = (Math.ceil(l * 100)) + "%";
     return [h, s, l];
 };
-utils.hexToRgb = function(hex) {
+utils.hexToRgb = function (hex) {
     if (hex.charAt && hex.charAt(0) === '#') {
         hex = utils.removeHash(hex)
     }
@@ -99,17 +97,17 @@ utils.hexToRgb = function(hex) {
     return [r, g, b]
 }
 
-utils.removeHash = function(hex) {
+utils.removeHash = function (hex) {
 
     var arr = hex.split('')
     arr.shift()
     return arr.join('')
 };
 
-utils.expand = function(hex) {
+utils.expand = function (hex) {
     return hex
         .split('')
-        .reduce(function(accum, value) {
+        .reduce(function (accum, value) {
 
             return accum.concat([value, value])
         }, [])
@@ -139,6 +137,35 @@ utils.getColorTag = (hexColor) => {
     if (hue < 330) return 'Magentas';
 
     return 'Reds';
+};
+/**
+ * 判断是否在数组中
+ * @param needle
+ * @param array
+ * @returns {boolean}
+ */
+utils.inArray = (needle, array) => {
+    for (let i in array) {
+        if (array[i] === needle) {
+            return true;
+        }
+    }
+    return false;
+};
+/**
+ * 从数组删除
+ * @param value
+ * @param array
+ * @returns {Array}
+ */
+utils.delFromArrayByValue = (value, array) => {
+    let newArray = [];
+    for (let i in array) {
+        if (array[i] !== value) {
+            newArray[newArray.length] = array[i];
+        }
+    }
+    return newArray;
 };
 
 module.exports = utils;
