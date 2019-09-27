@@ -1,0 +1,67 @@
+.item {
+    width: 590rpx;
+    height: 590rpx;
+    margin-bottom: 60rpx;
+    position: relative;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.collect {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    opacity: 0.6;
+}
+
+.i_icon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 40rpx;
+    right: 40rpx;
+    opacity: 0.6;
+}
+
+.text_box {
+    position: absolute;
+    bottom: 80rpx;
+    left: 70rpx;
+    color: #fff;
+}
+
+.title {
+    font-size: 43rpx;
+}
+
+.desc {
+    font-size: 36rpx;
+    opacity: 0.6;
+}
+
+.tip_text_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tip_title {
+    color: #fff;
+    font-size: 45rpx;
+    line-height: 65rpx;
+}
+
+.tip_desc {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 25rpx;
+    /* margin-top: 20rpx; */
+}

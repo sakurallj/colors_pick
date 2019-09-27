@@ -18,7 +18,12 @@ Component({
     /**
      * 组件的初始数据
      */
-    data: {},
+    data: {
+        indicatorDots: true,
+        autoplay: false,
+        interval: 3000,
+        duration:  1000
+    },
 
     /**
      * 组件的方法列表
@@ -37,12 +42,25 @@ Component({
                 let item = cData.list[i];
                 if (item.bgType == "color") {
                     item.style = "background: " + item.bgColorValue + ";";
-                } 
+                }
                 !!item.outBgColorValue && (item.outStyle = "background: " + item.outBgColorValue + ";");
             }
             this.setData({
                 cData: cData
             });
+            if (cData.layout =="swiper"){
+                this.setData({
+                    rowStyle: cData.list[0].outStyle
+                });
+            }
+        },
+        swiperChange(event) {
+            console.log(event);
+            let that = this, list = that.data.cData.list, current = event.detail.current, item = list[current], outStyle = item.outStyle;
+            console.log(list, current, item, outStyle);
+            that.setData({
+                rowStyle: outStyle
+            });
         }
     }
-})
+});

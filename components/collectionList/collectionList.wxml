@@ -1,22 +1,19 @@
-<view wx:if="{{cData.layout=='swiper'}}">
-    <scroll-view class="row_container" scroll-x="true" scroll-with-animation>
-        <view class="row_item dark_am  " wx:for="{{cData.list}}" wx:key="{{item.id}}"  style="{{item.outStyle}}" >
-
-        </view>
-    </scroll-view>
-</view>
+<block wx:if="{{cData.layout=='swiper'}}">
+    <view class="row_container" style="{{rowStyle}}">
+        <view class="row_title">您的色彩集</view>
+        <swiper indicator-dots="{{false}}" indicator-color="{{'rgba(255, 255, 255, .3)'}}" indicator-active-color="{{'#ffffff'}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange"  class="row_swiper" >
+            <swiper-item wx:for="{{cData.list}}" wx:key="{{item.id}}">
+                <view class="row_item" >
+                    <view class="row_item_surround">
+                        <collectionAlbum cData="{{item}}"></collectionAlbum>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</block>
 <view class="container" wx:elif="{{cData.layout=='list'}}">
-    <view class="item dark_am" style="{{item.style}}" wx:for="{{cData.list}}">
-        <image src="/images/collected.png" class="collect" wx:if="{{isCollected}}"></image>
-        <image src="/images/collect.png" class="collect" wx:else></image>
-        <image src="/images/i.png" class="i_icon"></image>
-        <view class="text_box">
-            <view class="title">
-                <text>{{item.title}}</text>
-            </view>
-            <view class="desc">
-                <text>{{item.subTitle}}</text>
-            </view>
-        </view>
+    <view class="list_item" wx:for="{{cData.list}}">
+        <collectionAlbum cData="{{item}}"></collectionAlbum>
     </view>
 </view>

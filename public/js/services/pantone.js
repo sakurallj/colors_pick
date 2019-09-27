@@ -54,8 +54,8 @@ cc.formatMyPantoneCollections = (list) => {
     let rtnData = [
         {
             layout: "tip",
-            title: "试着\n在这里寻找您的色彩灵感吧！",
-            tip: "您可以轻触各个色集上的心形按钮来编辑您色彩集内的指南",
+            title: "试着在这里\n寻找您的色彩灵感吧！",
+            subTitle: "您可以轻触各个色集上的心形按钮来编辑您色彩集内的指南",
             outBgColorValue: "#2F244C",
             bgColorValue: "#443C5E", 
             bgType :"color"

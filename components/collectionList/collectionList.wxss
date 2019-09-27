@@ -1,59 +1,50 @@
 @import "/public/css/common.wxss";
+
 .container {
     padding-top: 60rpx;
     padding-bottom: 60rpx;
     box-sizing: border-box;
 }
 
-.item {
-    margin: 0 auto;
-    width: 590rpx;
-    height: 590rpx;
-    margin-bottom: 60rpx;
-    /* box-shadow: 0px 0px 32rpx 0px rgba(58, 60, 90, 0.8); */
-    position: relative;
-    /* border-radius: 20rpx; */
+.list_item {
+    margin-bottom: 40rpx;
 }
 
-.item:last-child {
-    margin-bottom: 0;
-}
-
-.collect {
-    width: 40rpx;
-    height: 40rpx;
-    position: absolute;
-    top: 40rpx;
-    right: 40rpx;
-    opacity: 0.6;
-}
-
-.i_icon {
-    width: 40rpx;
-    height: 40rpx;
-    position: absolute;
-    bottom: 40rpx;
-    right: 40rpx;
-    opacity: 0.6;
-}
-
-.text_box {
-    position: absolute;
-    bottom: 80rpx;
-    left: 70rpx;
-    color: #fff;
-}
-
-.title {
-    font-size: 43rpx;
-}
-
-.desc {
-    font-size: 36rpx;
-    opacity: 0.6;
-}
-
-.row_item{
+.row_container {
     height: 1050rpx;
     width: 750rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.row_title {
+    width: 590rpx;
+    color: #fff;
+    font-size: 45rpx;
+    line-height: 65rpx;
+}
+
+.row_swiper {
+    height: 650rpx;
+    width: 100%;
+}
+
+.row_item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row_item_surround {
+    display: inline-block;
+    box-shadow: 0 0 22rpx rgba(0, 0, 0, 0.3);
+}
+
+.row_sub_item {
+    height: 590rpx;
+    width: 590rpx;
 }
