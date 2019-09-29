@@ -1,1 +1,68 @@
-/* pages/collectionDetail/collectionDetail.wxss */
+.top {
+    width: 100vw;
+    padding-top: 88px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.content {
+    padding: 0 40rpx;
+    padding-top: 40rpx;
+    padding-bottom: 20rpx;
+    position: relative;
+}
+
+.title, .desc {
+    color: #fff;
+}
+
+.info_box, .collect_box {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.collect_box {
+    position: absolute;
+    bottom: 10rpx;
+    right: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collect {
+    width: 40rpx;
+    height: 40rpx;
+    opacity: 0.6;
+}
+
+.info_box {
+    position: absolute;
+    bottom: 10rpx;
+    right: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i_icon {
+    width: 40rpx;
+    height: 40rpx;
+    opacity: 0.6;
+}
+
+.title {
+    font-size: 30rpx;
+    line-height: 35rpx;
+    font-weight: 800;
+}
+
+.desc {
+    font-size: 30rpx;
+    line-height: 35rpx;
+    opacity: 0.6;
+}
+
+.container {
+ 
+}

@@ -2,10 +2,14 @@ let that,
     app = getApp(),
     constData = app.constData,
     appData = app.data,
+    util = app.util,
     services = app.services;
 Page({
 
-    data: {},
+    data: {
+        navHeight: util.sysInfo.navigationHeight,
+        leftGap: util.sysInfo.leftGap
+    },
 
     onLoad: function(options) {
         that = this;
@@ -29,5 +33,8 @@ Page({
 
     onShareAppMessage: function() {
 
+    },
+    goBack: function () {
+        wx.navigateBack({});
     }
 });

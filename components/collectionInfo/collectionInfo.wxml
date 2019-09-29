@@ -1,4 +1,4 @@
-<view class="container" style="{{cData.outStyle}}">
+<view class="container collection_info" style="{{cData.outStyle}}">
     <view class="bottom">
         <view class="tip">将此用于:</view>
         <view class="title">{{cData.infoTitle}}</view>

@@ -6,7 +6,7 @@
 <navBar navType="circle" navBgStyle="{{navBgStyle}}" bindGoBack="goBack"></navBar>
 
 
-<view wx:if="{{colInfo.isShowAlbumInfo}}" class="collection_info" style="">
+<view wx:if="{{colInfo.isShowAlbumInfo}}" >
     <collectionInfo cData="{{colInfo}}" bindClose ="closeInfo"   bindLikeOrUnlike="likeOrUnlike"  ></collectionInfo>
 </view>
  

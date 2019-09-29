@@ -41,6 +41,7 @@ Component({
             navHeight: util.sysInfo.navigationHeight,
             circleImageWidth: util.menuButtonBoundingClientRect.height * 0.6,
             circleImageHeight: util.menuButtonBoundingClientRect.height * 0.6,
+            leftGap: util.sysInfo.leftGap,
         });
         console.log("getCurrentPages",getCurrentPages());
     },

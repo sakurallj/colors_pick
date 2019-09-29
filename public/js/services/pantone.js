@@ -6,7 +6,8 @@ import userService from './user';
 let cc = {
     DEFAULT_MY_PANTONE_COLLECTIONS: ["formula_guide_solid_coated", "formula_guide_solid_uncoated", "color_bridge_coated"],
     USER_COLLECTIONS_NAME: "userCollections",
-    LC_MY_PANTONE_IDS_KEY: "myPantoneIds"
+    LC_MY_PANTONE_IDS_KEY: "myPantoneIds",
+    D_C_COLORS: "cColors",
 };
 /**
  * 获得潘通指南
@@ -183,7 +184,7 @@ cc.isLike = (cId) => {
                     isLike: true
                 });
             } else {
-                console.log("cc.isLike ", cId, list,false);
+                console.log("cc.isLike ", cId, list, false);
                 resolve({
                     isLike: false
                 });
@@ -210,6 +211,7 @@ cc.getDetailById = (cId) => {
                 reject({});
                 return false;
             }
+            col.list = db.test;
             cc.isLike(cId).then(res => {
                 col.isLike = res.isLike;
                 resolve(col);
@@ -219,4 +221,18 @@ cc.getDetailById = (cId) => {
         }, res => {});
     });
 };
+
+cc.getColorsByCId = (cId) => {
+    return new Promise((resolve, reject) => {
+        db.cloudDB.collection(cc.D_C_COLORS).where({
+            paletteID: cId
+        }).limit(10000).get().then(res => {
+            console.log("cc.getColorsByCId", res);
+            resolve(res);
+        }, res => {
+            reject(res);
+        });
+    });
+};
+cc.getColorsByCId("cmyk_uncoated");
 module.exports = cc;

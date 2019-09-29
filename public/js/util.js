@@ -3,6 +3,7 @@ utils.sysInfo = wx.getSystemInfoSync();
 
 utils.menuButtonBoundingClientRect = wx.getMenuButtonBoundingClientRect();
 utils.sysInfo.navigationHeight = utils.menuButtonBoundingClientRect.bottom + 8;
+utils.sysInfo.leftGap = utils.sysInfo.screenWidth - utils.menuButtonBoundingClientRect.right;
 
 utils.sysInfo.isIOS = utils.sysInfo.system.indexOf('iOS') > -1;
 
@@ -182,4 +183,6 @@ utils.getArrayElement = (key, keyValue, array) => {
     }
     return null;
 };
+
+console.log("utils",utils);
 module.exports = utils;

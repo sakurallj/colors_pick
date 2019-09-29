@@ -11,9 +11,9 @@
             </text>
         </view>
     </view>
-    <view class="circle_back" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px':''}}"
+    <view class="circle_back" style="{{navBgStyle}}{{!!navHeight?'height:'+navHeight+'px;':''}}"
           wx:if="{{navType=='circle'}}">
-        <view class="circle_box {{!!isShowHome?'home':''}}" style="{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}}   ">
+        <view class="circle_box {{!!isShowHome?'home':''}}" style="{{!!leftGap?'margin-left:'+leftGap+'px;':''}}{{!!boxMTop?'margin-top: '+boxMTop+'px;':''}}   ">
             <view class="circle_image_out" bindtap="goBack">
 
                 <image class="circle_image" src="/images/arrowleft.png"></image>
