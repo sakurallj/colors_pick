@@ -1,4 +1,3 @@
-import pantone from "../../public/js/services/pantone";
 
 let that;
 let app = getApp();
@@ -18,9 +17,9 @@ Page({
         that.getData();
     },
     getData() {
-        wx.showLoading({
-            title: "加载中"
-        });
+        // wx.showLoading({
+        //     title: "加载中"
+        // });
         services.pantone.getPantonePageData().then(res => {
             wx.hideLoading();
             that.setData({

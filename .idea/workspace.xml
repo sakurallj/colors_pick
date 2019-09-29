@@ -3,15 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="71c606c4-7d01-43a0-96cc-ce922334cc27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionInfo/collectionInfo.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionList/collectionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionList/collectionList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionList/collectionList.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionList/collectionList.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionPage/collectionPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionPage/collectionPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/collectionPage/collectionPage.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionPage/collectionPage.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/collectionPage/collectionPage.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/components/collectionPage/collectionPage.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/pantone/pantone.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pantone/pantone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pantone/pantone.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pantone/pantone.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/data/pantoneGuides.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/data/pantoneGuides.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/services/pantone.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/services/pantone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/services/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/services/services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/util.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,102 +36,89 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/collectionPage/collectionPage.wxml">
+        <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/collectionPage/collectionPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/collectionList/collectionList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/data/pantone.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/services/pantone.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/api.js">
+        <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+            <state>
+              <caret column="104" selection-start-column="104" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/util.js">
+        <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="160" selection-start-line="160" selection-end-line="160" selection-end-column="26" />
+            <state>
+              <caret selection-end-line="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/navBar/navBar.wxml">
+        <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding>
-                <element signature="n#style#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#image#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#text#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#view#1;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#view#0;n#view#1;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#view#2;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#view#0;n#view#2;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#view#3;n#view#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="57" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/navBar/navBar.wxss">
+        <entry file="file://$PROJECT_DIR$/public/js/data/pantoneGuides.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+            <state relative-caret-position="751">
+              <caret line="349" column="30" lean-forward="true" selection-start-line="349" selection-start-column="30" selection-end-line="349" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/data/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/constData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -146,12 +141,19 @@
       <find>identifier</find>
       <find>rpx</find>
       <find>circle_image</find>
+      <find>defaultMyPantoneCollections</find>
+      <find>defaultMyPantoneCollections()</find>
+      <find>'userCollections'</find>
+      <find>&quot;myPantoneIds&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>colorValue</replace>
       <replace>bgColorValue</replace>
       <replace>id</replace>
       <replace>rpx</replace>
+      <replace>DEFAULT_MY_PANTONE_COLLECTIONS</replace>
+      <replace>cc.USER_COLLECTIONS_NAME</replace>
+      <replace>cc.LC_MY_PANTONE_IDS_KEY</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -170,14 +172,11 @@
         <option value="$PROJECT_DIR$/public/js/interceptor.js" />
         <option value="$PROJECT_DIR$/public/js/api.js" />
         <option value="$PROJECT_DIR$/public/js/data/db.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/js/services/user.js" />
         <option value="$PROJECT_DIR$/pages/collection/collection.js" />
         <option value="$PROJECT_DIR$/app.json" />
-        <option value="$PROJECT_DIR$/public/js/services/services.js" />
         <option value="$PROJECT_DIR$/public/css/common.wxss" />
         <option value="$PROJECT_DIR$/app.wxss" />
-        <option value="$PROJECT_DIR$/public/js/data/pantoneGuides.js" />
         <option value="$PROJECT_DIR$/pages/test/test.wxml" />
         <option value="$PROJECT_DIR$/pages/test/test.js" />
         <option value="$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.js" />
@@ -192,10 +191,17 @@
         <option value="$PROJECT_DIR$/components/collectionList/collectionList.js" />
         <option value="$PROJECT_DIR$/components/navBar/navBar.wxss" />
         <option value="$PROJECT_DIR$/components/navBar/navBar.wxml" />
-        <option value="$PROJECT_DIR$/pages/pantone/pantone.js" />
         <option value="$PROJECT_DIR$/components/collectionPage/collectionPage.js" />
         <option value="$PROJECT_DIR$/public/js/util.js" />
         <option value="$PROJECT_DIR$/public/js/services/pantone.js" />
+        <option value="$PROJECT_DIR$/pages/pantone/pantone.js" />
+        <option value="$PROJECT_DIR$/public/js/services/consts.js" />
+        <option value="$PROJECT_DIR$/public/js/services/services.js" />
+        <option value="$PROJECT_DIR$/public/js/services/constData.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/js/data/pantoneGuides.js" />
+        <option value="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.js" />
+        <option value="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxml" />
       </list>
     </option>
   </component>
@@ -263,6 +269,12 @@
               <item name="color_picker" type="b2602c69:ProjectViewProjectNode" />
               <item name="color_picker" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="color_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="color_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="collectionDetail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="color_picker" type="b2602c69:ProjectViewProjectNode" />
@@ -370,15 +382,15 @@
       <workItem from="1568273880908" duration="4032000" />
       <workItem from="1568799015575" duration="4447000" />
       <workItem from="1569478047883" duration="11677000" />
-      <workItem from="1569550779605" duration="9428000" />
+      <workItem from="1569550779605" duration="13481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29584000" />
+    <option name="totallyTimeSpent" value="33637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1326" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1318" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12957858" />
@@ -393,7 +405,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32782823" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32700247" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -470,23 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/data/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/services/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -501,23 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="63" lean-forward="true" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/services/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -573,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/data/pantoneGuides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/collectionAlbum/collectionAlbum.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -618,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/collectionPage/collectionPage.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -644,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/collectionPage/collectionPage.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="105">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -682,46 +646,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/collectionList/collectionList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="658">
+          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/collectionPage/collectionPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+        <state relative-caret-position="601">
+          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="100" column="14" selection-start-line="91" selection-start-column="16" selection-end-line="100" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="160" selection-start-line="160" selection-end-line="160" selection-end-column="26" />
+        <state relative-caret-position="933">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/services/pantone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+        <state relative-caret-position="839">
+          <caret line="201" selection-start-line="201" selection-end-line="201" selection-end-column="16" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/api.js">
+    <entry file="file://$PROJECT_DIR$/public/js/services/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="17" column="26" lean-forward="true" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/data/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/constData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/data/pantoneGuides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="349" column="30" lean-forward="true" selection-start-line="349" selection-start-column="30" selection-end-line="349" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/pantone/pantone.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="104" selection-start-column="104" selection-end-column="104" />
         </state>
       </provider>
     </entry>

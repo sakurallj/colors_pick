@@ -11,14 +11,14 @@ Component({
         cData: {
             type: Object,
             value: {},
-            observer: function (newData, oldData) {
+            observer: function(newData, oldData) {
                 this.onCDataChange(newData, oldData);
             }
         },
         cScrollTop: {
             type: Number,
             value: 0,
-            observer: function (newData, oldData) {
+            observer: function(newData, oldData) {
                 this.onScrollTopChange(newData, oldData);
             }
         },
@@ -56,7 +56,7 @@ Component({
             if (!!data.myGuides) {
                 const query = this.createSelectorQuery()
                 query.select('#swiper_collection_list').boundingClientRect()
-                query.exec(function (res) {
+                query.exec(function(res) {
                     if (!!res && !!res[0] && res[0].height) {
                         that.setData({
                             swiperHeight: res[0].height
@@ -80,8 +80,12 @@ Component({
             }
         },
         swiperColChange(event) {
-            let item = event.detail;
+            console.log(" swiperColChange(event)", event);
+            let item = event.detail,
+                navBgStyle = this.data.navBgStyle;
+            navBgStyle = !navBgStyle ? "" : item.outStyle;
             this.setData({
+                navBgStyle: navBgStyle,
                 swiperColOutStyle: item.outStyle
             });
         },
@@ -98,20 +102,25 @@ Component({
                 colInfo: ""
             });
         },
-        goBack: function () {
+        goBack: function() {
             this.triggerEvent('GoBack')
         },
         likeOrUnlike(event) {
-            wx.showLoading({
-                title: "加载中"
-            });
+            // wx.showLoading({
+            //     title: "加载中"
+            // });
             services.pantone.saveLike(event.detail.id).then(res => {
                 wx.hideLoading();
                 this.triggerEvent('RefreshData', event.detail);
             }, res => {
                 wx.hideLoading();
             });
-
+        },
+        showDetail(event){
+            let item = event.detail;
+            wx.navigateTo({
+                url: '/pages/collectionDetail/collectionDetail?cId=' + item.id + "&dataType=" + item.dataType,
+            })
         }
     }
 });

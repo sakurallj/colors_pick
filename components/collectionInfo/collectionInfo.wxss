@@ -34,6 +34,7 @@
     color: #fff;
     font-size: 60rpx;
     line-height: 70rpx;
+    margin-top: 20rpx;
 }
 
 .desc {
@@ -42,6 +43,7 @@
     line-height: 45rpx;
     margin-top: 50rpx;
     margin-bottom: 60rpx;
+    opacity: 0.6;
 }
 
 .close {

@@ -4,7 +4,9 @@ import util from '../util';
 import userService from './user';
 
 let cc = {
-    defaultMyPantoneCollections: ["formula_guide_solid_coated", "formula_guide_solid_coated", "color_bridge_coated"]
+    DEFAULT_MY_PANTONE_COLLECTIONS: ["formula_guide_solid_coated", "formula_guide_solid_uncoated", "color_bridge_coated"],
+    USER_COLLECTIONS_NAME: "userCollections",
+    LC_MY_PANTONE_IDS_KEY: "myPantoneIds"
 };
 /**
  * 获得潘通指南
@@ -23,16 +25,16 @@ cc.getPantoneGuides = () => {
 cc.getMyPantoneCollectionIds = interceptor.waitOpenIdInterceptor(() => {
     let openId = userService.getOpenIdFromCache();
     return new Promise((resolve, reject) => {
-        let myPantoneIds = wx.getStorageSync("myPantoneIds");
+        let myPantoneIds = wx.getStorageSync(cc.LC_MY_PANTONE_IDS_KEY);
         if (!!myPantoneIds) {
             resolve(myPantoneIds);
             return true;
         }
-        db.cloudDB.collection('userCollections').where({
+        db.cloudDB.collection(cc.USER_COLLECTIONS_NAME).where({
             _openid: openId,
             type: "panton"
         }).limit(1).get().then(res => {
-            console.log(res);
+            console.log("cc.getMyPantoneCollectionIds", res);
             let list = null,
                 data = {};
             if (res.data.length > 0) {
@@ -40,16 +42,16 @@ cc.getMyPantoneCollectionIds = interceptor.waitOpenIdInterceptor(() => {
                 list = data.list;
             }
             if (!list) {
-                list = cc.defaultMyPantoneCollections();
+                list = cc.DEFAULT_MY_PANTONE_COLLECTIONS;
             }
             data.list = list;
-            wx.setStorageSync("myPantoneIds", data);
+            wx.setStorageSync(cc.LC_MY_PANTONE_IDS_KEY, data);
             resolve(data);
         }, res => {
             let data = {
-                list: cc.defaultMyPantoneCollections()
+                list: cc.DEFAULT_MY_PANTONE_COLLECTIONS
             };
-            wx.setStorageSync("myPantoneIds", data);
+            wx.setStorageSync(cc.LC_MY_PANTONE_IDS_KEY, data);
             resolve(data);
         })
     });
@@ -71,7 +73,9 @@ cc.formatPantoneCollections = (myPantoneIds, allpantoneGuides) => {
     }];
     rtnData[0].style = "background: " + rtnData[0].bgColorValue + ";";
     rtnData[0].outStyle = "background: " + rtnData[0].outBgColorValue + ";";
-
+    for (let pI in allpantoneGuides) {
+        allpantoneGuides[pI].isLike = false;
+    }
     for (let i in myPantoneIds) {
         for (let pI in allpantoneGuides) {
             if (allpantoneGuides[pI].id === myPantoneIds[i]) {
@@ -101,43 +105,118 @@ cc.getPantonePageData = () => {
                 let myPantoneIds = res.list;
                 resolve(cc.formatPantoneCollections(myPantoneIds, allpantoneGuides));
             }, res => {
-                resolve(cc.formatPantoneCollections(cc.defaultMyPantoneCollections(), allpantoneGuides));
+                resolve(cc.formatPantoneCollections(cc.DEFAULT_MY_PANTONE_COLLECTIONS, allpantoneGuides));
             })
         }, res => {
             reject(res)
         });
     });
 };
-
+/**
+ * 清空我的收藏的本地缓存
+ */
+cc.clearMyPantoneCollectionIdsCache = () => {
+    wx.removeStorageSync(cc.LC_MY_PANTONE_IDS_KEY);
+};
+/**
+ * 收藏
+ * @type {function(): Promise<any>}
+ */
 cc.saveLike = interceptor.waitOpenIdInterceptor((cId) => {
     let openId = userService.getOpenIdFromCache();
     return new Promise((resolve, reject) => {
         cc.getMyPantoneCollectionIds().then(res => {
-            if (util.inArray(cId, res)) {
-                res = util.delFromArrayByValue(cId, res);
+            console.log("   cc.saveLike  cc.getMyPantoneCollectionIds", res);
+            let list = res.list;
+            if (util.inArray(cId, list)) {
+                list = util.delFromArrayByValue(cId, list);
             } else {
-                res[res.length] = cId;
+                list[list.length] = cId;
             }
-            db.cloudDB.collection('userCollections').where({
-                _openid: openId,
-                type: "panton"
-            }).limit(1).get().then(res => {
-                console.log(res);
-                let list = null;
-                if (res.data.length > 0) {
-                    list = res.data[0].list;
-                }
-                if (!list) {
-                    list = cc.defaultMyPantoneCollections();
-                }
-                resolve(list);
-            }, res => {
-                resolve(cc.defaultMyPantoneCollections());
-            });
+
+            cc.clearMyPantoneCollectionIdsCache();
+            if (!!res._id) { //更新
+
+                db.cloudDB.collection(cc.USER_COLLECTIONS_NAME).doc(res._id).update({
+                    data: {
+                        list: list
+                    }
+                }).then(res => {
+                    console.log(res);
+                    resolve(res);
+                }, res => {
+                    reject(res);
+                });
+            } else { //新增
+                db.cloudDB.collection(cc.USER_COLLECTIONS_NAME)
+                    .add({
+                        data: {
+                            type: "panton",
+                            list: list
+                        }
+                    })
+                    .then(res => {
+                        console.log(res);
+                        resolve(res);
+                    }, res => {
+                        reject(res);
+                    })
+            }
         }, res => {
             reject(res);
         });
 
     });
 });
+/**
+ * 判断是否已经收藏
+ * @type {function(): Promise<any>}
+ */
+cc.isLike = (cId) => {
+    return new Promise((resolve, reject) => {
+        cc.getMyPantoneCollectionIds().then(res => {
+            console.log("cc.isLike ", res);
+            let list = res.list;
+            if (util.inArray(cId, list)) {
+                console.log("cc.isLike ", cId, list, true);
+                resolve({
+                    isLike: true
+                });
+            } else {
+                console.log("cc.isLike ", cId, list,false);
+                resolve({
+                    isLike: false
+                });
+            }
+        }, res => {
+            resolve({
+                isLike: false
+            });
+        });
+
+    });
+};
+/**
+ *
+ * @param cId
+ * @returns {Promise<any>}
+ */
+cc.getDetailById = (cId) => {
+    return new Promise((resolve, reject) => {
+        cc.getPantoneGuides().then(allpantoneGuides => {
+            let col = util.getArrayElement("id", cId, allpantoneGuides);
+            console.log("cc.getDetailById", "id", col, cId, allpantoneGuides);
+            if (!col) {
+                reject({});
+                return false;
+            }
+            cc.isLike(cId).then(res => {
+                col.isLike = res.isLike;
+                resolve(col);
+            }, res => {
+                resolve(col);
+            });
+        }, res => {});
+    });
+};
 module.exports = cc;

@@ -5,8 +5,8 @@
         <view class="desc">{{cData.infoDescription}}</view>
 
         <view class="row">
-            <image src="/images/collected.png" class="collect" wx:if="{{cData.isLike}}"></image>
-            <image src="/images/collect.png" class="collect" wx:else></image>
+            <image src="/images/collected.png" class="collect" wx:if="{{cData.isLike}}"  bindtap="likeOrUnlike" ></image>
+            <image src="/images/collect.png" class="collect" wx:else  bindtap="likeOrUnlike" ></image>
             <view class="close" bindtap="close">关闭</view>
         </view>
     </view>

@@ -1,0 +1,1 @@
+<collectionDetail cData="{{cData}}" bindGoBack="goBack" bindRefreshData="refreshData"></collectionDetail>

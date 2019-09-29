@@ -7,7 +7,7 @@ Component({
         cData: {
             type: Object,
             value: {},
-            observer: function (newData, oldData) {
+            observer: function(newData, oldData) {
                 this.onCDataChange(newData, oldData);
             }
         },
@@ -24,11 +24,21 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        onCDataChange(newData, oldData){
+        onCDataChange(newData, oldData) {
 
         },
-        close(){
-            this.triggerEvent('Close' );
+        close() {
+            this.triggerEvent('Close');
+        },
+        likeOrUnlike() {
+            let cData = this.data.cData;
+            cData.isLike = !cData.isLike;
+            this.setData({
+                cData: cData
+            });
+            this.triggerEvent('LikeOrUnlike', {
+                id: cData.id
+            });
         }
     }
 })

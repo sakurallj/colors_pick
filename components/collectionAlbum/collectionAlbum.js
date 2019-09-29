@@ -7,7 +7,7 @@ Component({
         cData: {
             type: Object,
             value: {}
-        } 
+        }
     },
 
     /**
@@ -21,13 +21,16 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        showInfo(){
+        showInfo() {
             this.triggerEvent('ShowInfo', this.data.cData);
         },
-        likeOrUnlike(){
-            this.triggerEvent('LikeOrUnlike',{
+        likeOrUnlike() {
+            this.triggerEvent('LikeOrUnlike', {
                 id: this.data.cData.id
             });
+        },
+        showDetail() {
+            this.triggerEvent('ShowDetail', this.data.cData);
         }
     }
 })

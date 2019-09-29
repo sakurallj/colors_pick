@@ -46,9 +46,9 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/testCom/testCom",
-					"pathName": "pages/testCom/testCom",
-					"query": "",
+					"name": "pages/collectionDetail/collectionDetail",
+					"pathName": "pages/collectionDetail/collectionDetail",
+					"query": "cId=formula_guide_solid_coated&dataType=pantone",
 					"scene": null
 				},
 				{

@@ -9,21 +9,37 @@
     margin-bottom: 0;
 }
 
+.collect_box {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .collect {
     width: 40rpx;
     height: 40rpx;
-    position: absolute;
-    top: 40rpx;
-    right: 40rpx;
     opacity: 0.6;
+}
+
+.info_box {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 30rpx;
+    right: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .i_icon {
     width: 40rpx;
     height: 40rpx;
-    position: absolute;
-    bottom: 40rpx;
-    right: 40rpx;
     opacity: 0.6;
 }
 

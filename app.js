@@ -12,6 +12,7 @@ App({
 
         this.doUpdateApp();
         !this.services && (this.services = require('./public/js/services/services'));
+        !this.constData && (this.constData = require('./public/js/constData'));
         this.services.user.login();
     },
 

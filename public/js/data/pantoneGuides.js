@@ -1,3 +1,5 @@
+import constData from '../constData';
+
 let cc = {};
 cc.guides = {
     "cmyk_coated": {
@@ -362,6 +364,7 @@ for (let i in cc.guides) {
     item.style = "background: " + item.bgColorValue + ";";
     item.outBgColorValue = item.bgColorValue;
     item.outStyle = "background: " + item.outBgColorValue + ";";
+    item.dataType = constData.DT_PANTONE;
     data[item.order - 1] = item;
 }
 cc.guides = data;

@@ -16,7 +16,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    animation: sport ease-in-out 1s;
+    animation: sport ease 0.6s;
 }
 
 @keyframes sport {

@@ -3,6 +3,7 @@
         "pages/index/index",
         "pages/pick/pick",
         "pages/pantone/pantone",
+        "pages/collectionDetail/collectionDetail",
         "pages/my/my",
         "pages/test/test",
         "pages/testCom/testCom",

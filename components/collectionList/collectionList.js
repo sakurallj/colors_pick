@@ -30,22 +30,14 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        onCDataChange() {
-            this.reFormatColor();
+        onCDataChange(newData, oldData) {
+            this.reFormatColor(newData, oldData);
         },
-        reFormatColor() {
-            let cData = this.data.cData;
+        reFormatColor(newData, oldData) {
+            let cData = newData;
             if (!cData) {
                 return false;
             }
-            console.log(cData);
-            // for (let i in cData.list) {
-            //     let item = cData.list[i];
-            //     if (item.bgType == "color") {
-            //         item.style = "background: " + item.bgColorValue + ";";
-            //     }
-            //     !!item.outBgColorValue && (item.outStyle = "background: " + item.outBgColorValue + ";");
-            // }
             this.setData({
                 cData: cData
             });
@@ -58,10 +50,25 @@ Component({
                 for (let i in cData.list) {
                     swiperDots.list[i] = i;
                 }
+                let swiperCurrentIndex = this.data.swiperCurrentIndex,
+                    outStyle = cData.list[0].outStyle;
+                swiperCurrentIndex = !swiperCurrentIndex ? 0 : swiperCurrentIndex;
+                let i = swiperCurrentIndex;
+                for (; i >= 0; i--) {
+                    if (!!cData.list[i]) {
+                        break;
+                    }
+                }
+                let item = cData.list[i];
+                outStyle = item.outStyle;
+                swiperCurrentIndex = i;
+                console.log("reFormatColor", outStyle, swiperCurrentIndex);
                 this.setData({
                     swiperDots: swiperDots,
-                    rowStyle: cData.list[0].outStyle
+                    rowStyle: outStyle,
+                    swiperCurrentIndex: swiperCurrentIndex
                 });
+                this.triggerEvent('SwiperChange', item);
             }
         },
         swiperChange(event) {
@@ -70,9 +77,8 @@ Component({
                 current = event.detail.current,
                 item = list[current],
                 outStyle = item.outStyle;
-            console.log(list, current, item, outStyle);
             that.setData({
-                swiperDotsCurrIndex: current,
+                swiperCurrentIndex: current,
                 rowStyle: outStyle
             });
             this.triggerEvent('SwiperChange', item);
@@ -83,5 +89,8 @@ Component({
         likeOrUnlike(event) {
             this.triggerEvent('LikeOrUnlike', event.detail);
         },
+        showDetail(event){
+            this.triggerEvent('ShowDetail', event.detail);
+        }
     }
 });

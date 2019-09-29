@@ -167,5 +167,19 @@ utils.delFromArrayByValue = (value, array) => {
     }
     return newArray;
 };
-
+/**
+ *
+ * @param key
+ * @param keyValue
+ * @param array
+ * @returns {null|*}
+ */
+utils.getArrayElement = (key, keyValue, array) => {
+    for (let i in array) {
+        if (array[i][key] !== keyValue) {
+            return array[i];
+        }
+    }
+    return null;
+};
 module.exports = utils;
