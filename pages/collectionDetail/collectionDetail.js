@@ -22,12 +22,7 @@ Page({
         if (that.dataType === constData.DT_PANTONE) {
             services.pantone.getDetailById(that.cId).then(res => {
                 let cellInfo = util.getCellsWidthAndHeight(res.columnsPerPage);
-                for (let i in cellInfo) {
-                    cellInfo[i] = {
-                        width: "width:" + cellInfo[i][0] + "px;",
-                        height: "height:" + cellInfo[i][1] + "px;"
-                    };
-                }
+         
                 for (let index in res.list) {
                     res.list[index].isRowEnd = (res.columnsPerPage == 1 || index % res.columnsPerPage == (res.columnsPerPage - 1) || res.list.length - 1 == index);
                     res.list[index].rowNumber = parseInt(index / res.columnsPerPage) + 1

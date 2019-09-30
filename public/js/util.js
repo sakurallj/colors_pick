@@ -192,28 +192,25 @@ utils.getCellsWidthAndHeight = (cellNumber) => {
     let rawWidth = parseInt(utils.sysInfo.screenWidth / cellNumber),
         remainWidth = utils.sysInfo.screenWidth - rawWidth * cellNumber,
         data = [],
-        height = rawWidth > 75 ? 75 : rawWidth;
+        height = rawWidth > 75 ? 75 : rawWidth,
+        preTotalWidth = 0;
     for (let i = 0; i < cellNumber; i++) {
         let width = rawWidth;
         if (i === 0) {
-        
-                width=    rawWidth + parseInt(remainWidth / 2);
-             
+            width = rawWidth + parseInt(remainWidth / 2);
         } else if (i === cellNumber - 1) {
-            data[i] = [
-                rawWidth + remainWidth - parseInt(remainWidth / 2),
-                height
-            ];
-        } else {
-            data[i] = [
-                rawWidth,
-                height
-            ];
+            width = rawWidth + remainWidth - parseInt(remainWidth / 2);
         }
-        data[i] = [
-           width,
-            height
-        ];
+        preTotalWidth += width;
+        let arrowLeftWidth = preTotalWidth + width / 2;
+        data[i] = {
+            width: width,
+            height: height,
+            arrowLeftWidth: arrowLeftWidth,
+            widthStyle: "width:" + width + "px;",
+            heightStyle: "height:" + height + "px;",
+            arrowLeftStyle: "left:" + arrowLeftWidth + "px;",
+        };
     }
     return data;
 };

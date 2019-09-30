@@ -17,17 +17,17 @@
 </view>
 <view class="container">
     <block wx:for="{{cData.list}}" wx:key="{{item[1]}}">
-        <view class="cell" style="{{'background:#'+item[2]+';'}}{{cellInfo[index%cData.columnsPerPage].width}}{{cellInfo[index%cData.columnsPerPage].height}}">
+        <view class="cell" bindtap="showOrCloseCellInfo" data-item="{{item}}" style="{{'background:#'+item[2]+';'}}{{cellInfo[index%cData.columnsPerPage].widthStyle}}{{cellInfo[index%cData.columnsPerPage].heightStyle}}">
             <view class="cell_title" wx:if="{{cDataInfo.columnsPerPage==1}}">{{item[1]}}</view>
         </view>
-        <view class="cell_info" style="{{cellInfo[index%cDataInfo.columnsPerPage].height}}" wx:if="{{currRowNumber==item.rowNumber&&item.isRowEnd}}">
-            <view></view>
+        <view class="cell_info" style="{{cellInfo[index%cDataInfo.columnsPerPage].heightStyle}}" wx:if="{{currRowNumber==item.rowNumber&&item.isRowEnd}}">
+            <view class="cell_info_arrow" style="{{'border-color: #'+currCellInfo[2]+' transparent transparent transparent;'}}"></view>
         </view>
     </block>
 </view>
 <view class="bottom"></view>
 <navBar navType="circle" navBgStyle="{{navBgStyle}}" bindGoBack="goBack"></navBar>
 
-<view wx:if="{{cDataInfo.isShowAlbumInfo}}" >
-    <collectionInfo cData="{{cDataInfo}}" bindClose ="closeInfo"   bindLikeOrUnlike="likeOrUnlike"  ></collectionInfo>
+<view wx:if="{{cDataInfo.isShowAlbumInfo}}">
+    <collectionInfo cData="{{cDataInfo}}" bindClose="closeInfo" bindLikeOrUnlike="likeOrUnlike"></collectionInfo>
 </view>

@@ -4,12 +4,7 @@
     <list default="true" id="71c606c4-7d01-43a0-96cc-ce922334cc27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/collectionDetail/collectionDetail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/data/pantoneGuides.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/data/pantoneGuides.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/services/pantone.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/services/pantone.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/util.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,14 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/services/pantone.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+            <state relative-caret-position="497">
+              <caret line="156" column="26" lean-forward="true" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="209" column="22" selection-start-line="209" selection-start-column="12" selection-end-line="209" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -298,12 +302,12 @@
       <workItem from="1568799015575" duration="4447000" />
       <workItem from="1569478047883" duration="11677000" />
       <workItem from="1569550779605" duration="20909000" />
-      <workItem from="1569823898547" duration="957000" />
+      <workItem from="1569823898547" duration="1910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42022000" />
+    <option name="totallyTimeSpent" value="42975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1318" extended-state="6" />
@@ -644,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="195" column="42" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -677,11 +674,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/services/pantone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+        <state relative-caret-position="497">
+          <caret line="156" column="26" lean-forward="true" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="209" column="22" selection-start-line="209" selection-start-column="12" selection-end-line="209" selection-end-column="22" />
         </state>
       </provider>
     </entry>
