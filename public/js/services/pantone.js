@@ -7,7 +7,7 @@ let cc = {
     DEFAULT_MY_PANTONE_COLLECTIONS: ["formula_guide_solid_coated", "formula_guide_solid_uncoated", "color_bridge_coated"],
     USER_COLLECTIONS_NAME: "userCollections",
     LC_MY_PANTONE_IDS_KEY: "myPantoneIds",
-    D_C_COLORS: "cColors",
+    D_C_COLORS: "test",
 };
 /**
  * 获得潘通指南
@@ -116,8 +116,9 @@ cc.getPantonePageData = () => {
 /**
  * 清空我的收藏的本地缓存
  */
-cc.clearMyPantoneCollectionIdsCache = () => {
-    wx.removeStorageSync(cc.LC_MY_PANTONE_IDS_KEY);
+cc.updateMyPantoneCollectionIdsCache = (data) => {
+    console.log("cc.updateMyPantoneCollectionIdsCache ", data);
+    wx.setStorageSync(cc.LC_MY_PANTONE_IDS_KEY, data);
 };
 /**
  * 收藏
@@ -126,6 +127,10 @@ cc.clearMyPantoneCollectionIdsCache = () => {
 cc.saveLike = interceptor.waitOpenIdInterceptor((cId) => {
     let openId = userService.getOpenIdFromCache();
     return new Promise((resolve, reject) => {
+        if (!cId) {
+            reject(res);
+            return false;
+        }
         cc.getMyPantoneCollectionIds().then(res => {
             console.log("   cc.saveLike  cc.getMyPantoneCollectionIds", res);
             let list = res.list;
@@ -134,10 +139,9 @@ cc.saveLike = interceptor.waitOpenIdInterceptor((cId) => {
             } else {
                 list[list.length] = cId;
             }
-
-            cc.clearMyPantoneCollectionIdsCache();
+            res.list = list;
+            cc.updateMyPantoneCollectionIdsCache(res);
             if (!!res._id) { //更新
-
                 db.cloudDB.collection(cc.USER_COLLECTIONS_NAME).doc(res._id).update({
                     data: {
                         list: list
@@ -203,32 +207,43 @@ cc.isLike = (cId) => {
  * @returns {Promise<any>}
  */
 cc.getDetailById = (cId) => {
+    console.log("cc.getDetailById ", cId);
     return new Promise((resolve, reject) => {
         cc.getPantoneGuides().then(allpantoneGuides => {
             let col = util.getArrayElement("id", cId, allpantoneGuides);
-            console.log("cc.getDetailById", "id", col, cId, allpantoneGuides);
+            console.log("cc.getDetailById ", cId, col);
             if (!col) {
                 reject({});
                 return false;
             }
-            col.list = db.test;
-            cc.isLike(cId).then(res => {
+            cc.getColorsByCId(cId).then(res => {
+                col.list = res.list;
+                return cc.isLike(cId);
+            }, res => {
+                resolve(col);
+            }).then(res => {
                 col.isLike = res.isLike;
                 resolve(col);
             }, res => {
                 resolve(col);
             });
-        }, res => {});
+        }, res => {
+        });
     });
 };
 
 cc.getColorsByCId = (cId) => {
     return new Promise((resolve, reject) => {
         db.cloudDB.collection(cc.D_C_COLORS).where({
-            paletteID: cId
+            c_name: cId
         }).limit(10000).get().then(res => {
-            console.log("cc.getColorsByCId", res);
-            resolve(res);
+            if (!!res.data[0] && !!res.data[0].list) {
+                res.data[0].list = JSON.parse(res.data[0].list);
+                resolve(res.data[0]);
+            }
+            resolve({
+                list: []
+            });
         }, res => {
             reject(res);
         });

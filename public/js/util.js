@@ -7,15 +7,15 @@ utils.sysInfo.leftGap = utils.sysInfo.screenWidth - utils.menuButtonBoundingClie
 
 utils.sysInfo.isIOS = utils.sysInfo.system.indexOf('iOS') > -1;
 
-utils.rpxToPx = function (rpx) {
+utils.rpxToPx = function(rpx) {
     return rpx * utils.sysInfo.screenWidth / 750;
 };
-utils.pxToRpx = function (px) {
+utils.pxToRpx = function(px) {
     return px * 750 / utils.sysInfo.screenWidth;
 };
 
 
-utils.rgbToHex = function (rgbStr) {
+utils.rgbToHex = function(rgbStr) {
     console.log("rgbToHex rgbStr", rgbStr);
     //十六进制颜色值的正则表达式
     var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
@@ -51,7 +51,7 @@ utils.rgbToHex = function (rgbStr) {
     }
     return rgbStr;
 };
-utils.rgbToHsl = function (r, g, b) {
+utils.rgbToHsl = function(r, g, b) {
     let d, h, l, max, min, s;
     r /= 255;
     g /= 255;
@@ -83,7 +83,7 @@ utils.rgbToHsl = function (r, g, b) {
     l = (Math.ceil(l * 100)) + "%";
     return [h, s, l];
 };
-utils.hexToRgb = function (hex) {
+utils.hexToRgb = function(hex) {
     if (hex.charAt && hex.charAt(0) === '#') {
         hex = utils.removeHash(hex)
     }
@@ -98,17 +98,17 @@ utils.hexToRgb = function (hex) {
     return [r, g, b]
 }
 
-utils.removeHash = function (hex) {
+utils.removeHash = function(hex) {
 
     var arr = hex.split('')
     arr.shift()
     return arr.join('')
 };
 
-utils.expand = function (hex) {
+utils.expand = function(hex) {
     return hex
         .split('')
-        .reduce(function (accum, value) {
+        .reduce(function(accum, value) {
 
             return accum.concat([value, value])
         }, [])
@@ -177,12 +177,57 @@ utils.delFromArrayByValue = (value, array) => {
  */
 utils.getArrayElement = (key, keyValue, array) => {
     for (let i in array) {
-        if (array[i][key] !== keyValue) {
+        if (array[i][key] === keyValue) {
             return array[i];
         }
     }
     return null;
 };
 
-console.log("utils",utils);
+/**
+ *
+ * @param cellNumber
+ */
+utils.getCellsWidthAndHeight = (cellNumber) => {
+    let rawWidth = parseInt(utils.sysInfo.screenWidth / cellNumber),
+        remainWidth = utils.sysInfo.screenWidth - rawWidth * cellNumber,
+        data = [],
+        height = rawWidth > 75 ? 75 : rawWidth;
+    for (let i = 0; i < cellNumber; i++) {
+        let width = rawWidth;
+        if (i === 0) {
+        
+                width=    rawWidth + parseInt(remainWidth / 2);
+             
+        } else if (i === cellNumber - 1) {
+            data[i] = [
+                rawWidth + remainWidth - parseInt(remainWidth / 2),
+                height
+            ];
+        } else {
+            data[i] = [
+                rawWidth,
+                height
+            ];
+        }
+        data[i] = [
+           width,
+            height
+        ];
+    }
+    return data;
+};
+/**
+ * 
+ */
+utils.copyObject = (obj, exceptKeyArr) => {
+    let rtnObj = {};
+    for (let i in obj) {
+        if (!utils.inArray(i, exceptKeyArr)) {
+            rtnObj[i] = obj[i];
+        }
+    }
+    return rtnObj;
+}
+console.log("utils", utils);
 module.exports = utils;

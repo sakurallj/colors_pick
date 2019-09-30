@@ -1,21 +1,33 @@
-<view class="top" style="{{cData.outStyle}}{{!!navHeight?'padding-top:'+navHeight+'px':''}}">
+<view class="top" style="{{cDataInfo.outStyle}}{{!!navHeight?'padding-top:'+navHeight+'px':''}}">
     <view class="content">
         <view class="title_box">
-            <view class="title">{{cData.title}}</view>
-            <view class="desc">{{cData.subTitle}}</view>
+            <view class="title">{{cDataInfo.title}}</view>
+            <view class="desc">{{cDataInfo.subTitle}}</view>
         </view>
         <view class="tool_box">
             <view class="collect_box" catchtap="likeOrUnlike">
-                <image src="/images/collected.png" class="collect" wx:if="{{cData.isLike}}"></image>
+                <image src="/images/collected.png" class="collect" wx:if="{{cDataInfo.isLike}}"></image>
                 <image src="/images/collect.png" class="collect" wx:else></image>
             </view>
-            <view class="info_box" catchtap="showInfo">
+            <view class="info_box" catchtap="showAlbumInfo">
                 <image src="/images/i.png" class="i_icon"></image>
             </view>
         </view>
     </view>
 </view>
 <view class="container">
-    <view class="cell left" wx:for="{{cData.list}}" style="{{'background:#'+item.html}};height:93.75rpx;width:93.75rpx"></view>
+    <block wx:for="{{cData.list}}" wx:key="{{item[1]}}">
+        <view class="cell" style="{{'background:#'+item[2]+';'}}{{cellInfo[index%cData.columnsPerPage].width}}{{cellInfo[index%cData.columnsPerPage].height}}">
+            <view class="cell_title" wx:if="{{cDataInfo.columnsPerPage==1}}">{{item[1]}}</view>
+        </view>
+        <view class="cell_info" style="{{cellInfo[index%cDataInfo.columnsPerPage].height}}" wx:if="{{currRowNumber==item.rowNumber&&item.isRowEnd}}">
+            <view></view>
+        </view>
+    </block>
 </view>
+<view class="bottom"></view>
 <navBar navType="circle" navBgStyle="{{navBgStyle}}" bindGoBack="goBack"></navBar>
+
+<view wx:if="{{cDataInfo.isShowAlbumInfo}}" >
+    <collectionInfo cData="{{cDataInfo}}" bindClose ="closeInfo"   bindLikeOrUnlike="likeOrUnlike"  ></collectionInfo>
+</view>

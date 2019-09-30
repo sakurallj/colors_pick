@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "collectionDetail": "/components/collectionDetail/collectionDetail"
+        "collectionDetail": "/components/collectionDetail/collectionDetail",
+        "collectionInfo": "/components/collectionInfo/collectionInfo"
     }
 }
