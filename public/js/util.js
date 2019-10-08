@@ -201,8 +201,8 @@ utils.getCellsWidthAndHeight = (cellNumber) => {
         } else if (i === cellNumber - 1) {
             width = rawWidth + remainWidth - parseInt(remainWidth / 2);
         }
+        let arrowLeftWidth = preTotalWidth + width / 2 - utils.rpxToPx (25);
         preTotalWidth += width;
-        let arrowLeftWidth = preTotalWidth + width / 2;
         data[i] = {
             width: width,
             height: height,

@@ -9,7 +9,7 @@ Page({
     data: {
         navHeight: util.sysInfo.navigationHeight,
         leftGap: util.sysInfo.leftGap,
-        currRowNumber: 1
+        currRowNumber: 0
     },
 
     onLoad: function(options) {
@@ -22,10 +22,11 @@ Page({
         if (that.dataType === constData.DT_PANTONE) {
             services.pantone.getDetailById(that.cId).then(res => {
                 let cellInfo = util.getCellsWidthAndHeight(res.columnsPerPage);
-         
+
                 for (let index in res.list) {
                     res.list[index].isRowEnd = (res.columnsPerPage == 1 || index % res.columnsPerPage == (res.columnsPerPage - 1) || res.list.length - 1 == index);
-                    res.list[index].rowNumber = parseInt(index / res.columnsPerPage) + 1
+                    res.list[index].rowNumber = parseInt(index / res.columnsPerPage) + 1;
+                    res.list[index].cellInfoIndex = index % res.columnsPerPage;
                 }
                 let cDataInfo = util.copyObject(res, ["list"]);
                 that.setData({
@@ -73,4 +74,19 @@ Page({
             wx.hideLoading();
         });
     },
+    showOrCloseCellInfo(event) {
+        console.log(event);
+        let item = event.currentTarget.dataset.item,
+            currRowNumber = that.data.currRowNumber;
+        if (!!currRowNumber) {
+            that.setData({
+                currRowNumber: 0
+            });
+        }else{
+            that.setData({
+                currCellInfo: item,
+                currRowNumber: item.rowNumber
+            });
+        }
+    }
 });

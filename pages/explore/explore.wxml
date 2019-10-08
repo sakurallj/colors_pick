@@ -2,6 +2,7 @@
 <view class='container'>
     <view class='item' wx:for="{{datas}}">
         <view class="item_cell">
+            
         </view>
     </view>
     <view class="ad_top">
