@@ -22,6 +22,7 @@
         </view>
         <view class="cell_info" style="{{cellInfo[item.cellInfoIndex].heightStyle}}" wx:if="{{currRowNumber==item.rowNumber&&item.isRowEnd}}">
             <view class="cell_info_arrow" style="{{'border-color: #'+currCellInfo[2]+' transparent transparent transparent;'}}{{cellInfo[currCellInfo.cellInfoIndex].arrowLeftStyle}};"></view>
+            <view>{{currCellInfo[1]}}</view>
         </view>
     </block>
 </view>

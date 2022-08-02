@@ -1,64 +1,80 @@
 {
-	"cloudfunctionRoot": "funs/",
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
-	"appid": "wxfab83528e76d3f2e",
-	"projectname": "color_picker",
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pick",
-					"pathName": "pages/pick/pick",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "pages/collectionDetail/collectionDetail",
-					"pathName": "pages/collectionDetail/collectionDetail",
-					"query": "cId=premium_metallics_coated&dataType=pantone",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "pages/pantone/pantone",
-					"pathName": "pages/pantone/pantone",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+    "cloudfunctionRoot": "funs/",
+    "description": "项目配置文件。",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "useMultiFrameRuntime": false,
+        "useApiHook": false,
+        "useApiHostProcess": false,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "useIsolateContext": false,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.8.0",
+    "appid": "wxfab83528e76d3f2e",
+    "projectname": "color_picker",
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "list": []
+        },
+        "conversation": {
+            "list": []
+        },
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "pick",
+                    "pathName": "pages/pick/pick",
+                    "query": ""
+                },
+                {
+                    "id": 1,
+                    "name": "pages/collectionDetail/collectionDetail",
+                    "pathName": "pages/collectionDetail/collectionDetail",
+                    "query": "cId=premium_metallics_coated&dataType=pantone",
+                    "scene": null
+                },
+                {
+                    "id": 2,
+                    "name": "pages/pantone/pantone",
+                    "pathName": "pages/pantone/pantone",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
 }

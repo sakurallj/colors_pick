@@ -29,10 +29,14 @@ Page({
                     res.list[index].cellInfoIndex = index % res.columnsPerPage;
                 }
                 let cDataInfo = util.copyObject(res, ["list"]);
+                let item = res.list[4];
                 that.setData({
                     cellInfo: cellInfo,
                     cData: res,
-                    cDataInfo: cDataInfo
+                    cDataInfo: cDataInfo,
+
+                    currCellInfo: item,
+                    currRowNumber: item.rowNumber
                 });
             }, res => {});
         }
@@ -82,7 +86,7 @@ Page({
             that.setData({
                 currRowNumber: 0
             });
-        }else{
+        } else {
             that.setData({
                 currCellInfo: item,
                 currRowNumber: item.rowNumber
